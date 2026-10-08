@@ -6,20 +6,15 @@ Kho mã nguồn của dự án **Quản lý môi trường đô thị** thuộc 
 
 Dự án đang được khởi tạo. Tài liệu về phạm vi, kiến trúc, cách cài đặt và cách chạy sẽ được bổ sung khi mã nguồn được đưa vào kho.
 
-## Nhánh của thành viên
+## Phân quyền và nhánh làm việc
 
-| Thành viên GitHub | Nhánh làm việc |
-| --- | --- |
-| `247480201033-code` | `member/247480201033-code` |
-| `tadangduong1504-art` | `member/tadangduong1504-art` |
+| Vai trò | Tài khoản GitHub | Nhánh làm việc |
+| --- | --- | --- |
+| Owner, quản trị viên | `trxyan` | Duyệt và hợp nhất pull request vào `main` |
+| Thành viên | `247480201033-code` | `member/247480201033-code` |
+| Thành viên | `tadangduong1504-art` | `member/tadangduong1504-art` |
 
-## Quy trình làm việc
-
-- `main` là nhánh chính, dùng để lưu phiên bản đã được nhóm xem xét.
-- Mỗi thành viên làm việc trên nhánh `member/<github-username>` của mình. Với công việc cụ thể, có thể tạo nhánh `feature/<github-username>/<ten-cong-viec>` từ nhánh của mình.
-- Khi hoàn tất, mở pull request vào `main`, mô tả thay đổi và cách kiểm tra.
-- Nhờ ít nhất một thành viên khác xem xét pull request trước khi hợp nhất.
-- Không đẩy trực tiếp hoặc force push lên `main`.
+Mỗi thành viên đẩy commit lên nhánh của mình và mở pull request vào `main`. Owner xem xét, phê duyệt và quyết định có hợp nhất pull request hay không. Không đẩy trực tiếp hoặc force push lên `main`.
 
 ## Bắt đầu
 
