@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.venv/
+iscape_data/
+models/
+.runtime/
+tmp/
+.env
+.env.*
+!.env.example
+*.mdf
+*.ldf

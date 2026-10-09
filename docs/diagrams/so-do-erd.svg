@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2150" height="1470" viewBox="0 0 2150 1470" role="img" aria-label="ERD các quan hệ dữ liệu chính của hệ thống giám sát môi trường đô thị">
+<title>ERD các quan hệ dữ liệu chính của hệ thống giám sát môi trường đô thị</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="1075" y="76" font-family="Arial, Segoe UI, sans-serif" font-size="39" font-weight="700" text-anchor="middle" fill="#263238">ERD — CÁC QUAN HỆ DỮ LIỆU CHÍNH</text>
+<path d="M 650 390 L 795 390" fill="none" stroke="#52616b" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="722.5" y="366" font-family="Arial, Segoe UI, sans-serif" font-size="19" font-weight="500" text-anchor="middle" fill="#52616b">theo nơi</text>
+<path d="M 674 390 L 650 375" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 674 390 L 650 405" fill="none" stroke="#263238" stroke-width="2.5"/>
+<circle cx="687" cy="390" r="8" fill="#ffffff" stroke="#263238" stroke-width="2.5"/>
+<path d="M 774 375 L 774 405" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 1075 642 L 1075 765" fill="none" stroke="#52616b" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="1102" y="700" font-family="Arial, Segoe UI, sans-serif" font-size="19" font-weight="500" text-anchor="start" fill="#52616b">lưu số đo theo địa điểm</text>
+<path d="M 1060 663 L 1090 663" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 1075 741 L 1060 765" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 1075 741 L 1090 765" fill="none" stroke="#263238" stroke-width="2.5"/>
+<circle cx="1075" cy="727" r="8" fill="#ffffff" stroke="#263238" stroke-width="2.5"/>
+<path d="M 650 1010 L 795 1010" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<text x="722.5" y="986" font-family="Arial, Segoe UI, sans-serif" font-size="19" font-weight="500" text-anchor="middle" fill="#52616b">phát sinh</text>
+<path d="M 674 1010 L 650 995" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 674 1010 L 650 1025" fill="none" stroke="#263238" stroke-width="2.5"/>
+<circle cx="687" cy="1010" r="8" fill="#ffffff" stroke="#263238" stroke-width="2.5"/>
+<path d="M 774 995 L 774 1025" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 1355 1010 L 1500 1010" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<text x="1427" y="986" font-family="Arial, Segoe UI, sans-serif" font-size="19" font-weight="500" text-anchor="middle" fill="#52616b">phân tích</text>
+<path d="M 1376 995 L 1376 1025" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 1476 1010 L 1500 995" fill="none" stroke="#263238" stroke-width="2.5"/>
+<path d="M 1476 1010 L 1500 1025" fill="none" stroke="#263238" stroke-width="2.5"/>
+<circle cx="1463" cy="1010" r="8" fill="#ffffff" stroke="#263238" stroke-width="2.5"/>
+<rect x="90" y="195" width="560" height="484" rx="0" fill="#ffffff" stroke="#263238" stroke-width="2.6"/>
+<path d="M 90 267 L 650 267" fill="none" stroke="#263238" stroke-width="2.6"/>
+<text x="370.0" y="242" font-family="Arial, Segoe UI, sans-serif" font-size="31" font-weight="700" text-anchor="middle" fill="#263238">BaoCaoMT</text>
+<text x="118" y="317" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#263238">MaBaoCao</text>
+<path d="M 118 321 L 226.0 321" fill="none" stroke="#263238" stroke-width="1.4"/>
+<text x="118" y="354" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">MaDiaDiem</text>
+<text x="118" y="391" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">TieuDe</text>
+<text x="118" y="428" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">TuNgay</text>
+<text x="118" y="465" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">DenNgay</text>
+<text x="118" y="502" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ThoiGianTao</text>
+<text x="118" y="539" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">SoNgay</text>
+<text x="118" y="576" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">SoBanGhi</text>
+<text x="118" y="613" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">SoCanhBao</text>
+<text x="118" y="650" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">NoiDung (JSON)</text>
+<rect x="795" y="195" width="560" height="447" rx="0" fill="#ffffff" stroke="#263238" stroke-width="2.6"/>
+<path d="M 795 267 L 1355 267" fill="none" stroke="#263238" stroke-width="2.6"/>
+<text x="1075.0" y="242" font-family="Arial, Segoe UI, sans-serif" font-size="31" font-weight="700" text-anchor="middle" fill="#263238">DiaDiem</text>
+<text x="823" y="317" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#263238">MaDiaDiem</text>
+<path d="M 823 321 L 944.5 321" fill="none" stroke="#263238" stroke-width="1.4"/>
+<text x="823" y="354" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">Ten</text>
+<text x="823" y="391" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">Nhom</text>
+<text x="823" y="428" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ViDo</text>
+<text x="823" y="465" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">KinhDo</text>
+<text x="823" y="502" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ViDoTiengOn</text>
+<text x="823" y="539" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">KinhDoTiengOn</text>
+<text x="823" y="576" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">TenKhuVucTiengOn</text>
+<text x="823" y="613" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ChiTiet (JSON)</text>
+<rect x="1500" y="195" width="560" height="447" rx="0" fill="#ffffff" stroke="#263238" stroke-width="2.6"/>
+<path d="M 1500 267 L 2060 267" fill="none" stroke="#263238" stroke-width="2.6"/>
+<text x="1780.0" y="242" font-family="Arial, Segoe UI, sans-serif" font-size="31" font-weight="700" text-anchor="middle" fill="#263238">MauBanDoKhongKhi</text>
+<text x="1528" y="317" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#263238">MaMau</text>
+<path d="M 1528 321 L 1595.5 321" fill="none" stroke="#263238" stroke-width="1.4"/>
+<text x="1528" y="354" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">MaViTri</text>
+<text x="1528" y="391" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ViDo</text>
+<text x="1528" y="428" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">KinhDo</text>
+<text x="1528" y="465" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ThoiGianLay</text>
+<text x="1528" y="502" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ThoiGianNguon</text>
+<text x="1528" y="539" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">US_AQI</text>
+<text x="1528" y="576" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">PM25</text>
+<text x="1528" y="613" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ChiTiet (JSON)</text>
+<rect x="795" y="765" width="560" height="484" rx="0" fill="#ffffff" stroke="#263238" stroke-width="2.6"/>
+<path d="M 795 837 L 1355 837" fill="none" stroke="#263238" stroke-width="2.6"/>
+<text x="1075.0" y="812" font-family="Arial, Segoe UI, sans-serif" font-size="31" font-weight="700" text-anchor="middle" fill="#263238">NguonDL</text>
+<text x="823" y="887" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#263238">Manguon</text>
+<path d="M 823 891 L 917.5 891" fill="none" stroke="#263238" stroke-width="1.4"/>
+<text x="823" y="924" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">MaDiaDiem</text>
+<text x="823" y="961" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">TenNguon</text>
+<text x="823" y="998" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ThoiGian</text>
+<text x="823" y="1035" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">PM25</text>
+<text x="823" y="1072" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">PM10</text>
+<text x="823" y="1109" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">NhietDo</text>
+<text x="823" y="1146" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">DoAm</text>
+<text x="823" y="1183" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">TiengOn</text>
+<text x="823" y="1220" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ChiTiet (JSON)</text>
+<rect x="90" y="815" width="560" height="336" rx="0" fill="#ffffff" stroke="#263238" stroke-width="2.6"/>
+<path d="M 90 887 L 650 887" fill="none" stroke="#263238" stroke-width="2.6"/>
+<text x="370.0" y="862" font-family="Arial, Segoe UI, sans-serif" font-size="31" font-weight="700" text-anchor="middle" fill="#263238">CanhBao</text>
+<text x="118" y="937" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#263238">Macanhbao</text>
+<path d="M 118 941 L 239.5 941" fill="none" stroke="#263238" stroke-width="1.4"/>
+<text x="118" y="974" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">Manguon</text>
+<text x="118" y="1011" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">LoaiCanhBao</text>
+<text x="118" y="1048" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">MucDo</text>
+<text x="118" y="1085" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">NoiDung</text>
+<text x="118" y="1122" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ThoiGian</text>
+<rect x="1500" y="815" width="560" height="336" rx="0" fill="#ffffff" stroke="#263238" stroke-width="2.6"/>
+<path d="M 1500 887 L 2060 887" fill="none" stroke="#263238" stroke-width="2.6"/>
+<text x="1780.0" y="862" font-family="Arial, Segoe UI, sans-serif" font-size="31" font-weight="700" text-anchor="middle" fill="#263238">PhanTichAI</text>
+<text x="1528" y="937" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="700" text-anchor="start" fill="#263238">Maphantich</text>
+<path d="M 1528 941 L 1663.0 941" fill="none" stroke="#263238" stroke-width="1.4"/>
+<text x="1528" y="974" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">Manguon</text>
+<text x="1528" y="1011" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">KetQua</text>
+<text x="1528" y="1048" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">NhanXet</text>
+<text x="1528" y="1085" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">KhuyenNghi</text>
+<text x="1528" y="1122" font-family="Arial, Segoe UI, sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#263238">ThoiGian</text>
+<text x="1780" y="670" font-family="Arial, Segoe UI, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#52616b">Mẫu AQI theo tọa độ; dùng lại theo giờ.</text>
+<text x="1780" y="702" font-family="Arial, Segoe UI, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#52616b">MaViTri không phải khóa đến DiaDiem.</text>
+<path d="M 90 1307 L 2060 1307" fill="none" stroke="#d7dfe2" stroke-width="1.5"/>
+<path d="M 145 1363 L 240 1363" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<path d="M 172 1348 L 172 1378" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<text x="255" y="1371" font-family="Arial, Segoe UI, sans-serif" font-size="22" font-weight="400" text-anchor="start" fill="#263238">Một (bắt buộc)</text>
+<path d="M 680 1363 L 775 1363" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<path d="M 751 1363 L 775 1348" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<path d="M 751 1363 L 775 1378" fill="none" stroke="#52616b" stroke-width="2.5"/>
+<circle cx="738" cy="1363" r="8" fill="#ffffff" stroke="#263238" stroke-width="2.5"/>
+<text x="790" y="1371" font-family="Arial, Segoe UI, sans-serif" font-size="22" font-weight="400" text-anchor="start" fill="#263238">Không hoặc nhiều (tùy chọn)</text>
+<text x="1570" y="1371" font-family="Arial, Segoe UI, sans-serif" font-size="22" font-weight="400" text-anchor="start" fill="#263238">Khóa chính</text>
+<path d="M 1570 1378 L 1673 1378" fill="none" stroke="#263238" stroke-width="1.6"/>
+<path d="M 145 1422 L 235 1422" fill="none" stroke="#52616b" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="255" y="1430" font-family="Arial, Segoe UI, sans-serif" font-size="20" font-weight="400" text-anchor="start" fill="#52616b">Nét đứt: liên kết logic theo MaDiaDiem, không khai báo khóa ngoại SQL.</text>
+<text x="1435" y="1430" font-family="Arial, Segoe UI, sans-serif" font-size="19" font-weight="400" text-anchor="start" fill="#52616b">NguonDL.MaDiaDiem có thể NULL.</text>
+</svg>

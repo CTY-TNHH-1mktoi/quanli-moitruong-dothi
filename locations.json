@@ -1,0 +1,855 @@
+[
+  {
+    "MaDiaDiem": "hanoi",
+    "Ten": "Hà Nội",
+    "Nhom": "Thành phố",
+    "ViDo": 21.0285,
+    "KinhDo": 105.8542,
+    "ViDoTiengOn": 21.0333,
+    "KinhDoTiengOn": 105.7944,
+    "TenKhuVucTiengOn": "Cầu Giấy, Hà Nội",
+    "NguonToaDo": "Tọa độ tham chiếu sẵn có của dự án"
+  },
+  {
+    "MaDiaDiem": "tphcm",
+    "Ten": "Thành phố Hồ Chí Minh",
+    "Nhom": "Thành phố",
+    "ViDo": 10.82302,
+    "KinhDo": 106.62965,
+    "TenKhuVucTiengOn": "Thành phố Hồ Chí Minh",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "danang",
+    "Ten": "Đà Nẵng",
+    "Nhom": "Thành phố",
+    "ViDo": 16.06778,
+    "KinhDo": 108.22083,
+    "TenKhuVucTiengOn": "Đà Nẵng",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "haiphong",
+    "Ten": "Hải Phòng",
+    "Nhom": "Thành phố",
+    "ViDo": 20.86481,
+    "KinhDo": 106.68345,
+    "TenKhuVucTiengOn": "Hải Phòng",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "cantho",
+    "Ten": "Cần Thơ",
+    "Nhom": "Thành phố",
+    "ViDo": 10.03711,
+    "KinhDo": 105.78825,
+    "TenKhuVucTiengOn": "Cần Thơ",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "hue",
+    "Ten": "Huế",
+    "Nhom": "Thành phố",
+    "ViDo": 16.4619,
+    "KinhDo": 107.59546,
+    "TenKhuVucTiengOn": "Huế",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "nhatrang",
+    "Ten": "Nha Trang",
+    "Nhom": "Thành phố",
+    "ViDo": 12.24507,
+    "KinhDo": 109.19432,
+    "TenKhuVucTiengOn": "Nha Trang",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "dalat",
+    "Ten": "Đà Lạt",
+    "Nhom": "Thành phố",
+    "ViDo": 11.94646,
+    "KinhDo": 108.44193,
+    "TenKhuVucTiengOn": "Đà Lạt",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "vungtau",
+    "Ten": "Vũng Tàu",
+    "Nhom": "Thành phố",
+    "ViDo": 10.34599,
+    "KinhDo": 107.08426,
+    "TenKhuVucTiengOn": "Vũng Tàu",
+    "NguonToaDo": "Open-Meteo Geocoding / GeoNames"
+  },
+  {
+    "MaDiaDiem": "noise-f3182b13970d",
+    "Ten": "Long Điền, Bà Rịa - Vũng Tàu",
+    "Nhom": "Bà Rịa - Vũng Tàu",
+    "ViDo": 10.3896239,
+    "KinhDo": 107.2345158,
+    "TenKhuVucTiengOn": "Long Điền, Bà Rịa - Vũng Tàu",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bà Rịa - Vũng Tàu_Long Điền.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-8e188eaa5f0c",
+    "Ten": "Xuyên Mộc, Bà Rịa - Vũng Tàu",
+    "Nhom": "Bà Rịa - Vũng Tàu",
+    "ViDo": 10.6954367,
+    "KinhDo": 107.512599,
+    "TenKhuVucTiengOn": "Xuyên Mộc, Bà Rịa - Vũng Tàu",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bà Rịa - Vũng Tàu_Xuyên Mộc.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-e58020173ecc",
+    "Ten": "Di An, Bình Dương",
+    "Nhom": "Bình Dương",
+    "ViDo": 10.8810795,
+    "KinhDo": 106.8099809,
+    "TenKhuVucTiengOn": "Di An, Bình Dương",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bình Dương_Di An.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-81e539dbd4f7",
+    "Ten": "Thuận An, Bình Dương",
+    "Nhom": "Bình Dương",
+    "ViDo": 10.872743,
+    "KinhDo": 106.7135912,
+    "TenKhuVucTiengOn": "Thuận An, Bình Dương",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bình Dương_Thuận An.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-f4718e01d160",
+    "Ten": "Tân Uyên, Bình Dương",
+    "Nhom": "Bình Dương",
+    "ViDo": 11.052126,
+    "KinhDo": 106.7945772,
+    "TenKhuVucTiengOn": "Tân Uyên, Bình Dương",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bình Dương_Tân Uyên.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-db6e74a7365f",
+    "Ten": "Lộc Ninh, Bình Phước",
+    "Nhom": "Bình Phước",
+    "ViDo": 11.8453087,
+    "KinhDo": 106.5861607,
+    "TenKhuVucTiengOn": "Lộc Ninh, Bình Phước",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bình Phước_Lộc Ninh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-fa8b6e7ee9dc",
+    "Ten": "Hàm Thuận Nam, Bình Thuận",
+    "Nhom": "Bình Thuận",
+    "ViDo": 10.8515035,
+    "KinhDo": 107.8279077,
+    "TenKhuVucTiengOn": "Hàm Thuận Nam, Bình Thuận",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bình Thuận_Hàm Thuận Nam.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-a773816f8891",
+    "Ten": "Thuận Thành, Bắc Ninh",
+    "Nhom": "Bắc Ninh",
+    "ViDo": 21.0598674,
+    "KinhDo": 106.088575,
+    "TenKhuVucTiengOn": "Thuận Thành, Bắc Ninh",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bắc Ninh_Thuận Thành.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-0a5ad8085e87",
+    "Ten": "Bến Tre",
+    "Nhom": "Bến Tre",
+    "ViDo": 10.256395,
+    "KinhDo": 106.3831121,
+    "TenKhuVucTiengOn": "Bến Tre",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Bến Tre_Bến Tre.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-fd5500f371fa",
+    "Ten": "Cà Mau",
+    "Nhom": "Cà Mau",
+    "ViDo": 9.1856103,
+    "KinhDo": 105.1455661,
+    "TenKhuVucTiengOn": "Cà Mau",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Cà Mau_Cà Mau.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-c51369096f3b",
+    "Ten": "Ninh Kiều, Cần Thơ",
+    "Nhom": "Cần Thơ",
+    "ViDo": 10.0455006,
+    "KinhDo": 105.7753668,
+    "TenKhuVucTiengOn": "Ninh Kiều, Cần Thơ",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Cần Thơ_Ninh Kiều.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-b47f27aa3dba",
+    "Ten": "Phú Thiện, Gia Lai",
+    "Nhom": "Gia Lai",
+    "ViDo": 13.4266075,
+    "KinhDo": 108.3827904,
+    "TenKhuVucTiengOn": "Phú Thiện, Gia Lai",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Gia Lai_Phú Thiện.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-21618c346e7e",
+    "Ten": "Hoàng Su Phì, Hà Giang",
+    "Nhom": "Hà Giang",
+    "ViDo": 22.572418,
+    "KinhDo": 104.7233651,
+    "TenKhuVucTiengOn": "Hoàng Su Phì, Hà Giang",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Giang_Hoàng Su Phì.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-393431f9cbb2",
+    "Ten": "Xín Mần, Hà Giang",
+    "Nhom": "Hà Giang",
+    "ViDo": 22.6808116,
+    "KinhDo": 104.462086,
+    "TenKhuVucTiengOn": "Xín Mần, Hà Giang",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Giang_Xín Mần.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-6ed0caf0f884",
+    "Ten": "Ba Đình, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0423247,
+    "KinhDo": 105.8471339,
+    "TenKhuVucTiengOn": "Ba Đình, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Ba Đình.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-d6364dc669b4",
+    "Ten": "Chương Mỹ, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 20.8582849,
+    "KinhDo": 105.5804868,
+    "TenKhuVucTiengOn": "Chương Mỹ, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Chương Mỹ.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-7ec288de7004",
+    "Ten": "Cầu Giấy, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0181765,
+    "KinhDo": 105.8009229,
+    "TenKhuVucTiengOn": "Cầu Giấy, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Cầu Giấy.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-0ac5d7164f97",
+    "Ten": "Hai Bà Trưng, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0059122,
+    "KinhDo": 105.8421161,
+    "TenKhuVucTiengOn": "Hai Bà Trưng, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Hai Bà Trưng.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-9bed5e9e7f33",
+    "Ten": "Hoài Đức, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0283645,
+    "KinhDo": 105.6671909,
+    "TenKhuVucTiengOn": "Hoài Đức, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Hoài Đức.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-c040a2c54065",
+    "Ten": "Hoàn Kiếm, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0213839,
+    "KinhDo": 105.8467838,
+    "TenKhuVucTiengOn": "Hoàn Kiếm, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Hoàn Kiếm.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-5bf835d5d6ee",
+    "Ten": "Hoàng Mai, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 20.95307,
+    "KinhDo": 105.8472506,
+    "TenKhuVucTiengOn": "Hoàng Mai, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Hoàng Mai.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-9fb871b4b82e",
+    "Ten": "Hà Đông, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 20.9725106,
+    "KinhDo": 105.7803846,
+    "TenKhuVucTiengOn": "Hà Đông, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Hà Đông.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-303ed359a408",
+    "Ten": "Lương Sơn, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 20.8579071,
+    "KinhDo": 105.5804868,
+    "TenKhuVucTiengOn": "Lương Sơn, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Lương Sơn.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-bdaabc25bec4",
+    "Ten": "Sóc Sơn, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.2193545,
+    "KinhDo": 105.7819017,
+    "TenKhuVucTiengOn": "Sóc Sơn, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Sóc Sơn.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-acdc5461ee2c",
+    "Ten": "Thanh Trì, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 20.9430657,
+    "KinhDo": 105.8702395,
+    "TenKhuVucTiengOn": "Thanh Trì, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Thanh Trì.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-209007990a91",
+    "Ten": "Thường Tín, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 20.8473297,
+    "KinhDo": 105.8668553,
+    "TenKhuVucTiengOn": "Thường Tín, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Thường Tín.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-68aac0f3aba4",
+    "Ten": "Tây Hồ, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0611878,
+    "KinhDo": 105.8314969,
+    "TenKhuVucTiengOn": "Tây Hồ, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Tây Hồ.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-3c47418648ab",
+    "Ten": "Từ Liêm, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.007233,
+    "KinhDo": 105.7376744,
+    "TenKhuVucTiengOn": "Từ Liêm, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Từ Liêm.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-4b9838df2af2",
+    "Ten": "Đông Anh, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.1339767,
+    "KinhDo": 105.8518017,
+    "TenKhuVucTiengOn": "Đông Anh, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Đông Anh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-17fdb7634814",
+    "Ten": "Đống Đa, Hà Nội",
+    "Nhom": "Hà Nội",
+    "ViDo": 21.0244026,
+    "KinhDo": 105.8393154,
+    "TenKhuVucTiengOn": "Đống Đa, Hà Nội",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hà Nội_Đống Đa.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-cec81a47d3ac",
+    "Ten": "Mai Châu, Hòa Bình",
+    "Nhom": "Hòa Bình",
+    "ViDo": 20.6543513,
+    "KinhDo": 105.0666806,
+    "TenKhuVucTiengOn": "Mai Châu, Hòa Bình",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hòa Bình_Mai Châu.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-2012ef2a17e0",
+    "Ten": "Văn Lâm, Hưng Yên",
+    "Nhom": "Hưng Yên",
+    "ViDo": 20.9813807,
+    "KinhDo": 106.0474985,
+    "TenKhuVucTiengOn": "Văn Lâm, Hưng Yên",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hưng Yên_Văn Lâm.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-189fa845965a",
+    "Ten": "Cát Hải, Hải Phòng",
+    "Nhom": "Hải Phòng",
+    "ViDo": 20.7980218,
+    "KinhDo": 107.1004337,
+    "TenKhuVucTiengOn": "Cát Hải, Hải Phòng",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hải Phòng_Cát Hải.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-2c40e63dbfa7",
+    "Ten": "Binh Tan, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7693105,
+    "KinhDo": 106.6096163,
+    "TenKhuVucTiengOn": "Binh Tan, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Binh Tan.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-7faf573b60a5",
+    "Ten": "Bình Chánh, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7844007,
+    "KinhDo": 106.5827766,
+    "TenKhuVucTiengOn": "Bình Chánh, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Bình Chánh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-8ee70f90f371",
+    "Ten": "Bình Thạnh, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.8123951,
+    "KinhDo": 106.7126576,
+    "TenKhuVucTiengOn": "Bình Thạnh, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Bình Thạnh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-b97ee0997f67",
+    "Ten": "Gò Vấp, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.8181525,
+    "KinhDo": 106.6779993,
+    "TenKhuVucTiengOn": "Gò Vấp, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Gò Vấp.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-64276603e293",
+    "Ten": "Hóc Môn, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.8600392,
+    "KinhDo": 106.5954963,
+    "TenKhuVucTiengOn": "Hóc Môn, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Hóc Môn.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-f9968dd310c9",
+    "Ten": "Nhà Bè, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.712318,
+    "KinhDo": 106.696087,
+    "TenKhuVucTiengOn": "Nhà Bè, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Nhà Bè.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-f5c2e96f4230",
+    "Ten": "Quận 1, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7724874,
+    "KinhDo": 106.7062394,
+    "TenKhuVucTiengOn": "Quận 1, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 1.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-bbd28af6fdd6",
+    "Ten": "Quận 10, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7800326,
+    "KinhDo": 106.6604951,
+    "TenKhuVucTiengOn": "Quận 10, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 10.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-cfe66acad5bb",
+    "Ten": "Quận 11, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7738773,
+    "KinhDo": 106.647542,
+    "TenKhuVucTiengOn": "Quận 11, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 11.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-75e572a50333",
+    "Ten": "Quận 12, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.8687731,
+    "KinhDo": 106.6512763,
+    "TenKhuVucTiengOn": "Quận 12, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 12.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-83fc13894729",
+    "Ten": "Quận 2, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7951223,
+    "KinhDo": 106.7335459,
+    "TenKhuVucTiengOn": "Quận 2, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 2.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-39a294c61a20",
+    "Ten": "Quận 3, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.767722,
+    "KinhDo": 106.6800998,
+    "TenKhuVucTiengOn": "Quận 3, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 3.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-351ddf77a73b",
+    "Ten": "Quận 5, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7522337,
+    "KinhDo": 106.6793997,
+    "TenKhuVucTiengOn": "Quận 5, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 5.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-ac4035cf2251",
+    "Ten": "Quận 6, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7478651,
+    "KinhDo": 106.6511596,
+    "TenKhuVucTiengOn": "Quận 6, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 6.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-2edbb0cfc4f2",
+    "Ten": "Quận 8, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.7494537,
+    "KinhDo": 106.6646961,
+    "TenKhuVucTiengOn": "Quận 8, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 8.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-73700d0c2406",
+    "Ten": "Quận 9, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.8499154,
+    "KinhDo": 106.8026291,
+    "TenKhuVucTiengOn": "Quận 9, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Quận 9.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-1f1eab6b6f4b",
+    "Ten": "Tân Bình, Hồ Chí Minh city",
+    "Nhom": "Hồ Chí Minh city",
+    "ViDo": 10.814976,
+    "KinhDo": 106.6726314,
+    "TenKhuVucTiengOn": "Tân Bình, Hồ Chí Minh city",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Hồ Chí Minh city_Tân Bình.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-e23202976d46",
+    "Ten": "Diên Khánh, Khánh Hòa",
+    "Nhom": "Khánh Hòa",
+    "ViDo": 12.2613923,
+    "KinhDo": 109.1071137,
+    "TenKhuVucTiengOn": "Diên Khánh, Khánh Hòa",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Khánh Hòa_Diên Khánh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-b0349bc576bf",
+    "Ten": "Mộc Hóa, Long An",
+    "Nhom": "Long An",
+    "ViDo": 10.8159687,
+    "KinhDo": 105.947608,
+    "TenKhuVucTiengOn": "Mộc Hóa, Long An",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Long An_Mộc Hóa.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-80abfeb9a850",
+    "Ten": "Bắc Hà, Lào Cai",
+    "Nhom": "Lào Cai",
+    "ViDo": 22.5543129,
+    "KinhDo": 104.2940458,
+    "TenKhuVucTiengOn": "Bắc Hà, Lào Cai",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Lào Cai_Bắc Hà.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-36b22f596726",
+    "Ten": "Di Linh, Lâm Đồng",
+    "Nhom": "Lâm Đồng",
+    "ViDo": 11.6755294,
+    "KinhDo": 107.975293,
+    "TenKhuVucTiengOn": "Di Linh, Lâm Đồng",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Lâm Đồng_Di Linh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-417b2f5d9a0c",
+    "Ten": "Đà Lạt, Lâm Đồng",
+    "Nhom": "Lâm Đồng",
+    "ViDo": 11.941233,
+    "KinhDo": 108.433786,
+    "TenKhuVucTiengOn": "Đà Lạt, Lâm Đồng",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Lâm Đồng_Đà Lạt.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-ff5d343bb2b8",
+    "Ten": "Đạ Tẻh, Lâm Đồng",
+    "Nhom": "Lâm Đồng",
+    "ViDo": 11.5220844,
+    "KinhDo": 107.4829585,
+    "TenKhuVucTiengOn": "Đạ Tẻh, Lâm Đồng",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Lâm Đồng_Đạ Tẻh.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-ffef506dd1a8",
+    "Ten": "Diễn Châu, Nghệ An",
+    "Nhom": "Nghệ An",
+    "ViDo": 19.0644138,
+    "KinhDo": 105.6041758,
+    "TenKhuVucTiengOn": "Diễn Châu, Nghệ An",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Nghệ An_Diễn Châu.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-f2cdd87d62a7",
+    "Ten": "Nam Đàn, Nghệ An",
+    "Nhom": "Nghệ An",
+    "ViDo": 18.7022009,
+    "KinhDo": 105.5010178,
+    "TenKhuVucTiengOn": "Nam Đàn, Nghệ An",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Nghệ An_Nam Đàn.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-faf4c6647c3e",
+    "Ten": "Đông Hòa, Phú Yên",
+    "Nhom": "Phú Yên",
+    "ViDo": 12.9990267,
+    "KinhDo": 109.3778451,
+    "TenKhuVucTiengOn": "Đông Hòa, Phú Yên",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Phú Yên_Đông Hòa.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-a8f4f9c8fbe8",
+    "Ten": "Điện Bàn, Quảng Nam",
+    "Nhom": "Quảng Nam",
+    "ViDo": 15.8900296,
+    "KinhDo": 108.2512756,
+    "TenKhuVucTiengOn": "Điện Bàn, Quảng Nam",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Quảng Nam_Điện Bàn.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-a5200dea1a13",
+    "Ten": "Hướng Hóa, Quảng Trị",
+    "Nhom": "Quảng Trị",
+    "ViDo": 16.612647,
+    "KinhDo": 106.6049485,
+    "TenKhuVucTiengOn": "Hướng Hóa, Quảng Trị",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Quảng Trị_Hướng Hóa.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-381e5f4c6dcb",
+    "Ten": "Sơn La",
+    "Nhom": "Sơn La",
+    "ViDo": 21.3035531,
+    "KinhDo": 103.9303088,
+    "TenKhuVucTiengOn": "Sơn La",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Sơn La_Sơn La.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-7762f5029731",
+    "Ten": "Phổ Yên, Thái Nguyên",
+    "Nhom": "Thái Nguyên",
+    "ViDo": 21.4524304,
+    "KinhDo": 105.7744332,
+    "TenKhuVucTiengOn": "Phổ Yên, Thái Nguyên",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Thái Nguyên_Phổ Yên.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-ace00660f5f0",
+    "Ten": "Phú Lộc, Thừa Thiên - Huế",
+    "Nhom": "Thừa Thiên - Huế",
+    "ViDo": 16.3317944,
+    "KinhDo": 107.9566218,
+    "TenKhuVucTiengOn": "Phú Lộc, Thừa Thiên - Huế",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Thừa Thiên - Huế_Phú Lộc.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-eb5b145db530",
+    "Ten": "Cai Lậy, Tiền Giang",
+    "Nhom": "Tiền Giang",
+    "ViDo": 10.3677544,
+    "KinhDo": 106.1613924,
+    "TenKhuVucTiengOn": "Cai Lậy, Tiền Giang",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Tiền Giang_Cai Lậy.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-727a6553994b",
+    "Ten": "Gò Công Đông, Tiền Giang",
+    "Nhom": "Tiền Giang",
+    "ViDo": 10.3005457,
+    "KinhDo": 106.7100903,
+    "TenKhuVucTiengOn": "Gò Công Đông, Tiền Giang",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Tiền Giang_Gò Công Đông.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-ba2df08c3226",
+    "Ten": "Phúc Yên, Vĩnh Phúc",
+    "Nhom": "Vĩnh Phúc",
+    "ViDo": 21.2297171,
+    "KinhDo": 105.7150357,
+    "TenKhuVucTiengOn": "Phúc Yên, Vĩnh Phúc",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Vĩnh Phúc_Phúc Yên.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-a9e03c07b208",
+    "Ten": "Tam Dao, Vĩnh Phúc",
+    "Nhom": "Vĩnh Phúc",
+    "ViDo": 21.3852567,
+    "KinhDo": 105.6163121,
+    "TenKhuVucTiengOn": "Tam Dao, Vĩnh Phúc",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Vĩnh Phúc_Tam Dao.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-a6fbb351908b",
+    "Ten": "Hải Châu, Đà Nẵng",
+    "Nhom": "Đà Nẵng",
+    "ViDo": 16.0536457,
+    "KinhDo": 108.2024973,
+    "TenKhuVucTiengOn": "Hải Châu, Đà Nẵng",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đà Nẵng_Hải Châu.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-bec986ea6848",
+    "Ten": "Ngũ Hành Sơn, Đà Nẵng",
+    "Nhom": "Đà Nẵng",
+    "ViDo": 16.0441277,
+    "KinhDo": 108.2436905,
+    "TenKhuVucTiengOn": "Ngũ Hành Sơn, Đà Nẵng",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đà Nẵng_Ngũ Hành Sơn.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-975964b7575b",
+    "Ten": "Cư M'gar, Đắk Lắk",
+    "Nhom": "Đắk Lắk",
+    "ViDo": 12.8873359,
+    "KinhDo": 108.0618803,
+    "TenKhuVucTiengOn": "Cư M'gar, Đắk Lắk",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đắk Lắk_Cư M'gar.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-a7cc16a72ff6",
+    "Ten": "Long Thành, Đồng Nai",
+    "Nhom": "Đồng Nai",
+    "ViDo": 10.6851088,
+    "KinhDo": 107.0392857,
+    "TenKhuVucTiengOn": "Long Thành, Đồng Nai",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đồng Nai_Long Thành.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-8167b4e571c1",
+    "Ten": "Nhơn Trạch, Đồng Nai",
+    "Nhom": "Đồng Nai",
+    "ViDo": 10.698813,
+    "KinhDo": 106.8249178,
+    "TenKhuVucTiengOn": "Nhơn Trạch, Đồng Nai",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đồng Nai_Nhơn Trạch.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-f7e6f3c74d80",
+    "Ten": "Thống Nhất, Đồng Nai",
+    "Nhom": "Đồng Nai",
+    "ViDo": 11.0185992,
+    "KinhDo": 107.1772187,
+    "TenKhuVucTiengOn": "Thống Nhất, Đồng Nai",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đồng Nai_Thống Nhất.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-c8db986bcf8f",
+    "Ten": "Lấp Vò, Đồng Tháp",
+    "Nhom": "Đồng Tháp",
+    "ViDo": 10.3319646,
+    "KinhDo": 105.6348665,
+    "TenKhuVucTiengOn": "Lấp Vò, Đồng Tháp",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đồng Tháp_Lấp Vò.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-3af8069e22e4",
+    "Ten": "Tam Nông, Đồng Tháp",
+    "Nhom": "Đồng Tháp",
+    "ViDo": 10.7806282,
+    "KinhDo": 105.6472361,
+    "TenKhuVucTiengOn": "Tam Nông, Đồng Tháp",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đồng Tháp_Tam Nông.areas.geojson"
+  },
+  {
+    "MaDiaDiem": "noise-3c1ef554addf",
+    "Ten": "Tân Hồng, Đồng Tháp",
+    "Nhom": "Đồng Tháp",
+    "ViDo": 10.8731399,
+    "KinhDo": 105.4320513,
+    "TenKhuVucTiengOn": "Tân Hồng, Đồng Tháp",
+    "NguonToaDo": "NoiseCapture: ô có nhiều lượt đo nhất trong khu vực",
+    "TepTiengOn": "Vietnam_Đồng Tháp_Tân Hồng.areas.geojson"
+  }
+]

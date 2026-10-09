@@ -1,0 +1,2 @@
+# Optional: browser checks use the installed Microsoft Edge browser.
+playwright==1.63.0
