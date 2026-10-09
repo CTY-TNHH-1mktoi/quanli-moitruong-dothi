@@ -11,6 +11,50 @@ Repository: [CTY-TNHH-1mktoi/quanli-moitruong-dothi](https://github.com/CTY-TNHH
 
 [Bộ lệnh terminal riêng, mỗi người một file dự án](docs/team/terminal/README.md): Giang `README.md`, Kiên `app.py`, Dương `static/index.html`, Nghĩa `chatbot.py`. Hướng dẫn đi từ clone/cấu hình tài khoản đến sửa cơ bản, hoàn thiện, commit/push và tạo PR. Giang (owner `trxyan`) ủy quyền trợ lý thực hiện phần của mình; ba thành viên còn lại tự thực hiện bằng tài khoản cá nhân.
 
+## Phân công và phạm vi nghiệm thu
+
+Nguyễn Trường Giang là owner GitHub `trxyan`, phụ trách chốt phạm vi, hướng dẫn chạy, đối chiếu tiêu chí nghiệm thu và điều phối hợp nhất PR. Trong đợt này, mỗi thành viên sửa một file; kết quả kiểm chứng được ghi trong mô tả PR.
+
+| Thành viên | Vai trò | File phụ trách trong đợt này | Đầu ra mới |
+|---|---|---|---|
+| Nguyễn Trường Giang (`trxyan`) | Điều phối và phân tích yêu cầu | `README.md` | Phân công, phạm vi và checklist nghiệm thu |
+| Trịnh Trung Kiên | Backend và dữ liệu | `app.py` | API health kiểm tra Flask và kết nối SQL, phản hồi lỗi an toàn |
+| Tạ Đăng Dương | Frontend và UI/UX | `static/index.html` | Điều hướng nhanh các mục không khí, bản đồ, báo cáo, hội thoại |
+| Trần Trọng Nghĩa | Mô hình và tích hợp AI | `chatbot.py` | Thời gian nguồn không khí, thời tiết và tiếng ồn trong ngữ cảnh chatbot |
+
+Các đầu ra mới của Kiên, Dương và Nghĩa đang được giao, chưa được triển khai trong bản nền. Từng người dùng tài khoản của mình; Giang xác nhận username trước khi gán reviewer hoặc cấp quyền cộng tác.
+
+### Phạm vi được chốt
+
+- Dashboard theo địa điểm tại Hà Nội và các thành phố khác ở Việt Nam; khi chuyển địa điểm, dữ liệu, lịch sử và báo cáo phải theo đúng lựa chọn.
+- Lưu snapshot nguồn, danh mục địa điểm, mẫu AQI và báo cáo vào SQL Server; báo cáo đã lưu mở lại từ dữ liệu được lưu.
+- Bản đồ theo tọa độ địa điểm và lớp màu AQI, có thời gian nguồn và thông tin khi bấm bản đồ.
+- Random Forest phân loại tham khảo khi đủ đầu vào; chatbot Xanh Non dùng dữ liệu địa điểm đang chọn và cho phép sinh đến khi mô hình tự kết thúc.
+- Không khí/thời tiết lấy từ mô hình Open-Meteo; tiếng ồn lấy từ bộ dữ liệu NoiseCapture tổng hợp theo vùng. Đây là các nguồn tham khảo, không đại diện cho cảm biến thời gian thực tại từng đường phố. Khi thiếu dữ liệu, giao diện và AI phải nêu rõ tình trạng thiếu.
+
+### Quy trình nghiệm thu
+
+1. Thành viên cập nhật nhánh từ bản nền chung, sửa file được giao và chạy kiểm tra tương ứng trong hướng dẫn terminal.
+2. PR ghi rõ thay đổi, lệnh kiểm tra, kết quả thực tế và giới hạn còn lại; đối chiếu với checklist bên dưới.
+3. Giang đối chiếu phạm vi và bằng chứng; reviewer có quyền ghi thực hiện review theo quy định repository. PR do Giang tạo cần người khác review nếu nhánh đích yêu cầu.
+4. Owner hợp nhất khi đáp ứng quy định nhánh và ghi nhận kết quả nghiệm thu thực tế trong PR.
+
+### Checklist nghiệm thu của đợt này
+
+| Phần việc / người phụ trách | Thao tác kiểm tra | Điều kiện đạt | Trạng thái |
+|---|---|---|---|
+| Backend / Kiên | Gọi `GET /api/health` với kết nối SQL hoạt động | HTTP 200; trường `Database` là `ok`; kết nối được đóng | Chờ triển khai và kiểm chứng |
+| Backend lỗi SQL / Kiên | Giả lập lỗi kết nối SQL, gọi cùng endpoint | HTTP 503; không lộ mật khẩu, chuỗi kết nối hoặc traceback | Chờ triển khai và kiểm chứng |
+| UI / Dương | Bấm Không khí, Bản đồ, Báo cáo, Chatbot; thử Tab và Enter | Chuyển đúng `#air`, `#locationMap`, `#reports`, `#chat`; thao tác được bằng bàn phím | Chờ triển khai và kiểm chứng |
+| UI màn hình nhỏ / Dương | Mở dashboard ở chiều rộng 390 px | Menu và nội dung không tràn ngang, không che thao tác chính | Chờ kiểm chứng sau thay đổi |
+| AI thời gian nguồn / Nghĩa | Tạo snapshot có thời gian nguồn không khí, thời tiết và `TiengOn_ChiTiet.DoGanNhat`; kiểm tra ngữ cảnh | Ngữ cảnh giữ đúng thời gian được cung cấp và phân biệt tiếng ồn tổng hợp với đo trực tiếp | Chờ triển khai và kiểm chứng |
+| AI thiếu dữ liệu / Nghĩa | Tạo snapshot thiếu thời gian nguồn hoặc chỉ số tiếng ồn; kiểm tra ngữ cảnh và kiểm thử hồi quy | Không bịa thời gian hoặc số đo; nêu rõ chỉ số chưa có dữ liệu; streaming tiếp tục hoạt động | Chờ triển khai và kiểm chứng |
+| Tài liệu / Giang | Đối chiếu phân công, phạm vi, cách chạy và checklist với hướng dẫn terminal | File được giao và điều kiện đạt rõ ràng; các mục chưa thực hiện có trạng thái chờ | Đã rà soát tài liệu ngày 10/10/2026; PR chờ review |
+
+**Bằng chứng của bản nền ngày 10/10/2026:** 34/34 kiểm thử Python với mock đạt trong 21,525 giây; 13 kiểm tra nội suy/thang màu JavaScript đạt; kiểm tra cú pháp các file JavaScript trực tiếp trong `static/` thành công. Lệnh chạy lại và kết quả được ghi trong [TEST_REPORT.md](TEST_REPORT.md). Những kết quả này kiểm chứng bản nền, chưa chứng minh các thay đổi mới đang giao cho Kiên, Dương và Nghĩa.
+
+Mỗi PR nghiệm thu phải ghi ngày kiểm tra, người kiểm tra, môi trường, lệnh hoặc bước thao tác, kết quả thực tế và giới hạn còn lại. Chỉ đổi trạng thái sang đạt khi có bằng chứng; các kiểm thử trình duyệt/API/SQL trực tiếp ngày 07/10/2026 được giữ nguyên ngày trong báo cáo. Hợp nhất vào `main` cần đáp ứng quy định review của repository.
+
 ## Cấu trúc
 
 ```
