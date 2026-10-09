@@ -1,0 +1,2 @@
+# Optional: used only to regenerate GGUF with the bundled official converter.
+sentencepiece==0.2.1

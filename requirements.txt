@@ -1,0 +1,11 @@
+flask
+flask-cors
+requests
+pyodbc
+joblib
+numpy
+pandas
+scikit-learn==1.8.0
+torch==2.8.0
+transformers==4.57.1
+safetensors==0.8.0
