@@ -35,9 +35,25 @@ Các đầu ra mới của Kiên, Dương và Nghĩa đang được giao, chưa 
 ### Quy trình nghiệm thu
 
 1. Thành viên cập nhật nhánh từ bản nền chung, sửa file được giao và chạy kiểm tra tương ứng trong hướng dẫn terminal.
-2. PR ghi rõ thay đổi, lệnh kiểm tra, kết quả thực tế và giới hạn còn lại; đối chiếu với checklist bên dưới sau khi được bổ sung.
+2. PR ghi rõ thay đổi, lệnh kiểm tra, kết quả thực tế và giới hạn còn lại; đối chiếu với checklist bên dưới.
 3. Giang đối chiếu phạm vi và bằng chứng; reviewer có quyền ghi thực hiện review theo quy định repository. PR do Giang tạo cần người khác review nếu nhánh đích yêu cầu.
 4. Owner hợp nhất khi đáp ứng quy định nhánh và ghi nhận kết quả nghiệm thu thực tế trong PR.
+
+### Checklist nghiệm thu của đợt này
+
+| Phần việc / người phụ trách | Thao tác kiểm tra | Điều kiện đạt | Trạng thái |
+|---|---|---|---|
+| Backend / Kiên | Gọi `GET /api/health` với kết nối SQL hoạt động | HTTP 200; trường `Database` là `ok`; kết nối được đóng | Chờ triển khai và kiểm chứng |
+| Backend lỗi SQL / Kiên | Giả lập lỗi kết nối SQL, gọi cùng endpoint | HTTP 503; không lộ mật khẩu, chuỗi kết nối hoặc traceback | Chờ triển khai và kiểm chứng |
+| UI / Dương | Bấm Không khí, Bản đồ, Báo cáo, Chatbot; thử Tab và Enter | Chuyển đúng `#air`, `#locationMap`, `#reports`, `#chat`; thao tác được bằng bàn phím | Chờ triển khai và kiểm chứng |
+| UI màn hình nhỏ / Dương | Mở dashboard ở chiều rộng 390 px | Menu và nội dung không tràn ngang, không che thao tác chính | Chờ kiểm chứng sau thay đổi |
+| AI thời gian nguồn / Nghĩa | Tạo snapshot có thời gian nguồn không khí, thời tiết và `TiengOn_ChiTiet.DoGanNhat`; kiểm tra ngữ cảnh | Ngữ cảnh giữ đúng thời gian được cung cấp và phân biệt tiếng ồn tổng hợp với đo trực tiếp | Chờ triển khai và kiểm chứng |
+| AI thiếu dữ liệu / Nghĩa | Tạo snapshot thiếu thời gian nguồn hoặc chỉ số tiếng ồn; kiểm tra ngữ cảnh và kiểm thử hồi quy | Không bịa thời gian hoặc số đo; nêu rõ chỉ số chưa có dữ liệu; streaming tiếp tục hoạt động | Chờ triển khai và kiểm chứng |
+| Tài liệu / Giang | Đối chiếu phân công, phạm vi, cách chạy và checklist với hướng dẫn terminal | File được giao và điều kiện đạt rõ ràng; các mục chưa thực hiện có trạng thái chờ | Đã rà soát tài liệu ngày 10/10/2026; PR chờ review |
+
+**Bằng chứng của bản nền ngày 10/10/2026:** 34/34 kiểm thử Python với mock đạt trong 21,525 giây; 13 kiểm tra nội suy/thang màu JavaScript đạt; kiểm tra cú pháp các file JavaScript trực tiếp trong `static/` thành công. Lệnh chạy lại và kết quả được ghi trong [TEST_REPORT.md](TEST_REPORT.md). Những kết quả này kiểm chứng bản nền, chưa chứng minh các thay đổi mới đang giao cho Kiên, Dương và Nghĩa.
+
+Mỗi PR nghiệm thu phải ghi ngày kiểm tra, người kiểm tra, môi trường, lệnh hoặc bước thao tác, kết quả thực tế và giới hạn còn lại. Chỉ đổi trạng thái sang đạt khi có bằng chứng; các kiểm thử trình duyệt/API/SQL trực tiếp ngày 07/10/2026 được giữ nguyên ngày trong báo cáo. Hợp nhất vào `main` cần đáp ứng quy định review của repository.
 
 ## Cấu trúc
 
