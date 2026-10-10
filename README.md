@@ -201,7 +201,7 @@ Lớp màu dùng dữ liệu **Open-Meteo / CAMS Global**, không phải AccuWea
 
 ## Chatbot Xanh Non
 
-Gói `xanhnon-model.zip` đã được giải nén vào `models/xanhnon-qwen2.5-0.5b-vietnamese/`, gồm `model.safetensors`, cấu hình, tokenizer và giấy phép đi kèm. Các tệp phải nằm cùng thư mục. `models/` không được đưa vào Git vì trọng số khoảng 1 GB; khi chuyển dự án sang máy khác, cần sao chép thư mục này hoặc giải nén ZIP lại.
+Gói `xanhnon-model.zip` đã được giải nén vào `models/xanhnon-qwen2.5-0.5b-vietnamese/`, gồm `model.safetensors`, cấu hình, tokenizer và giấy phép đi kèm. Các tệp phải nằm cùng thư mục. Hai tệp trọng số lớn (`model.safetensors` và `models/xanhnon-f16.gguf`) được lưu bằng Git LFS. Sau khi clone, cài Git LFS và chạy `git lfs pull` để tải đủ mô hình.
 
 Chatbot ưu tiên llama.cpp trên CPU và sử dụng mẫu hội thoại của tokenizer trong gói ZIP. Câu hỏi và trọng số được xử lý trên máy; không gọi dịch vụ chatbot bên ngoài và không tải thêm mô hình. Internet vẫn cần cho các API môi trường hiện có. Khi thiếu bản GGUF hoặc binary, chế độ `auto` dùng PyTorch/Transformers với trọng số safetensors gốc.
 
@@ -213,7 +213,7 @@ Chatbot không bị ép trả lời trong 2–3 câu. Mặc định `CHATBOT_MAX
 
 Ngữ cảnh đầu vào tối đa 8192 token; ứng dụng bỏ các lượt cũ nhất khi cần. Với phản hồi rất dài, giao diện giữ toàn bộ nội dung hiển thị và gửi tối đa 32768 ký tự cuối trong lịch sử mỗi phản hồi. Giao diện và kết nối sinh văn bản với llama.cpp không tự cắt phản hồi theo thời gian. Nút **Dừng trả lời** chỉ dừng khi người dùng bấm, giữ phần đã nhận và cho phép viết tiếp. PyTorch không còn cắt phản hồi sau 60 giây.
 
-Khi chuyển dự án sang máy Windows khác, sao chép cả `.runtime/llama-bin/` và `models/xanhnon-f16.gguf` để dùng chế độ CPU nhanh. Hai thư mục `.runtime/` và `models/` được bỏ qua trong Git. Máy khác nền tảng cần binary llama.cpp phù hợp, đặt bằng `CHATBOT_LLAMA_SERVER`, hoặc dùng backend `transformers`.
+Khi chuyển dự án sang máy Windows khác, chạy `git lfs pull` để lấy `models/xanhnon-f16.gguf`; binary trong `.runtime/llama-bin/` đã có trong Git để dùng chế độ CPU nhanh. Chỉ log, dữ liệu tải về và kết quả kiểm thử trong `.runtime/` được bỏ qua. Máy khác nền tảng cần binary llama.cpp phù hợp, đặt bằng `CHATBOT_LLAMA_SERVER`, hoặc dùng backend `transformers`.
 
 Để tạo lại GGUF từ đúng trọng số gốc (bộ chuyển đổi b11471 đã có trong `.runtime/llama-converter/`):
 

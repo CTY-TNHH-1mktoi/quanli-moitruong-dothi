@@ -2,8 +2,9 @@ __pycache__/
 .pytest_cache/
 .venv/
 iscape_data/
-models/
-.runtime/
+.runtime/*
+!.runtime/llama-bin/
+!.runtime/llama-converter/
 tmp/
 .env
 .env.*

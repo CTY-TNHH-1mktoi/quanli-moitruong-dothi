@@ -1,0 +1,2 @@
+llama.cpp b11471, Windows x64 CPU release
+https://github.com/ggml-org/llama.cpp/releases/tag/b11471
