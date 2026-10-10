@@ -8,3 +8,5 @@
 *.svg text eol=lf
 *.png binary
 *.joblib binary
+models/xanhnon-f16.gguf filter=lfs diff=lfs merge=lfs -text
+models/xanhnon-qwen2.5-0.5b-vietnamese/model.safetensors filter=lfs diff=lfs merge=lfs -text
