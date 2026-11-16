@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+nhìn đồng thời nhãn AQI và nhãn RF; hai nhãn có thể khác nhau vì dùng cơ chế phân loại khác
+nhau.
+Phần này đọc kết quả PhanTich và DuDoanRF từ snapshot, không gọi chatbot để dựng toàn bộ
+nội dung. UC09 được thực hiện bởi renderPrediction và renderAnalysis trong script.js. Không có
+thao tác cấu hình lại classifier hoặc gửi lệnh huấn luyện từ giao diện này.
+9.7 UI06 Lịch sử cảnh báo trong nút chuông
+Nút chuông luôn nằm trên thanh đầu trang; số đếm gắn với những mục cảnh báo gần nhất đã tải.
+Khi mở, bảng nổi có tên địa điểm, danh sách, mức, nội dung, thời gian và nút đóng. Đang tải,
+chưa có cảnh báo và lỗi được trình bày trong chính bảng nổi. Đóng bảng không cập nhật trạng
+thái đã đọc trong cơ sở dữ liệu vì lược đồ chưa có thuộc tính này.
+Dữ liệu được đọc từ /api/canhbao?limit=8&location=... và liên kết UC08. Khi đổi nơi, tên bảng
+và danh sách đổi theo. Thành phần điều khiển được đặt tại notificationToggle, notificationClose
+và warningHistory; hành vi nằm trong dashboard.js cùng script.js.
+9.8 UI07 Báo cáo môi trường
+Màn hình có bộ chọn kỳ 24 giờ, 7 ngày hoặc 30 ngày, nút Tạo và lưu báo cáo, khu vực kết quả
+và lịch sử. Kết quả gồm thống kê, nhóm xu hướng, cảnh báo theo loại, nội dung quy tắc và bảng
+dữ liệu. Mở một báo cáo cũ cập nhật bộ chọn kỳ theo báo cáo đó; hành vi này không tạo mới báo
+cáo.
+Trong lúc tạo hoặc mở báo cáo, các nút liên quan và bộ chọn địa điểm được khóa để giữ ngữ
+cảnh. Tải CSV chỉ được bật khi có bản ghi; in chỉ được bật khi có báo cáo hiện tại. Lịch sử hỗ
+trợ Xem thêm theo offset. Lỗi vượt thời gian chờ giữ khả năng tải lại lịch sử để xác định một báo
+cáo có thể đã được lưu. UI07 phục vụ UC10–UC12; dữ liệu trao đổi với /api/baocao và
+/api/baocao/<id>.
+9.9 UI08 Chatbot Xanh Non
+Bong bóng ở góc phải mở một cửa sổ có tên Xanh Non, lịch sử tin nhắn, gợi ý hỏi, ô nhập, nút
+gửi và nút đóng. Người sử dụng nhấn Enter để gửi, Shift+Enter để xuống dòng. Đang trả lời có
+trạng thái chờ và thao tác dừng. Khi câu trả lời bị cắt do giới hạn sinh, giao diện có thao tác tiếp
+tục. Bắt đầu lại xóa ngữ cảnh trên widget của nơi đang chọn.
+Thu gọn chỉ ẩn cửa sổ; quá trình nhận phản hồi vẫn tiếp tục và dấu báo phản hồi mới được cập
+nhật. Các tin nhắn được giữ riêng theo địa điểm trong bộ nhớ của trang. Lời xác nhận hữu ích
+được gửi như tin nhắn, không dùng bộ nút chấm điểm riêng. UI08 phục vụ UC13–UC16 và các
+nhánh /api/chat. Widget hiển thị văn bản bằng textContent; đầu ra mô hình không được thực thi
+như HTML.
+59

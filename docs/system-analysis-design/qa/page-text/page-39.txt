@@ -1,0 +1,6 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 9. Sequence điều phối hội thoại và phản hồi SSE
+Bước trả trực tiếp và bước gọi NativeChatbot là hai nhánh thay thế. Quy tắc và tri thức đã xác
+định được câu trả lời thì không gọi mô hình sinh. Bước Dừng từ widget hủy quá trình nhận phản
+hồi; bộ xử lý phía máy chủ chuyển tín hiệu hủy tới runtime khi kết nối đóng.
+39

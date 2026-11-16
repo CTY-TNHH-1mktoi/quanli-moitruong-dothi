@@ -1,0 +1,33 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Điều kiện sau và đầu ra. Lịch sử chỉ chứa cảnh báo của địa điểm hiện tại. Con số trên chuông là
+số mục gần nhất đang tải, không phải số cảnh báo chưa đọc có lưu bền.
+Luồng thay thế và ngoại lệ. Chưa có cảnh báo hiển thị trạng thái rỗng; lỗi tải hiển thị thông báo
+và khả năng thử lại. Cảnh báo không có vòng đời xác nhận, phân công hoặc đóng trong phiên
+bản hiện tại.
+Thiết kế và bằng chứng. app.canhbao; static/script.js: renderAlerts; static/dashboard.js:
+setNotifications và syncAlerts. Đọc CanhBao qua NguonDL.
+Quy tắc và nghiệm thu. BR01, BR05, BR14. Kiểm thử: TC12.
+5.10 FR09 Xem phân tích và phân loại Random Forest
+Mục đích và tác nhân. Tách phần diễn giải AQI theo quy tắc khỏi nhãn dự đoán của mô hình
+minh họa. Tác nhân: A01. Ca sử dụng tương ứng: UC09.
+Điều kiện trước. Có snapshot và trạng thái DuDoanRF. Đủ năm đặc trưng mới chạy được mô
+hình.
+Đầu vào và giao diện. Năm giá trị PM25, PM10, NhietDo, DoAm, TiengOn. Giá trị phải
+chuyển được thành số hữu hạn; thứ tự đặc trưng phải khớp model bundle. Vị trí thao tác: UI05.
+Luồng chính.
+1. Kiểm tra đầy đủ giá trị và danh sách đặc trưng.
+2. Nạp bundle joblib cục bộ một lần và tạo DataFrame đúng thứ tự.
+3. Chạy hai classifier cho chất lượng không khí và mức tiếng ồn.
+4. Trả nhãn tiếng Việt và TrangThai; giao diện hiển thị cùng phần phân tích AQI nhưng thành
+khối riêng.
+Điều kiện sau và đầu ra. TrangThai là ok, thieu_du_lieu hoặc loi_mo_hinh. Nhãn RF thể hiện
+kết quả mô hình được huấn luyện theo nhãn của dự án; phân tích AQI được lưu trong
+PhanTichAI do build_analysis tạo.
+Luồng thay thế và ngoại lệ. Thiếu một trường trả danh sách Thieu. Lỗi nạp hoặc suy luận
+không làm mất dữ liệu nguồn. Tên PhanTichAI không có nghĩa là mọi nội dung trong bảng do
+mô hình ngôn ngữ sinh ra.
+Thiết kế và bằng chứng. environment_predictor.py: FEATURE_FIELDS, load_model,
+predict_environment; app.build_analysis; static/script.js: renderPrediction. Bundle
+environment_rf.joblib; snapshot lưu kết quả trong ChiTiet.
+Quy tắc và nghiệm thu. BR03, BR06. Kiểm thử: TC06, TC13.
+23

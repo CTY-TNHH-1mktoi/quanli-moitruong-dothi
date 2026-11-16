@@ -1,0 +1,29 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+là số lần đo, kết quả được tính bằng 10 log10 của tỷ số giữa tổng wi × 10 mũ (Li/10) và tổng wi.
+Việc tính trên năng lượng tránh dùng trung bình cộng trực tiếp các mức decibel.
+Kết quả đi cùng số ô, số lần đo, bán kính, lần đo đầu và lần đo gần nhất. Nếu không có ô phù hợp
+thì trả None. Phép tổng hợp này mô tả tập dữ liệu vùng đã có; nó không khẳng định mức ồn tại
+đúng vị trí thiết bị của người sử dụng hoặc tại thời điểm hiện tại.
+10.4 Quy tắc sinh cảnh báo
+Bảng 23. Ngưỡng cảnh báo nội bộ được khai báo trong mã nguồn
+Thông số Mức Trung bình từ Mức Cao từ Đơn vị
+PM2.5 35,5 55,5 µg/m³
+PM10 100 154 µg/m³
+Nhiệt độ 35 38 °C
+Độ ẩm 85 95 %
+Tiếng ồn 70 85 dBA
+Hàm build_alerts kiểm tra mức cao trước, sau đó mức lưu ý. Một thông số chỉ tạo tối đa một
+cảnh báo trong một snapshot; giá trị thiếu được bỏ qua. Các ngưỡng trong bảng là ngưỡng vận
+hành của dự án, không được xác định như giới hạn quy chuẩn pháp luật. Đặc biệt, mức tiếng ồn
+tổng hợp có thời gian thu thập khác nhau nên không được coi là bằng chứng vượt quy chuẩn tại
+thời điểm cập nhật ứng dụng.
+10.5 Phân tích US AQI và nhánh giá trị thay thế
+Bảng 24. Các mức US AQI được giao diện sử dụng
+Khoảng chỉ số nguyên Tên trong ứng dụng Màu
+0–50 Tốt Xanh lá
+51–100 Trung bình Vàng
+101–150 Kém Cam
+151–200 Xấu Đỏ
+201–300 Rất xấu Tím
+Trên 300 Nguy hại Đỏ sẫm
+62

@@ -1,0 +1,8 @@
+{
+  "source": "C:\\Codex-demoth1-intermediates-20261019\\style-v2-merged.safetensors",
+  "sha256": "a0c48e0724a400d16f8301d00e7efb98d45b2db0bbcc56852501889792785fc4",
+  "tensor_count": 290,
+  "base_config": "D:\\Recovered-demoth1-20261026\\models\\xanhnon-qwen2.5-0.5b-vietnamese\\config.json",
+  "native_release_changed": false,
+  "recovery_mode": "Fresh LoRA on recovered merged checkpoint; original adapter/optimizer are not reconstructed."
+}

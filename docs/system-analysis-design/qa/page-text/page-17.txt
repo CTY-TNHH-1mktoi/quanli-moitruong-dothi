@@ -1,0 +1,14 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 5 PHÂN TÍCH CHỨC NĂNG NGHIỆP VỤ
+5.1 Cây phân rã và cách đọc đặc tả
+Cây chức năng gồm sáu nhánh. Nhóm tra cứu xác định địa điểm và trình bày số liệu; nhóm cập
+nhật tiếp nhận, đánh giá và lưu; bản đồ và xu hướng cung cấp góc nhìn không gian và thời gian;
+báo cáo tổng hợp lịch sử; hội thoại hỗ trợ giải thích và tư vấn; vận hành quản lý dữ liệu học và
+trạng thái mô hình.
+Hình 1. Cây phân rã chức năng của hệ thống
+Các chức năng dưới đây đều có mã nguồn triển khai. FR01–FR15 là nghiệp vụ sử dụng trực tiếp;
+FR16 hỗ trợ ghi nhận dữ liệu cải thiện; FR17–FR18 thuộc vận hành cục bộ. Trạng thái triển khai
+không đồng nghĩa với mọi yêu cầu đều đã được chứng minh bằng kiểm thử trực tiếp; kết quả và
+phạm vi kiểm chứng được ghi tại chương 12. Mức ưu tiên của FR01–FR15 là cốt lõi trong sản
+phẩm, FR16–FR18 là hỗ trợ vận hành.
+17

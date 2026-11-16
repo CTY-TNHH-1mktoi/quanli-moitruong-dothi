@@ -1,0 +1,206 @@
+{
+  "version": 2,
+  "sources": {
+    "airnow_aqi": {"title": "AirNow — AQI Basics", "url": "https://www.airnow.gov/aqi/aqi-basics/", "type": "official"},
+    "airnow_particles": {"title": "EPA/AirNow — Air Quality Guide for Particle Pollution (2023)", "url": "https://www.airnow.gov/sites/default/files/2023-03/air-quality-guide-for-particle-pollution_0.pdf", "type": "official"},
+    "epa_pm": {"title": "US EPA — Particulate Matter (PM) Basics", "url": "https://www.epa.gov/pm-pollution/particulate-matter-pm-basics", "type": "official"},
+    "project": {"title": "Quy tắc dữ liệu của dự án demoth1", "url": "README.md", "type": "project_policy"},
+    "epa_indoor_pm": {"title": "US EPA — Sources of Indoor Particulate Matter", "url": "https://www.epa.gov/indoor-air-quality-iaq/sources-indoor-particulate-matter-pm", "type": "official"},
+    "epa_air_cleaners": {"title": "US EPA — Guide to Air Cleaners in the Home", "url": "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home", "type": "official"},
+    "epa_moisture": {"title": "US EPA — A Brief Guide to Mold, Moisture and Your Home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", "type": "official"},
+    "nidcd_noise": {"title": "NIH/NIDCD — Noise-Induced Hearing Loss", "url": "https://www.nidcd.nih.gov/health/noise-induced-hearing-loss", "type": "official"},
+    "epa_waste": {"title": "US EPA — What You Can Do: Reduce, Reuse, Recycle", "url": "https://www.epa.gov/recycle/what-you-can-do", "type": "official"},
+    "cdc_heat": {"title": "CDC — Heat Illnesses: Travel to Hot Climates", "url": "https://wwwnc.cdc.gov/travel/page/travel-to-hot-climates", "type": "official"}
+  },
+  "documents": [
+    {
+      "id": "indoor_dust_actions", "kind": "practical_advice",
+      "title": "Biện pháp giảm bụi trong nhà gần đường",
+      "questions": ["Tôi sống gần đường lớn, làm thế nào để giảm bụi vào nhà?", "Làm sao hạn chế bụi mịn trong phòng?", "Nhà sát đường nhiều bụi, tôi nên làm gì?", "Cách giảm bụi trong nhà?", "Chưa có máy lọc không khí thì làm sao giảm bụi vào nhà?"],
+      "answer": "Hạn chế mở cửa phía đường khi ngoài trời nhiều bụi. Lau bụi bằng khăn ẩm và dùng máy hút bụi có lọc HEPA nếu có, để hạn chế bụi bay lại. Máy lọc phù hợp diện tích phòng có thể giúp giảm bụi mịn; đồng thời tránh khói thuốc, đốt nến trong nhà.",
+      "answer_without_filter": "Bạn vẫn có thể hạn chế mở cửa phía đường khi ngoài trời nhiều bụi, lau bụi bằng khăn ẩm và tránh khói thuốc, đốt nến trong nhà. Các cách này giúp giảm nguồn bụi, nhưng không bảo đảm loại hết bụi mịn.",
+      "steps": ["Hạn chế mở cửa phía đường khi ô nhiễm ngoài trời cao để giảm bụi đi vào.", "Lau bụi bằng khăn ẩm; nếu có máy hút bụi, ưu tiên loại có lọc HEPA để hạn chế bụi bay lại.", "Nếu dùng máy lọc không khí, chọn thiết bị phù hợp diện tích phòng và thay lọc theo hướng dẫn.", "Giảm nguồn bụi trong nhà như khói thuốc và nến. Máy lọc không thay thế việc kiểm soát nguồn ô nhiễm."],
+      "source_ids": ["epa_indoor_pm", "epa_air_cleaners"]
+    },
+    {
+      "id": "humidity_actions", "kind": "practical_advice",
+      "title": "Giảm ẩm và phòng nấm mốc trong nhà",
+      "questions": ["Phòng tôi ẩm quá, nên làm gì?", "Làm sao hạn chế nấm mốc trong nhà?", "Cách giảm độ ẩm trong phòng?", "Nhà bị nồm ẩm thì xử lý thế nào?", "Tường thường bị ướt, làm sao phòng mốc?"],
+      "answer": "Bạn nên tìm và sửa chỗ rò nước, lau khô bề mặt ướt, dùng quạt hút tại khu vực phát sinh hơi ẩm hoặc máy hút ẩm nếu có. Theo EPA, nên giữ độ ẩm trong nhà dưới 60%, lý tưởng khoảng 30–50% khi có thể. Số đo độ ẩm ngoài trời không thay thế số đo trong phòng.",
+      "steps": ["Kiểm tra rò nước, thấm dột và nguồn hơi ẩm; xử lý nguồn trước để hạn chế tái diễn.", "Làm khô đồ và khu vực bị ướt trong 24–48 giờ khi có thể.", "Dùng quạt hút ở bếp, phòng tắm hoặc máy hút ẩm phù hợp; đo độ ẩm ngay trong phòng.", "Hướng tới độ ẩm dưới 60%, lý tưởng 30–50% nếu điều kiện cho phép; không suy ra độ ẩm trong phòng từ bảng giám sát ngoài trời."],
+      "source_ids": ["epa_moisture"]
+    },
+    {
+      "id": "noise_actions", "kind": "practical_advice",
+      "title": "Giảm tiếp xúc với tiếng ồn",
+      "questions": ["Làm sao giảm ảnh hưởng của tiếng ồn?", "Tiếng xe ngoài đường ồn quá, nên làm gì?", "Giảm tiếng ồn", "Cách bảo vệ tai khi phải ở nơi ồn?", "Mình thường đứng gần loa lớn, nên làm gì?"],
+      "answer": "Bạn nên giảm âm lượng các thiết bị có thể kiểm soát, tăng khoảng cách với nguồn ồn và giảm thời gian ở chỗ ồn. Nếu buộc phải ở nơi rất ồn, dùng nút tai hoặc chụp tai bảo vệ phù hợp. Không tăng âm lượng tai nghe để át tiếng ồn xung quanh.",
+      "steps": ["Giảm âm lượng thiết bị nếu bạn kiểm soát được nguồn ồn.", "Di chuyển xa loa, máy móc hoặc nguồn ồn; chọn chỗ yên tĩnh hơn để nghỉ.", "Giảm thời gian tiếp xúc và dùng nút tai hoặc chụp tai bảo vệ khi cần.", "Nếu nghi ngờ nghe kém, nên kiểm tra thính lực; số liệu tiếng ồn khu vực không chẩn đoán được tình trạng tai của bạn."],
+      "source_ids": ["nidcd_noise"]
+    },
+    {
+      "id": "waste_actions", "kind": "practical_advice",
+      "title": "Giảm và phân loại rác sinh hoạt",
+      "questions": ["Làm sao giảm rác sinh hoạt?", "Nhà tôi nhiều rác nhựa, nên làm gì?", "Cách bắt đầu phân loại rác tại nhà?", "Làm sao bớt dùng đồ nhựa một lần?", "Tôi muốn sống xanh hơn, nên bắt đầu thế nào?"],
+      "answer": "Bạn có thể bắt đầu bằng việc mang túi và bình nước dùng lại, mua vừa nhu cầu và tái sử dụng đồ còn tốt. Tách vật liệu có thể tái chế khỏi rác bẩn, rồi kiểm tra đơn vị thu gom địa phương nhận những loại nào. Không phải mọi loại nhựa đều được thu nhận để tái chế.",
+      "steps": ["Giảm rác từ đầu bằng túi, bình nước và hộp dùng lại; hạn chế mua dư.", "Sửa chữa, dùng lại hoặc cho tặng đồ còn sử dụng được.", "Tách vật liệu tái chế khỏi rác bẩn và kiểm tra yêu cầu của đơn vị thu gom tại nơi bạn sống.", "Nếu có điều kiện phù hợp, cân nhắc ủ rác hữu cơ; không mặc định mọi loại bao bì đều tái chế được."],
+      "source_ids": ["epa_waste"]
+    },
+    {
+      "id": "filter_actions", "kind": "practical_advice",
+      "title": "Chọn và dùng máy lọc không khí để giảm bụi",
+      "questions": ["Chọn máy lọc không khí để giảm bụi thế nào?", "Nên dùng máy lọc không khí ra sao?", "Dùng HEPA thế nào cho hiệu quả?", "Máy lọc không khí cần phù hợp diện tích phòng không?", "Làm sao dùng máy lọc để giảm bụi mịn?"],
+      "answer": "Để lọc bụi, bạn nên chọn máy có CADR phù hợp diện tích phòng; lọc HEPA thường được dùng để giữ hạt bụi. Đặt và vận hành theo hướng dẫn, thay lọc đúng hạn, đồng thời giảm nguồn phát bụi. Máy lọc không loại hết mọi chất ô nhiễm và không thay thế thông gió bằng không khí sạch.",
+      "steps": ["Xem CADR và diện tích phòng phù hợp trên thông số thiết bị; không chỉ nhìn tên HEPA.", "Đặt và vận hành theo hướng dẫn của nhà sản xuất, giữ đường hút và thổi thông thoáng.", "Vệ sinh, thay lọc đúng hạn; bộ lọc quá bẩn làm giảm hiệu quả.", "Giảm nguồn phát bụi và thông gió bằng không khí sạch khi phù hợp; tránh thiết bị cố ý tạo ozone."],
+      "source_ids": ["epa_air_cleaners"]
+    },
+    {
+      "id": "heat_actions", "kind": "practical_advice",
+      "title": "Điều chỉnh hoạt động khi trời nóng",
+      "questions": ["Trời nóng quá, nên làm gì khi phải ra ngoài?", "Làm sao giảm rủi ro khi hoạt động ngoài trời nắng nóng?", "Trời nắng gắt thì nên tập thể dục thế nào?", "Tôi phải đi bộ lúc trời nóng, cần chú ý gì?", "Cách điều chỉnh buổi tập khi trời nóng?"],
+      "answer": "Bạn nên chuyển hoạt động sang lúc bớt nóng nếu có thể, chọn chỗ râm mát, nghỉ thường xuyên và uống nước đều đặn. Giảm vận động gắng sức trong thời tiết nóng; nếu thấy yếu hoặc choáng, dừng hoạt động và vào nơi mát. Không khí mát hơn không đồng nghĩa AQI tốt hơn.",
+      "steps": ["Dời hoạt động sang thời điểm bớt nóng nếu có thể, ưu tiên bóng râm.", "Giảm cường độ, nghỉ thường xuyên và uống nước đều đặn.", "Nếu thấy yếu hoặc choáng, dừng hoạt động và vào nơi mát; triệu chứng nặng cần được hỗ trợ y tế.", "Xem thêm AQI nếu dự định vận động ngoài trời; nhiệt độ dễ chịu không bảo đảm không khí sạch."],
+      "source_ids": ["cdc_heat", "project"]
+    },
+    {
+      "id": "aqi_definition",
+      "title": "Ý nghĩa chỉ số AQI",
+      "questions": ["AQI có nghĩa là gì?", "Giải thích chỉ số chất lượng không khí", "Chỉ số AQI dùng để làm gì?", "AQI càng cao thì càng tốt phải không?"],
+      "answer": "AQI là chỉ số thể hiện chất lượng không khí và mức lo ngại đối với sức khỏe. AQI càng cao thì không khí càng ô nhiễm; ứng dụng này hiển thị thang US AQI.",
+      "source_ids": ["airnow_aqi", "project"]
+    },
+    {
+      "id": "aqi_categories",
+      "title": "Các mức US AQI",
+      "questions": ["US AQI có những mức nào?", "Các khoảng AQI được phân loại thế nào?", "Màu sắc của AQI có ý nghĩa gì?", "AQI bao nhiêu là tốt và bao nhiêu là xấu?"],
+      "answer": "US AQI gồm: 0–50 Tốt (xanh lá), 51–100 Trung bình (vàng), 101–150 Kém với nhóm nhạy cảm (cam), 151–200 Xấu (đỏ), 201–300 Rất xấu (tím), 301–500 Nguy hại (nâu đỏ). Đây là cách gọi tiếng Việt của các mức US AQI trong ứng dụng.",
+      "source_ids": ["airnow_aqi", "project"]
+    },
+    {
+      "id": "pm25_definition",
+      "title": "Bụi mịn PM2.5",
+      "questions": ["Bụi mịn PM2.5 là gì?", "PM 2.5 nghĩa là gì?", "Giải thích PM2,5", "Bụi PM2.5 có kích thước bao nhiêu?"],
+      "answer": "PM2.5 là các hạt bụi có đường kính thường từ 2,5 micromet trở xuống. Hạt nhỏ có thể đi sâu vào phổi; nồng độ PM2.5 thường được hiển thị bằng µg/m³.",
+      "source_ids": ["epa_pm"]
+    },
+    {
+      "id": "pm10_definition",
+      "title": "Bụi PM10",
+      "questions": ["Bụi PM10 là gì?", "PM 10 nghĩa là gì?", "Giải thích chỉ số PM10", "Bụi PM10 có kích thước bao nhiêu?"],
+      "answer": "PM10 là các hạt bụi có đường kính thường từ 10 micromet trở xuống, có thể được hít vào đường hô hấp. PM2.5 là phần bụi nhỏ hơn nằm trong nhóm PM10.",
+      "source_ids": ["epa_pm"]
+    },
+    {
+      "id": "pm_comparison",
+      "title": "Phân biệt PM2.5 và PM10",
+      "questions": ["PM2.5 khác PM10 thế nào?", "Phân biệt bụi PM10 và PM2.5", "Bụi PM2.5 nhỏ hơn PM10 không?", "So sánh ngắn gọn PM2.5 và PM10"],
+      "answer": "PM2.5 gồm các hạt bụi có đường kính thường không quá 2,5 µm; PM10 gồm các hạt thường không quá 10 µm. PM2.5 nhỏ hơn, có thể đi sâu vào phổi và là nhóm bụi đáng lo ngại đối với sức khỏe.",
+      "source_ids": ["epa_pm"]
+    },
+    {
+      "id": "pm_units",
+      "title": "Đơn vị nồng độ bụi",
+      "questions": ["µg/m³ nghĩa là gì?", "Đơn vị của PM2.5 là gì?", "Microgam trên mét khối là gì?", "PM10 được đo bằng đơn vị nào?"],
+      "answer": "µg/m³ là microgam trên mét khối: khối lượng bụi trong một mét khối không khí. Đây là đơn vị nồng độ; AQI là chỉ số đã được quy đổi, nên hai giá trị không thể thay thế trực tiếp cho nhau.",
+      "source_ids": ["epa_pm", "airnow_aqi"]
+    },
+    {
+      "id": "pm_aqi_difference",
+      "title": "Phân biệt AQI và nồng độ PM2.5",
+      "questions": ["AQI và PM2.5 có giống nhau không?", "PM2.5 bằng 50 có phải AQI bằng 50 không?", "Có thể lấy PM2.5 làm AQI luôn không?", "Tại sao nồng độ bụi khác số AQI?"],
+      "answer": "AQI và PM2.5 không phải cùng một đại lượng: PM2.5 là nồng độ bụi, còn AQI được tính theo thang chỉ số và quy tắc của từng hệ thống. Khi thiếu US AQI, mình chưa đủ dữ liệu để xác định mức AQI và không thể coi nồng độ PM2.5 là chỉ số đó.",
+      "source_ids": ["airnow_aqi", "epa_pm", "project"]
+    },
+    {
+      "id": "pm_sources",
+      "title": "Nguồn phát sinh bụi",
+      "questions": ["Bụi mịn sinh ra từ đâu?", "Các nguồn gây ô nhiễm PM2.5 là gì?", "Giao thông có tạo bụi mịn không?", "Bụi PM10 thường đến từ đâu?"],
+      "answer": "Bụi có thể phát sinh trực tiếp từ công trường, đường bụi, hoạt động đốt và ống khói. Một phần bụi mịn hình thành trong khí quyển khi các chất ô nhiễm từ giao thông, công nghiệp và nhà máy phản ứng với nhau.",
+      "source_ids": ["epa_pm"]
+    },
+    {
+      "id": "pm_health",
+      "title": "Tác động của bụi tới sức khỏe",
+      "questions": ["Tại sao bụi mịn ảnh hưởng sức khỏe?", "Hít bụi PM2.5 có tác hại gì?", "Bụi mịn ảnh hưởng phổi thế nào?", "PM2.5 có ảnh hưởng tim mạch không?"],
+      "answer": "Bụi nhỏ có thể đi sâu vào phổi và một phần có thể vào máu, ảnh hưởng hệ hô hấp và tim mạch. Mức rủi ro còn phụ thuộc nồng độ, thời gian tiếp xúc và tình trạng sức khỏe; chỉ số môi trường không đủ để chẩn đoán bệnh cho một người.",
+      "source_ids": ["epa_pm", "airnow_particles", "project"]
+    },
+    {
+      "id": "sensitive_groups",
+      "title": "Nhóm nhạy cảm với ô nhiễm bụi",
+      "questions": ["Nhóm nhạy cảm với ô nhiễm không khí gồm ai?", "Ai cần chú ý hơn khi AQI tăng?", "Trẻ em có nhạy cảm với bụi mịn không?", "Người lớn tuổi có cần theo dõi AQI không?"],
+      "answer": "Những người cần chú ý hơn gồm người có bệnh tim hoặc phổi, người cao tuổi, trẻ em, thanh thiếu niên, người mang thai và người làm việc ngoài trời. Khi AQI tăng, nên điều chỉnh thời gian và cường độ hoạt động theo hướng dẫn tương ứng.",
+      "source_ids": ["airnow_particles"]
+    },
+    {
+      "id": "outdoor_principles",
+      "title": "Điều chỉnh vận động theo AQI",
+      "questions": ["Khi không khí ô nhiễm nên điều chỉnh hoạt động thế nào?", "Vì sao nên giảm vận động gắng sức khi AQI cao?", "Không khí xấu thì nên tập thể dục thế nào?", "Nên giảm thời gian hay cường độ hoạt động ngoài trời?"],
+      "answer": "Khi AQI tăng, có thể giảm thời gian, giảm cường độ hoặc dời hoạt động sang lúc chất lượng không khí tốt hơn. Ở mức US AQI 151–200, mọi người nên giảm hoạt động kéo dài hoặc gắng sức; nhóm nhạy cảm nên tránh các hoạt động đó ngoài trời.",
+      "source_ids": ["airnow_particles"]
+    },
+    {
+      "id": "indoor_particles",
+      "title": "Bụi trong nhà",
+      "questions": ["Ở trong nhà có chắc không có bụi mịn không?", "Bụi ngoài trời có vào trong nhà không?", "Làm sao giảm bụi mịn trong nhà?", "Ô nhiễm trong nhà đến từ đâu?"],
+      "answer": "Ở trong nhà vẫn có thể tiếp xúc với bụi từ ngoài trời và các nguồn như hút thuốc, nến, bếp đốt. Có thể giảm các nguồn phát bụi và dùng máy lọc không khí phù hợp để giảm hạt bụi trong phòng.",
+      "source_ids": ["airnow_particles"]
+    },
+    {
+      "id": "air_filters",
+      "title": "Vai trò của bộ lọc HEPA",
+      "questions": ["Máy lọc không khí có giúp giảm bụi mịn không?", "Bộ lọc HEPA có tác dụng gì?", "HEPA có lọc được hạt bụi không?", "Dùng máy lọc có bảo đảm không khí hoàn toàn sạch không?"],
+      "answer": "Bộ lọc HEPA và máy lọc không khí phù hợp có thể giúp giảm hạt bụi trong nhà. Hiệu quả còn phụ thuộc thiết bị, diện tích phòng và nguồn phát bụi; dùng máy lọc không có nghĩa là mọi chất ô nhiễm đều được loại bỏ.",
+      "source_ids": ["airnow_particles"]
+    },
+    {
+      "id": "missing_aqi",
+      "title": "Thiếu chỉ số AQI",
+      "questions": ["Không có AQI thì đánh giá không khí thế nào?", "Thiếu US AQI nhưng có PM2.5 thì sao?", "Chưa có dữ liệu AQI có nghĩa không khí tốt không?", "AQI bị trống có phải bằng 0 không?"],
+      "answer": "Thiếu AQI có nghĩa là chưa đủ dữ liệu để kết luận mức chất lượng không khí theo AQI. Giá trị trống không phải bằng 0; hãy cập nhật bảng giám sát và kiểm tra đúng địa điểm, thời gian.",
+      "source_ids": ["project"]
+    },
+    {
+      "id": "missing_pm",
+      "title": "Thiếu số đo PM2.5",
+      "questions": ["PM2.5 bị trống nghĩa là không có bụi phải không?", "Không có số đo PM2.5 thì sao?", "Thiếu dữ liệu bụi mịn có phải là không khí sạch?", "Vì sao không nên gán số đo thiếu bằng 0?"],
+      "answer": "PM2.5 bị trống là chưa có số đo, không chứng minh không khí sạch hoặc nồng độ bụi bằng 0. Mình chỉ có thể nhận xét dựa trên những chỉ số hợp lệ đang có.",
+      "source_ids": ["project"]
+    },
+    {
+      "id": "location_time",
+      "title": "Đúng địa điểm và thời điểm",
+      "questions": ["Có dùng AQI Hà Nội để đánh giá nơi khác được không?", "Có thể dùng số đo hôm qua cho hôm nay không?", "Vì sao phải kiểm tra thời gian cập nhật?", "Tại sao đổi địa điểm thì kết quả thay đổi?"],
+      "answer": "Chất lượng không khí thay đổi theo vị trí và thời gian. Khi nhận xét, cần dùng dữ liệu của đúng địa điểm và nêu thời điểm cập nhật; số đo cũ hoặc nơi khác không đại diện chắc chắn cho nơi bạn đang hỏi.",
+      "source_ids": ["project"]
+    },
+    {
+      "id": "data_source",
+      "title": "Nguồn dữ liệu của ứng dụng",
+      "questions": ["Dữ liệu trong ứng dụng lấy từ đâu?", "Xanh Non dùng nguồn số liệu nào?", "Số liệu có phải cảm biến đo trực tiếp tại chỗ không?", "Ứng dụng lấy chất lượng không khí từ nguồn nào?"],
+      "answer": "Ứng dụng lấy dữ liệu không khí và thời tiết qua Open-Meteo theo tọa độ tham chiếu. Tiếng ồn được tổng hợp từ NoiseCapture quanh khu vực, nên không phải số đo trực tiếp ngay tại vị trí của bạn.",
+      "source_ids": ["project"]
+    },
+    {
+      "id": "forecast_missing",
+      "title": "Không suy đoán dự báo",
+      "questions": ["Có thể dùng AQI hiện tại để biết ngày mai không?", "Thiếu dữ liệu dự báo thì có kết luận ngày mai được không?", "Chỉ số hiện tại có bảo đảm tối nay không khí tốt không?", "Xanh Non có thể tự đoán AQI tương lai không?"],
+      "answer": "Số đo hiện tại không đủ để khẳng định AQI vào thời điểm tương lai. Khi chưa có dữ liệu dự báo đúng địa điểm và thời gian, mình chưa thể cung cấp một dự báo đáng tin cậy.",
+      "source_ids": ["project"]
+    },
+    {
+      "id": "weather_air_difference",
+      "title": "Phân biệt thời tiết và chất lượng không khí",
+      "questions": ["Trời mát có đồng nghĩa không khí sạch không?", "Độ ẩm cao có chứng minh AQI xấu không?", "Nhiệt độ dễ chịu thì có chắc không ô nhiễm không?", "Nhìn trời trong có biết AQI không?"],
+      "answer": "Nhiệt độ, độ ẩm và cảm giác dễ chịu không thay thế được số đo chất ô nhiễm hoặc AQI. Muốn đánh giá chất lượng không khí cần xem chỉ số phù hợp, đúng địa điểm và thời điểm.",
+      "source_ids": ["project"]
+    },
+    {
+      "id": "medical_limit",
+      "title": "Giới hạn nhận xét sức khỏe",
+      "questions": ["AQI có chẩn đoán được bệnh không?", "Chỉ số bụi có cho biết tôi mắc bệnh gì không?", "Có thể kê thuốc dựa trên AQI không?", "Chatbot có thể chẩn đoán từ số đo môi trường không?"],
+      "answer": "AQI và nồng độ bụi giúp nhận biết mức ô nhiễm và điều chỉnh hoạt động, không đủ để chẩn đoán bệnh hoặc kê thuốc cho cá nhân. Nếu cần đánh giá triệu chứng, bạn nên trao đổi với nhân viên y tế.",
+      "source_ids": ["project", "airnow_aqi"]
+    }
+  ]
+}

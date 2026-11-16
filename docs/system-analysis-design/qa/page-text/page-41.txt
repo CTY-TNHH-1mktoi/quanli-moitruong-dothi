@@ -1,0 +1,27 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Đối tượng Trách nhiệm và thuộc tính chính Bất biến hoặc vòng đời
+Ghi loại chỉ số, mức và nội dung tại lần Bắt buộc có NguonDL cha; được lưu và
+Cảnh báo
+cập nhật tra cứu, không có trạng thái giao việc.
+Mỗi lần cập nhật hiện chèn một hàng;
+Phân tích môi Lưu kết luận và diễn giải được
+schema cho phép nhiều hàng trên một
+trường build_analysis tạo
+nguồn.
+Nội dung là snapshot; mở lại không thay
+Báo cáo Đóng gói kết quả theo kỳ và địa điểm
+đổi theo bản ghi mới.
+Lưu tọa độ, thời gian lấy, thời gian nguồn Mã vị trí là khóa tra cứu logic; mỗi lần
+Mẫu lưới AQI
+và AQI lấy có MaMau riêng.
+Tồn tại trong bộ nhớ trình duyệt; tách
+Giữ các cặp hỏi đáp và địa điểm của
+Hội thoại đang mở theo địa điểm, giới hạn tám cặp gửi lên
+widget
+API.
+Câu hỏi learned phụ thuộc hash tri thức;
+Góp ý và câu hỏi Lưu dấu vết tiếp nhận, nguồn liên kết và
+góp ý approved phải qua kiểm tra riêng
+học trạng thái kiểm tra
+tư và nội dung.
+41

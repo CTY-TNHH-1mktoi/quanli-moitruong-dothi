@@ -91,14 +91,14 @@ class LocationIsolationTests(unittest.TestCase):
         snapshot = {"DiaDiem": get_location("tphcm"), "DuLieu": {"PM25": 45.4, "TiengOn": None}}
         history = [{"role": "user", "content": "Chào"}, {"role": "assistant", "content": "Xin chào"}]
         with patch.object(chatbot, "_load_runtime", return_value=runtime):
-            chatbot._generate("Địa điểm đang chọn là gì?", history, snapshot)
+            chatbot._generate("Giải thích chi tiết số liệu ở địa điểm đang chọn", history, snapshot)
         messages = runtime.generate.call_args.args[0]
         self.assertEqual(messages[1:3], history)
         self.assertIn("Hồ Chí Minh", messages[-1]["content"])
         self.assertIn("PM2.5: 45.4", messages[-1]["content"])
         self.assertIn("Tiếng ồn: chưa có dữ liệu", messages[-1]["content"])
         self.assertNotIn("Cầu Giấy", messages[-1]["content"])
-        self.assertTrue(messages[-1]["content"].endswith("Địa điểm đang chọn là gì?"))
+        self.assertTrue(messages[-1]["content"].endswith("Giải thích chi tiết số liệu ở địa điểm đang chọn"))
 
 
 class NoiseLocationTests(unittest.TestCase):

@@ -1,0 +1,20 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Trong trạng thái đang tải, lớp phủ không được xem là một bộ số liệu mới đã hoàn thành. Khi tải
+thiếu, vùng không có mẫu giữ trong suốt và thông báo nguồn đi cùng. Lỗi ảnh nền và lỗi nguồn
+AQI là hai lỗi khác nhau. Những lần pan hoặc đổi nơi tạo yêu cầu cũ không được ghi đè lớp mới.
+UI03 phục vụ UC05–UC06; file triển khai là map.js và air-overlay.js.
+9.5 UI04 Xu hướng dữ liệu
+Màn hình có tên xu hướng PM2.5, nhận xét tăng giảm, giá trị gần nhất và đồ thị Canvas. Trục
+tung có số, đơn vị µg/m³ và bước chia tự chọn theo miền dữ liệu; trục hoành có nhãn thời gian.
+Đồ thị được vẽ lại theo kích thước phần chứa. Phiên bản hiện tại dùng 12 snapshot gần nhất,
+không có date picker hoặc danh sách chọn tất cả thông số trên màn hình này.
+Nguồn là /api/dulieu/lichsu?limit=12&location=...; UC07. Các trạng thái rỗng, lỗi tải và thiếu
+điểm có cách hiển thị riêng. Màn hình không kết luận xu hướng dài hạn từ số điểm thưa, không
+biến các mốc snapshot thành dữ liệu quan trắc liên tục.
+Hình 19. Màn hình xu hướng với trục số
+Ảnh từ kiểm thử trình duyệt ngày 27/10/2026, sử dụng dữ liệu kiểm thử có kiểm soát để kiểm tra trục và điều
+hướng.
+9.6 UI05 Phân tích và tư vấn
+Màn hình trình bày phân tích AQI, nội dung gợi ý theo quy tắc và kết quả Random Forest. Dữ
+liệu RF có trạng thái riêng, gồm đủ dữ liệu, thiếu dữ liệu và lỗi mô hình. Người sử dụng có thể
+58

@@ -1,0 +1,55 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Mã và yêu Điều kiện trước và đầu Bước thực hiện và kết quả
+Bằng chứng và trạng thái
+cầu vào mong đợi
+Đơn vị và tư vấn thật đã
+Câu hỏi giảm bụi gần Yêu cầu tư vấn. Có biện pháp cụ kiểm tra 27/10.
+TC22
+đường lớn hoặc chưa có thể, hoàn chỉnh; phần nối tiếp giữ test_chat_advice;
+FR15
+máy lọc đúng hạn chế đã nêu. test_chat_knowledge; live-
+verification.json
+Kiểm thử đơn vị và câu
+hỏi thật 27/10.
+Xin chào, hỏi chức năng Gửi lần lượt. Giao tiếp và chức
+TC23 test_chat_social;
+và một câu ngoài môi năng có nhánh phù hợp; ngoài
+FR15 test_chat_intents;
+trường phạm vi dùng câu cố định.
+test_chat_scope; live-
+verification.json
+Kiểm thử kho tạm và API
+Quan sát lưu góp ý. Payload trùng
+TC24 Gửi hữu ích cho cùng một có mock.
+chỉ có một fingerprint; câu xác
+FR16 phản hồi hai lần test_chat_text_feedback;
+nhận được trả về.
+test_chat_feedback
+Quan sát kho học. Chỉ mẫu phù Kiểm thử kho tạm và dữ
+Câu hỏi mới ổn định; câu
+TC25 hợp được liên kết; không cập nhật liệu kiểm soát.
+có thông tin nhạy cảm
+FR16 trọng số; hash thay đổi làm đáp án test_chat_learning;
+hoặc số liệu hiện tại
+cũ mất hiệu lực. test_chat_reviewed_safety
+Kiểm thử trạng thái;
+Gọi status. Trả trạng thái phù hợp; runtime ready có hồ sơ
+TC26 Runtime cold, ready hoặc
+không sinh câu hỏi để kiểm tra 27/10.
+FR17 có khóa training
+tình trạng. test_chat_training_state;
+restoration-state.json
+Đối chiếu tiền kiểm tra. 452 mẫu Đã tiền kiểm tra 576 mẫu
+TC27 Tập train và validation đã train và 124 validation được token trong hồ sơ 27/10.
+FR18 chuẩn bị hóa; không coi đây là optimizer .runtime/xanhnon-
+step. data/preflight.json
+Đã ghi nhận trạng thái
+Đối chiếu trạng thái tự động.
+Lịch chạy có dữ liệu thực tế 27/10.
+TC28 waiting_for_memory;
+nhưng RAM chưa đáp restoration-state.json;
+FR18 model_activated=false; bản đang
+ứng automatic-training-
+chạy không tự thay.
+check.json
+72

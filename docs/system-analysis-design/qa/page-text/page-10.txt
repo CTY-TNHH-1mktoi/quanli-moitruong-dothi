@@ -1,0 +1,27 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Thành phần Công nghệ và vai trò Bằng chứng
+Leaflet 1.9.4; nền OpenStreetMap; lớp màu
+Bản đồ static/map.js; air-overlay.js
+AQI bằng Canvas
+Flask; các blueprint cho báo cáo, bản đồ và app.py; environment_reports.py;
+Máy chủ
+góp ý air_quality_map.py
+SQL Server qua pyodbc; SQLite cục bộ; tệp Các tệp schema SQL;
+Lưu trữ
+JSON chat_feedback.py; chat_learning.py
+Phân loại môi environment_predictor.py;
+Hai bộ phân loại Random Forest nạp từ joblib
+trường environment_rf.joblib
+XanhNon-Style-v2; nền Qwen2.5 0.5B; models/xanhnon-active.json;
+Trợ lý hội thoại
+llama.cpp chạy cục bộ native_chatbot.py
+JSONL; Transformers, PEFT LoRA; đánh giá
+Dữ liệu học train_xanhnon.py; export_xanhnon.py
+và xuất GGUF riêng
+1.5 Cơ sở lập báo cáo
+Nguồn chính của hồ sơ là mã Python, JavaScript, HTML, các lược đồ SQL, danh mục địa điểm,
+cấu hình bản mô hình và bộ kiểm thử trong repository. Các tài liệu kỹ thuật chính thức được
+dùng để xác định ký pháp UML, chức năng thư viện và ý nghĩa nguồn dữ liệu. Kết quả kiểm thử
+đã lưu được ghi kèm ngày và phạm vi; kết quả của một tập tình huống không được quy đổi thành
+tỷ lệ chính xác chung của chatbot.
+10

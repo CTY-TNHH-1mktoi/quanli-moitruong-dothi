@@ -200,16 +200,14 @@ let trendPoints = [];               // [{ v: giá trị PM2.5, t: thời gian }]
 function renderTrend(rows) {
   trendPoints = rows
     .filter((r) => r.PM25 !== null && r.PM25 !== undefined)
-    .map((r) => ({ v: Number(r.PM25), t: r.ThoiGian }));
+    .map((r) => ({ v: Number(r.PM25), t: r.ThoiGian }))
+    .filter((point) => Number.isFinite(point.v) && point.v >= 0);
 
   const n = trendPoints.length;
   const last = n ? trendPoints[n - 1].v : null;
 
   $('#trendValue').textContent = formatNumber(last, 1);
   $('#trendLabel').textContent = describeTrend(trendPoints);
-  canvas.setAttribute('aria-label', n
-    ? `Biểu đồ xu hướng PM2.5 gồm ${n} lần đo, gần nhất là ${formatNumber(last, 1)} µg/m³`
-    : 'Biểu đồ xu hướng PM2.5, chưa có dữ liệu');
 
   // Nhãn thời gian: tối đa 5 mốc, lấy từ dữ liệu thật
   const labels = $('#chartLabels');
@@ -236,11 +234,11 @@ function describeTrend(points) {
 }
 
 function drawTrend() {
-  if (!canvas) return;
+  if (!canvas || !canvas.getClientRects().length) return;
   const rect = canvas.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
-  const width = Math.max(rect.width, 320);
-  const height = 220;
+  const width = Math.max(rect.width, 1);
+  const height = Math.max(rect.height, 1);
 
   canvas.width = width * dpr;
   canvas.height = height * dpr;
@@ -248,40 +246,58 @@ function drawTrend() {
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, width, height);
 
-  const pad = { top: 18, right: 12, bottom: 18, left: 12 };
+  const values = trendPoints.map((point) => point.v);
+  const upper = Math.max(10, Math.max(0, ...values) * 1.08);
+  const rawStep = Math.max(10, upper / 6);
+  const magnitude = 10 ** Math.floor(Math.log10(rawStep));
+  const ratio = rawStep / magnitude;
+  const step = (ratio <= 1 ? 1 : ratio <= 2 ? 2 : ratio <= 5 ? 5 : 10) * magnitude;
+  const max = Math.ceil(upper / step) * step;
+  ctx.font = '10px Inter, Arial, sans-serif';
+  const pad = { top: 24, right: 12, bottom: 14,
+    left: Math.max(36, Math.ceil(ctx.measureText(max.toLocaleString('vi-VN')).width) + 14) };
   const chartW = width - pad.left - pad.right;
   const chartH = height - pad.top - pad.bottom;
+  $('#chartLabels').style.paddingLeft = `${pad.left}px`;
+  $('#chartLabels').style.paddingRight = `${pad.right}px`;
+  const description = trendPoints.length
+    ? `Biểu đồ xu hướng PM2.5 gồm ${trendPoints.length} lần đo, gần nhất là ${formatNumber(values[values.length - 1], 1)} µg/m³`
+    : 'Biểu đồ xu hướng PM2.5, chưa có dữ liệu';
+  canvas.setAttribute('aria-label', `${description}. Trục dọc từ 0 đến ${max} µg/m³, mỗi mốc ${step} µg/m³.`);
 
-  // Lưới ngang
-  ctx.strokeStyle = '#edf1ef';
+  // Các đường lưới và nhãn dùng chung thang đo bắt đầu từ 0.
+  ctx.fillStyle = '#8a96a3';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('µg/m³', 0, 8);
+  ctx.textAlign = 'right';
   ctx.lineWidth = 1;
-  [0, .25, .5, .75, 1].forEach((r) => {
-    const y = pad.top + chartH * r;
+  for (let tick = 0; tick <= max; tick += step) {
+    const y = pad.top + chartH - (tick / max) * chartH;
+    ctx.fillText(tick.toLocaleString('vi-VN'), pad.left - 9, y);
+    ctx.strokeStyle = tick === 0 ? '#dce4e1' : '#edf1ef';
     ctx.beginPath();
-    ctx.moveTo(pad.left, y);
+    ctx.moveTo(pad.left - 3, y);
     ctx.lineTo(width - pad.right, y);
     ctx.stroke();
-  });
+  }
+  ctx.strokeStyle = '#dce4e1';
+  ctx.beginPath();
+  ctx.moveTo(pad.left, pad.top);
+  ctx.lineTo(pad.left, pad.top + chartH);
+  ctx.stroke();
 
   if (!trendPoints.length) {
     ctx.fillStyle = '#8a96a3';
     ctx.font = '13px Inter, Arial, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('Chưa có dữ liệu lịch sử', width / 2, height / 2);
+    ctx.fillText('Chưa có dữ liệu lịch sử', pad.left + chartW / 2, pad.top + chartH / 2);
     return;
   }
 
-  // Trục dọc tự co giãn theo dữ liệu
-  const values = trendPoints.map((p) => p.v);
-  const lo = Math.min(...values);
-  const hi = Math.max(...values);
-  const margin = Math.max((hi - lo) * 0.2, 5);
-  const min = Math.max(0, lo - margin);
-  const max = hi + margin;
-
   const points = values.map((value, i) => ({
     x: values.length === 1 ? pad.left + chartW / 2 : pad.left + (chartW * i) / (values.length - 1),
-    y: pad.top + chartH - ((value - min) / (max - min)) * chartH,
+    y: pad.top + chartH - (value / max) * chartH,
   }));
 
   // Gradient vùng dưới biểu đồ
@@ -341,9 +357,22 @@ function historyItem(kind, icon, title, text, time) {
   return item;
 }
 
+function updateAlertState(status, count = 0) {
+  const box = $('#warningHistory');
+  box.dataset.alertStatus = status;
+  box.dataset.alertCount = String(count);
+  document.dispatchEvent(new CustomEvent('alertschanged', {detail: {status, count}}));
+}
+
+function renderAlertsLoading() {
+  $('#warningHistory').replaceChildren(el('p', 'notification-empty', 'Đang tải lịch sử cảnh báo…'));
+  updateAlertState('loading');
+}
+
 function renderAlerts(list) {
   const box = $('#warningHistory');
   box.replaceChildren();
+  updateAlertState('ready', list.length);
 
   if (!list.length) {
     box.append(historyItem('normal', '✓', 'Chưa có cảnh báo đã lưu', 'Chưa ghi nhận cảnh báo cho địa điểm đang chọn.'));
@@ -364,6 +393,7 @@ function renderAlerts(list) {
 function renderAlertsFailed(message) {
   const box = $('#warningHistory');
   box.replaceChildren(historyItem('warning', '!', 'Không tải được lịch sử cảnh báo', message));
+  updateAlertState('error');
 }
 
 // ---------------------------------------------------------------------------
@@ -383,7 +413,7 @@ async function loadAll(changed = false) {
     renderCurrent({DuLieu: {}});
     renderCurrentFailed();
     renderTrendFailed();
-    $('#warningHistory').replaceChildren();
+    renderAlertsLoading();
     hideError();
   }
   const version = ++refreshVersion;

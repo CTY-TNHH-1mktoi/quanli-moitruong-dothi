@@ -1,0 +1,9 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 16. ERD sáu bảng nghiệp vụ và loại liên kết
+Trong phạm vi dữ liệu mới do ứng dụng tạo, MaDiaDiem luôn được lấy từ danh mục hợp lệ. Cột
+này vẫn cho phép NULL ở NguonDL để tương thích dữ liệu cũ. Phần migration chỉ gắn hanoi
+cho các hàng cũ nhận diện rõ nguồn Hà Nội; các hàng khác không được gán địa điểm suy đoán.
+CanhBao và PhanTichAI bắt buộc có Manguon; NguonDL không bắt buộc phải có cảnh báo.
+Mỗi lượt cập nhật hiện tạo một phân tích, trong khi ràng buộc vật lý cho phép 0 đến nhiều phân
+tích trên một nguồn.
+49

@@ -8,46 +8,137 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/volt/volt.css">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
 </head>
-<body>
-  <header class="header">
-    <div class="brand">
-      <div>
-        <h1>Giám sát môi trường đô thị</h1>
-        <p>Nền tảng theo dõi thời tiết & chất lượng môi trường</p>
+<body class="volt-dashboard">
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M20 4c-8-1-15 1-15 8a6 6 0 0 0 6 6c7 0 9-7 9-14Z"/><path d="M4 21 15 10M8 17v-5m3 2h5"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M7 14l4-5 4 3 5-7"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M5 16h14l-2-3V9a5 5 0 0 0-10 0v4l-2 3Zm5 4h4M12 2v2"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9H4l-2 2v-9a9 9 0 1 1 19-2ZM7 10h10M7 14h6"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6 6a8 8 0 0 1 13 2M5 16a8 8 0 0 0 13 2"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-locate" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+  </svg>
+  <a class="skip-link" href="#mainContent">Đến nội dung chính</a>
+  <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="Menu chính">
+    <button type="button" id="sidebarClose" class="icon-button sidebar-close" aria-label="Đóng menu điều hướng"><svg class="ui-icon" aria-hidden="true"><use href="#icon-close"/></svg></button>
+    <a class="sidebar-brand" href="#overview" aria-label="Môi trường đô thị — Tổng quan">
+      <span class="brand-mark"><svg class="ui-icon"><use href="#icon-leaf"/></svg></span>
+      <span>Môi trường đô thị<small>URBAN ENVIRONMENT</small></span>
+    </a>
+    <div class="sidebar-label">KHÔNG GIAN GIÁM SÁT</div>
+    <nav class="sidebar-nav" aria-label="Điều hướng chức năng">
+      <a class="sidebar-link active" href="#overview" data-section-link aria-current="page"><svg class="ui-icon"><use href="#icon-grid"/></svg><span>Tổng quan</span></a>
+      <a class="sidebar-link" href="#air" data-section-link><svg class="ui-icon"><use href="#icon-leaf"/></svg><span>Chỉ số môi trường</span></a>
+      <a class="sidebar-link" href="#environmentMap" data-section-link><svg class="ui-icon"><use href="#icon-map"/></svg><span>Bản đồ chất lượng không khí</span></a>
+      <a class="sidebar-link" href="#trends" data-section-link><svg class="ui-icon"><use href="#icon-chart"/></svg><span>Xu hướng dữ liệu</span></a>
+      <a class="sidebar-link" href="#insights" data-section-link><svg class="ui-icon"><use href="#icon-spark"/></svg><span>Phân tích & tư vấn</span></a>
+      <a class="sidebar-link" href="#reports" data-section-link><svg class="ui-icon"><use href="#icon-file"/></svg><span>Báo cáo môi trường</span></a>
+    </nav>
+    <div class="sidebar-footer"><span class="sidebar-status-dot"></span><span>Open-Meteo · NoiseCapture<small>Nguồn dữ liệu môi trường</small></span></div>
+  </aside>
+  <button type="button" id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Đóng menu" hidden></button>
+  <header class="header dashboard-header">
+    <div class="header-start">
+      <button type="button" class="icon-button menu-toggle" id="sidebarToggle" aria-label="Mở menu điều hướng" aria-controls="dashboardSidebar" aria-expanded="false"><svg class="ui-icon"><use href="#icon-menu"/></svg></button>
+      <nav class="dashboard-breadcrumb" aria-label="Vị trí trang"><span>Không gian giám sát</span><span aria-hidden="true">/</span><strong id="currentSectionLabel">Tổng quan</strong></nav>
+    </div>
+    <div class="header-search" role="search">
+      <svg class="ui-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+      <input id="locationSearch" type="search" role="combobox" maxlength="80" placeholder="Tìm địa điểm hoặc chức năng…" aria-label="Tìm địa điểm hoặc chức năng" aria-autocomplete="list" aria-controls="headerSearchResults" aria-expanded="false" autocomplete="off" spellcheck="false">
+      <div id="headerSearchResults" class="header-search-results" role="listbox" aria-label="Kết quả tìm kiếm" hidden></div>
+    </div>
+    <div class="header-actions">
+      <div class="notification-center">
+        <button type="button" id="notificationToggle" class="icon-button notification-toggle" aria-label="Lịch sử cảnh báo" aria-controls="alerts" aria-expanded="false" title="Lịch sử cảnh báo">
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-bell"/></svg><span id="notificationCount" class="notification-count" aria-hidden="true" hidden></span>
+        </button>
+        <section id="alerts" class="notification-panel" aria-labelledby="notificationTitle" hidden>
+          <div class="notification-heading">
+            <div><span class="section-label">THÔNG BÁO</span><h2 id="notificationTitle">Lịch sử cảnh báo</h2></div>
+            <button type="button" id="notificationClose" class="icon-button" aria-label="Đóng lịch sử cảnh báo"><svg class="ui-icon" aria-hidden="true"><use href="#icon-close"/></svg></button>
+          </div>
+          <p id="notificationLocation" class="notification-location">Địa điểm đang chọn</p>
+          <div class="warning-history" id="warningHistory" data-alert-status="loading" data-alert-count="0" aria-live="polite"><p class="notification-empty">Đang tải lịch sử cảnh báo…</p></div>
+        </section>
       </div>
+      <span class="project-label">Giám sát môi trường đô thị</span><span class="project-avatar" aria-hidden="true">MT</span>
     </div>
   </header>
 
-  <main class="container" id="mainContent" aria-busy="true">
-    <section class="hero-card">
+  <main class="container dashboard-content" id="mainContent" aria-busy="true" tabindex="-1">
+    <div id="dashboardViewContext" class="dashboard-view-context" hidden>
+      <span><svg class="ui-icon" aria-hidden="true"><use href="#icon-pin"/></svg><strong id="dashboardViewLocation">Hà Nội</strong></span>
+      <a href="#overview" id="backToOverview"><svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>Về tổng quan</a>
+    </div>
+    <section class="hero-card" id="overview" aria-labelledby="locationTitle">
       <div class="hero-main">
         <span class="eyebrow">KHU VỰC ĐANG GIÁM SÁT</span>
         <div class="hero-title-row">
-          <h2 id="locationTitle">Hà Nội</h2>
+          <h1 id="locationTitle">Hà Nội</h1>
           <span class="status-pill loading" id="statusPill"><i aria-hidden="true"></i> <span id="statusText" aria-live="polite">Đang tải dữ liệu…</span></span>
         </div>
         <p id="locationSource">Thời tiết và không khí: trung tâm Hà Nội (Open-Meteo). Tiếng ồn: khu vực Cầu Giấy (NoiseCapture).</p>
-        <div class="location-controls">
-          <label for="locationSearch">Chọn địa điểm</label>
-          <input id="locationSearch" type="search" maxlength="80" placeholder="Tìm thành phố hoặc khu vực…" aria-label="Tìm địa điểm">
-          <select id="locationSelect" aria-label="Địa điểm đang giám sát"><option value="hanoi">Hà Nội</option></select>
+        <div class="location-actions">
+          <div class="location-controls">
+            <label for="locationSelect">Chọn địa điểm</label>
+            <select id="locationSelect" aria-label="Địa điểm đang giám sát"><option value="hanoi">Hà Nội</option></select>
+          </div>
+          <button type="button" class="location-locate" id="locateMe" aria-describedby="geolocationStatus" disabled><svg class="ui-icon" aria-hidden="true"><use href="#icon-locate"/></svg><span id="locateMeLabel">Lấy vị trí hiện tại</span></button>
         </div>
+        <p class="geolocation-status" id="geolocationStatus" role="status" aria-live="polite" hidden></p>
         <p class="location-details" id="locationDetails"></p>
         <small class="location-note">Không khí theo ô lưới mô hình; các nơi gần nhau có thể cùng giá trị. Tên khu vực NoiseCapture theo dữ liệu nguồn, có thể là tên hành chính cũ.</small>
         <div id="locationError" class="location-error" role="alert" hidden><span id="locationErrorText"></span> <button type="button" id="locationRetry">Thử lại</button></div>
       </div>
       <div class="hero-meta">
+        <button type="button" class="dashboard-refresh" id="refreshDashboard"><svg class="ui-icon"><use href="#icon-refresh"/></svg>Cập nhật dữ liệu</button>
         <div>
-          <span>Cập nhật gần nhất</span>
+          <span><svg class="ui-icon"><use href="#icon-clock"/></svg>Cập nhật gần nhất</span>
           <strong id="lastUpdate">—</strong>
         </div>
       </div>
     </section>
 
-    <section class="location-map-card" aria-labelledby="mapHeading">
+    <section id="air">
+      <div class="section-title">
+        <div>
+          <span class="section-label">CHẤT LƯỢNG KHÔNG KHÍ</span>
+          <h2>Các chỉ số môi trường</h2>
+        </div>
+      </div>
+      <div class="air-layout">
+        <article class="aqi-card" id="aqiCard">
+          <div class="aqi-top"><span>US AQI</span><span class="aqi-dot"></span></div>
+          <strong id="aqiValue">—</strong>
+          <span class="aqi-status" id="aqiStatus">Đang tải</span>
+          <div class="aqi-scale"><span id="aqiBar" style="width: 0%"></span></div>
+          <p id="aqiNote">Chất lượng không khí sẽ hiển thị tại đây.</p>
+        </article>
+        <div class="pollution-grid">
+          <article class="pollution-card" data-metric="pm25"><div class="pollution-header"><span>PM2.5</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>µg/m³</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
+          <article class="pollution-card" data-metric="pm10"><div class="pollution-header"><span>PM10</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>µg/m³</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
+          <article class="pollution-card" data-metric="temp"><div class="pollution-header"><span>Nhiệt độ</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>°C</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
+          <article class="pollution-card" data-metric="humidity"><div class="pollution-header"><span>Độ ẩm</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>%</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
+          <article class="pollution-card" data-metric="noise"><div class="pollution-header"><span>Tiếng ồn</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>dBA</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div><p class="card-note" id="noiseSourceNote">Trung bình khu vực, không phải số đo trực tiếp</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-map-card" id="environmentMap" aria-labelledby="mapHeading">
       <div class="map-heading">
         <div>
           <span class="section-label">BẢN ĐỒ MÔI TRƯỜNG</span>
@@ -101,32 +192,9 @@
       <button type="button" class="text-btn" id="retryBtn">Thử lại</button>
     </div>
 
-    <section id="air">
-      <div class="section-title">
-        <div>
-          <span class="section-label">CHẤT LƯỢNG KHÔNG KHÍ</span>
-          <h2>Các chỉ số môi trường</h2>
-        </div>
-      </div>
-      <div class="air-layout">
-        <article class="aqi-card" id="aqiCard">
-          <div class="aqi-top"><span>US AQI</span><span class="aqi-dot"></span></div>
-          <strong id="aqiValue">—</strong>
-          <span class="aqi-status" id="aqiStatus">Đang tải</span>
-          <div class="aqi-scale"><span id="aqiBar" style="width: 0%"></span></div>
-          <p id="aqiNote">Chất lượng không khí sẽ hiển thị tại đây.</p>
-        </article>
-        <div class="pollution-grid">
-          <article class="pollution-card" data-metric="pm25"><div class="pollution-header"><span>PM2.5</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>µg/m³</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
-          <article class="pollution-card" data-metric="pm10"><div class="pollution-header"><span>PM10</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>µg/m³</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
-          <article class="pollution-card" data-metric="temp"><div class="pollution-header"><span>Nhiệt độ</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>°C</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
-          <article class="pollution-card" data-metric="humidity"><div class="pollution-header"><span>Độ ẩm</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>%</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div></article>
-          <article class="pollution-card" data-metric="noise"><div class="pollution-header"><span>Tiếng ồn</span><b class="normal" data-role="badge">—</b></div><strong data-role="value">—</strong><small>dBA</small><div class="progress"><i data-role="bar" style="width: 0%"></i></div><p class="card-note" id="noiseSourceNote">Trung bình khu vực, không phải số đo trực tiếp</p></article>
-        </div>
-      </div>
-    </section>
 
-    <section>
+
+    <section id="insights" hidden>
       <div class="section-title">
         <div><span class="section-label">HỖ TRỢ THÔNG MINH</span><h2>Tư vấn môi trường & xử lý sự cố</h2></div>
       </div>
@@ -154,41 +222,9 @@
       </div>
     </section>
 
-    <section id="chat">
-      <div class="section-title">
-        <div><span class="section-label">TRỢ LÝ MÔI TRƯỜNG</span><h2>Trò chuyện với Xanh Non</h2></div>
-      </div>
-      <div class="chat-card">
-        <div class="chat-header">
-          <div><strong>🌱 Xanh Non</strong><p>Hỏi về chỉ số trên trang, chất lượng không khí và lối sống xanh.</p></div>
-          <button type="button" class="chat-reset" id="chatReset">Cuộc trò chuyện mới</button>
-        </div>
-        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Hội thoại với Xanh Non">
-          <div class="chat-message assistant"><span>Xanh Non</span><p>Chào bạn! Mình là Xanh Non. Bạn muốn tìm hiểu về môi trường hoặc các chỉ số đang hiển thị trên trang?</p></div>
-        </div>
-        <div class="chat-suggestions" aria-label="Câu hỏi gợi ý">
-          <button type="button" data-chat-question="PM2.5 là gì?">PM2.5 là gì?</button>
-          <button type="button" data-chat-question="Giải thích các chỉ số môi trường hiện tại giúp tôi.">Giải thích chỉ số hiện tại</button>
-          <button type="button" data-chat-question="Làm sao giảm tiếng ồn?">Làm sao giảm tiếng ồn?</button>
-        </div>
-        <form id="chatForm" class="chat-form">
-          <label for="chatInput">Câu hỏi của bạn</label>
-          <div class="chat-input-row">
-            <textarea id="chatInput" name="message" rows="2" maxlength="8000" placeholder="Nhập câu hỏi…" required></textarea>
-            <button id="chatSend" type="submit">Gửi</button>
-          </div>
-          <div class="chat-actions">
-            <button type="button" class="chat-reset" id="chatContinue" hidden>Viết tiếp</button>
-            <button type="button" class="chat-reset" id="chatStop" hidden>Dừng trả lời</button>
-          </div>
-          <p class="chat-status" id="chatStatus" role="status">Enter để gửi · Shift + Enter để xuống dòng</p>
-          <p class="chat-error" id="chatError" role="alert" hidden></p>
-          <small class="chat-note">Câu trả lời AI có thể có sai sót. Hãy đối chiếu các số đo trên bảng giám sát.</small>
-        </form>
-      </div>
-    </section>
 
-    <section>
+
+    <section id="trends" hidden>
       <div class="section-title">
         <div><span class="section-label">PHÂN TÍCH</span><h2>Xu hướng môi trường</h2></div>
       </div>
@@ -199,7 +235,7 @@
       </div>
     </section>
 
-    <section id="reports">
+    <section id="reports" hidden>
       <div class="section-title">
         <div><span class="section-label">BÁO CÁO</span><h2>Phân tích phục vụ quy hoạch & xử lý sự cố</h2></div>
       </div>
@@ -274,13 +310,43 @@
       </div>
     </section>
 
-    <section>
-      <div class="section-title">
-        <div><span class="section-label">LỊCH SỬ CẢNH BÁO</span><h2>Các nguy cơ gần đây</h2></div>
-      </div>
-      <div class="warning-history" id="warningHistory"></div>
-    </section>
   </main>
+
+    <section id="chat" class="chat-widget" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+<div class="chat-card">
+        <div class="chat-header">
+          <div class="chat-identity"><span class="chat-avatar"><svg class="ui-icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span><div><strong id="chatTitle">Xanh Non</strong><p>Trợ lý môi trường của bạn</p></div></div>
+          <div class="chat-header-actions"><button type="button" class="chat-reset" id="chatReset">Bắt đầu lại</button><button type="button" class="icon-button chat-close" id="chatClose" aria-label="Thu gọn trò chuyện"><svg class="ui-icon" aria-hidden="true"><use href="#icon-close"/></svg></button></div>
+        </div>
+        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Hội thoại với Xanh Non">
+          <div class="chat-message assistant"><span>Xanh Non</span><p>Chào bạn! Mình là Xanh Non. Bạn muốn tìm hiểu về môi trường hoặc các chỉ số đang hiển thị trên trang?</p></div>
+        </div>
+        <div class="chat-suggestions" aria-label="Câu hỏi gợi ý">
+          <button type="button" data-chat-question="PM2.5 là gì?">PM2.5 là gì?</button>
+          <button type="button" data-chat-question="Giải thích các chỉ số môi trường hiện tại giúp tôi.">Giải thích chỉ số hiện tại</button>
+          <button type="button" data-chat-question="Làm sao giảm tiếng ồn?">Làm sao giảm tiếng ồn?</button>
+        </div>
+        <form id="chatForm" class="chat-form">
+          <label for="chatInput">Câu hỏi của bạn</label>
+          <div class="chat-input-row">
+            <textarea id="chatInput" name="message" rows="2" maxlength="8000" placeholder="Nhập câu hỏi…" required></textarea>
+            <button id="chatSend" type="submit">Gửi</button>
+          </div>
+          <div class="chat-actions">
+            <button type="button" class="chat-reset" id="chatContinue" hidden>Viết tiếp</button>
+            <button type="button" class="chat-reset" id="chatStop" hidden>Dừng trả lời</button>
+          </div>
+          <p class="chat-status" id="chatStatus" role="status">Enter để gửi · Shift + Enter để xuống dòng</p>
+          <p class="chat-error" id="chatError" role="alert" hidden></p>
+          <small class="chat-note">AI có thể trả lời sai. Bạn có thể nhắn “hữu ích” để góp ý.</small>
+        </form>
+      </div>
+    </section>
+
+  <button type="button" id="chatLauncher" class="chat-launcher" aria-controls="chat" aria-expanded="false" aria-label="Trò chuyện với Xanh Non">
+    <span class="chat-launcher-icon"><svg class="ui-icon" aria-hidden="true"><use href="#icon-chat"/></svg></span><span>Xanh Non<small>Hỏi về môi trường</small></span><span id="chatUnread" class="chat-unread" hidden></span>
+  </button>
+
 
   <footer>
     <div><strong>Giám sát môi trường đô thị</strong></div>
@@ -294,5 +360,6 @@
   <script src="script.js"></script>
   <script src="chat.js"></script>
   <script src="reports.js"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>

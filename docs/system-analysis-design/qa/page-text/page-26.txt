@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Điều kiện trước. Widget đã sẵn sàng. Câu hỏi không rỗng và lịch sử đúng cấu trúc.
+Đầu vào và giao diện. message tối đa 8.000 ký tự; history tối đa tám cặp user–assistant;
+location; stream; cờ learn_from_chat. Giao diện có mở, đóng, gửi, dừng, bắt đầu lại và tiếp tục
+khi câu trả lời bị cắt. Vị trí thao tác: UI08.
+Luồng chính.
+1. Người sử dụng mở bong bóng, nhập câu hỏi và gửi; giao diện khóa lựa chọn địa điểm trong
+lúc tạo câu trả lời.
+2. API kiểm tra dữ liệu, chuẩn bị snapshot và điều phối các nhánh trả lời.
+3. Với stream, máy chủ phát status, delta và done hoặc error; widget ghép nội dung theo sự kiện.
+4. Khi hoàn tất, lưu cặp hỏi đáp trong bộ nhớ của địa điểm, mở khóa thao tác và đánh dấu phản
+hồi mới nếu widget đang thu gọn.
+Điều kiện sau và đầu ra. Câu trả lời hiển thị dạng văn bản an toàn. Thu gọn không xóa hội
+thoại; bắt đầu lại xóa ngữ cảnh tại giao diện. Không có hồ sơ hội thoại gắn tài khoản đăng nhập.
+Luồng thay thế và ngoại lệ. HTTP 400 cho dữ liệu sai; 413 cho body quá lớn; 429 khi khóa
+sinh đang bận; 503 khi thiếu mô hình. Ngắt kết nối được truyền tới xử lý hủy, không biến câu dở
+thành một cặp lịch sử hoàn chỉnh.
+Thiết kế và bằng chứng. static/chat.js; app.chat; chatbot.validate_chat, generate_reply và
+stream_reply; NativeChatbot.generate. Lịch sử thông thường nằm trong bộ nhớ trình duyệt;
+không có bảng ChatSession.
+Quy tắc và nghiệm thu. BR09, BR11, BR14. Kiểm thử: TC18, TC19.
+5.15 FR14 Giữ ngữ cảnh và đọc dữ liệu theo thời gian
+Mục đích và tác nhân. Hiểu các câu nối tiếp ngắn và lấy đúng dữ liệu hiện tại hoặc dự báo cho
+nội dung đang trao đổi. Tác nhân: A01, E01. Ca sử dụng tương ứng: UC14.
+Điều kiện trước. Có câu hỏi và lịch sử user–assistant hợp lệ. Thời gian xử lý dựa trên UTC+7.
+Đầu vào và giao diện. Các cách nói như mai, ngày kia, tối, 18 giờ 30; câu nối tiếp như độ ẩm thì
+sao hoặc không khí nữa. Địa điểm có thể ở danh mục đang chọn hoặc được nêu trong câu hỏi. Vị
+trí thao tác: UI08.
+Luồng chính.
+1. Xác định chủ đề và lấy các chi tiết ngữ cảnh từ lượt người sử dụng gần nhất còn liên quan.
+2. Giữ hoặc thay địa điểm, ngày và giờ theo thông tin mới; câu hiện tại không tiếp tục dùng mốc
+dự báo cũ.
+3. Nếu chưa rõ chủ đề hoặc thiếu ngày cho một giờ cụ thể, hỏi lại; nếu đủ, đọc nguồn thời tiết
+hoặc không khí phù hợp.
+26

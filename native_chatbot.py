@@ -1,4 +1,4 @@
-"""Manage an owned llama.cpp CPU process and stream its local chat responses."""
+"""Manage an owned llama.cpp process and stream its local chat responses."""
 
 import atexit
 import json
@@ -12,20 +12,26 @@ import requests
 
 
 class NativeChatbot:
-    def __init__(self, binary, model_path, threads, max_input_tokens, max_output_tokens):
+    def __init__(self, binary, model_path, threads, max_input_tokens, max_output_tokens, *, gpu_layers=0, log_path=None, lora_path=None):
+        if type(gpu_layers) is not int or not 0 <= gpu_layers <= 999:
+            raise ValueError('gpu_layers must be an integer from 0 to 999')
+        if lora_path is not None and not Path(lora_path).is_file():
+            raise FileNotFoundError('The requested LoRA adapter is missing')
         self.max_input_tokens = max_input_tokens
         with socket.socket() as listener:
             listener.bind(("127.0.0.1", 0))
             port = listener.getsockname()[1]
         self.base_url = f"http://127.0.0.1:{port}"
-        log_path = Path(binary).parent.parent / "xanhnon-server.log"
+        log_path = Path(log_path) if log_path is not None else Path(binary).parent.parent / "xanhnon-server.log"
         arguments = [
             str(binary), "-m", str(model_path), "-t", str(threads), "-tb", str(threads),
             "-c", str(max_input_tokens + max(max_output_tokens, 2048)),
             "-b", "256", "-ub", "128", "-np", "1",
             "-n", str(max_output_tokens), "--context-shift", "--keep", "-1",
-            "--host", "127.0.0.1", "--port", str(port), "-ngl", "0",
+            "--host", "127.0.0.1", "--port", str(port), "-ngl", str(gpu_layers),
         ]
+        if lora_path is not None:
+            arguments.extend(['--lora', str(lora_path)])
         with log_path.open("ab") as log:
             self.process = subprocess.Popen(
                 arguments, stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT,

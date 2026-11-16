@@ -18,6 +18,52 @@ def get_location(identifier=None):
     return dict(LOCATION_MAP[identifier])
 
 
+def location_mentions(message):
+    """Prefer a district's full name over an overlapping city substring."""
+    from chat_knowledge import normalized
+    text=normalized(message)
+    matches=[]
+    for place in LOCATIONS:
+        aliases={normalized(place['Ten']),normalized(place['Ten'].split(',')[0])}
+        if place['MaDiaDiem']=='tphcm':
+            aliases.update({'tp hcm','tphcm','sai gon','ho chi minh'})
+        for alias in aliases:
+            if not alias:
+                continue
+            for match in re.finditer(r'\b'+re.escape(alias)+r'\b',text):
+                matches.append((match.start(),match.end(),place))
+    selected=[]
+    for start,end,place in sorted(matches,key=lambda v: (-(v[1]-v[0]),v[0])):
+        if not any(start<old_end and end>old_start for old_start,old_end,_ in selected):
+            selected.append((start,end,place))
+    return text,sorted(selected,key=lambda v:v[0])
+
+
+def named_location(message):
+    _,mentions=location_mentions(message)
+    places={place['MaDiaDiem']:place for _,_,place in mentions}
+    return dict(next(iter(places.values()))) if len(places)==1 else None
+
+
+def location_followup(message):
+    """A short change of place can inherit a topic; a new request cannot."""
+    text,mentions=location_mentions(message)
+    if len(mentions)!=1:
+        return None
+    start,end,place=mentions[0]
+    remainder=' '.join((text[:start]+' '+text[end:]).split())
+    if re.fullmatch(r'(?:(?:the|vay|con|o|tai|thi|sao|the nao|ra sao|nhe|nhi|ban|a|xem|giup minh|giup toi)\s*)*',remainder):
+        return dict(place)
+    return None
+
+
+def without_locations(message):
+    text,mentions=location_mentions(message)
+    for start,end,_ in reversed(mentions):
+        text=text[:start]+' '+text[end:]
+    return ' '.join(text.split())
+
+
 class LocationStore:
     def __init__(self, connection_factory):
         self.connection_factory = connection_factory

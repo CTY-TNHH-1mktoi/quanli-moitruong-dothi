@@ -1,0 +1,8 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 4. DFD mức 0 phần hội thoại và huấn luyện
+DFD mức 0 được trình bày ở hai hình cùng cấp; tác nhân và kho được lặp lại khi cần để các dòng
+dữ liệu rõ ràng. Tiến trình 4.0 đọc D2 và nguồn dự báo theo ngữ cảnh, không yêu cầu mỗi câu
+hỏi phải tạo snapshot SQL. Ảnh nền bản đồ do trình duyệt trao đổi trực tiếp với OpenStreetMap
+trong phạm vi 1.0. Các kho ghép trong một khung là nhóm logic, không bổ sung bảng mới. Tất
+cả thao tác đọc ghi kho đều đi qua tiến trình xử lý.
+33

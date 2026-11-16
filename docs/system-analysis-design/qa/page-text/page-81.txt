@@ -1,0 +1,29 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Mã Tệp và điểm xử lý Nội dung đối chiếu
+chat_knowledge.py; chat_output.py; Tra cứu TF-IDF, tài liệu có nguồn và xử lý
+S16
+data/xanhnon/knowledge.json đầu ra.
+chat_feedback.py; chat_learning.py; Góp ý, câu hỏi mới, trạng thái duyệt và dữ
+S17
+feedback_training_data.py liệu học.
+native_chatbot.py; model_release.py; Tiến trình suy luận, vòng đời và nhận diện
+S18
+models/xanhnon-active.json bản phát hành.
+train_xanhnon.py; daily_train_xanhnon.py; Tinh chỉnh, lịch tự động, kiểm tra tài
+S19
+export_xanhnon.py nguyên và xuất ứng viên.
+training_state.py; training_resume.py; Khóa học, điều kiện resume và xử lý nguồn
+S20
+sensor_training_data.py cảm biến.
+B.1 Hồ sơ kiểm thử được sử dụng
+Thư mục recovery/history-restoration-20261027 chứa restoration-state.json, live-
+verification.json, browser-checks.json, runtime-tests-final.txt, backend-tests-final.txt, training-
+seed-export-tests.txt và javascript-tests.txt. Các ảnh home-live-desktop.png, home-live-
+mobile.png và trends-restored-1600.png được lấy từ cùng hồ sơ. Kết quả bổ sung phục vụ tài liệu
+được lưu trong docs/system-analysis-design/qa/document-evidence-tests.json và log tương ứng.
+B.2 Phạm vi đối chiếu phiên bản
+Các tệp chính được kiểm tra SHA-256 với danh mục source_sha256 của hồ sơ khôi phục. Kiểm
+tra tại thời điểm biên soạn không ghi nhận thay đổi ở các tệp có trong danh mục đó. Việc này xác
+định phạm vi mã đã đối chiếu, không có nghĩa mọi tệp trong toàn bộ repository đều đã được
+kiểm toán bảo mật.
+81

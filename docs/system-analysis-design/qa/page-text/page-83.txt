@@ -1,0 +1,27 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+TÀI LIỆU THAM KHẢO
+Các tài liệu trực tuyến được kiểm tra ngày 27/10/2026. Mã nguồn dự án và các hồ sơ kiểm thử ở
+phụ lục B là nguồn chính cho các chức năng, cấu hình, số liệu và trạng thái triển khai được mô tả
+trong báo cáo.
+[T01] Open-Meteo. Weather Forecast API. Tài liệu biến thời tiết và dữ liệu theo giờ. Tài liệu gốc
+[T02] Open-Meteo. Air Quality API. Tài liệu biến chất lượng không khí, AQI và dữ liệu mô
+hình. Tài liệu gốc
+[T03] Noise-Planet. NoiseCapture. Giới thiệu dữ liệu cộng đồng và phương pháp thu thập. Tài
+liệu gốc
+[T04] Object Management Group. Unified Modeling Language version 2.5.1. 2017. Tài liệu gốc
+[T05] Pallets Projects. Modular Applications with Blueprints. Flask Documentation. Tài liệu gốc
+[T06] Microsoft. Primary and foreign key constraints. SQL Server documentation. Tài liệu gốc
+[T07] Leaflet. API reference for Leaflet 1.9.4. Tài liệu gốc
+[T08] AirNow. Air Quality Index Basics. Tài liệu về sáu mức US AQI. Tài liệu gốc
+[T09] ggml-org. llama.cpp. Mã nguồn và hướng dẫn chạy mô hình cục bộ. Tài liệu gốc
+[T10] González, Óscar và cộng sự. iSCAPE Outdoor Sensor Deployment Data. Zenodo, 2019.
+Tài liệu gốc
+[T11] González, Óscar và cộng sự. iSCAPE Citizen Science Workshops Data. Zenodo, 2019. Tài
+liệu gốc
+[T12] González, Óscar; Barberán, Víctor; Camprodon, Guillem. iSCAPE Low Cost Sensor
+Development Data. Zenodo, 2019. Tài liệu gốc
+[T13] UCI Machine Learning Repository. Beijing Multi-Site Air Quality. Dataset 501, 2019. Tài
+liệu gốc
+[T14] Hugging Face. Low-Rank Adaptation. PEFT documentation. Tài liệu gốc
+[T15] Themesberg. Volt Bootstrap 5 Dashboard. Mã nguồn và giấy phép MIT. Tài liệu gốc
+83

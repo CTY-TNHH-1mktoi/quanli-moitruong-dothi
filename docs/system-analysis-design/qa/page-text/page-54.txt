@@ -1,0 +1,13 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Đối tượng Cơ chế Phục vụ
+Giảm bản ghi lặp do yêu cầu
+Snapshot và mẫu bản Khóa trong tiến trình, thời hạn cache và đọc lại
+đồng thời; không là UNIQUE
+đồ SQL
+theo thời gian nguồn.
+Khóa ngoại bảo vệ sự tồn tại của snapshot cha đối với cảnh báo và phân tích. Hệ thống không có
+API xóa snapshot, xóa địa điểm hoặc xóa báo cáo. Các quy tắc nghiệp vụ như kỳ báo cáo hợp lệ,
+giới hạn lưới và chuẩn dữ liệu đầu vào nằm trong xử lý ứng dụng. Cơ chế cache ngăn phần lớn
+lần lấy lại trong thời hạn, nhưng schema không cấm hai snapshot khác nhau có cùng thời gian
+nguồn.
+54

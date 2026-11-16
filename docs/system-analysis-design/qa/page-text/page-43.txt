@@ -1,0 +1,18 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 12. Các phụ thuộc của lớp học từ câu hỏi mới
+ConversationLearner sử dụng các hàm của chat_knowledge để tìm nội dung ổn định có nguồn,
+sau đó lưu câu hỏi và liên kết tài liệu trong SQLite. Việc thay đổi phiên bản tri thức làm mất hiệu
+lực của liên kết học cũ cho đến khi được kiểm tra lại. Quan hệ trong hình là phụ thuộc xử lý và
+đọc ghi dữ liệu, không phải quan hệ kế thừa.
+6.9 Trách nhiệm và quan hệ giữa các thành phần
+Các repository có trách nhiệm tập trung đối với một nhóm lưu trữ; hàm build_report không phụ
+thuộc Flask nên có thể kiểm thử bằng danh sách hàng dữ liệu. Đây là biểu hiện phân tách trách
+nhiệm trong thiết kế hiện tại. Ngược lại, app.py vẫn giữ điều phối cập nhật, giao dịch và một số
+quy tắc đánh giá; chatbot.py giữ phần lớn quyết định nhánh hội thoại. Báo cáo không mô tả các
+module này như một tập microservice hoặc một hệ lớp miền hoàn chỉnh.
+Quan hệ phụ thuộc xuất hiện khi một bộ xử lý gọi hàm hoặc dùng đối tượng khác. Quan hệ sở
+hữu thể hiện rõ ở NativeChatbot với tiến trình con; vòng đời tiến trình được đối tượng tạo và kết
+thúc. Các lớp nghiệp vụ nêu trên không có cây kế thừa chung. Số lượng một–nhiều của snapshot
+và cảnh báo là quan hệ dữ liệu trong ERD, không phải bằng chứng rằng mã Python đã định nghĩa
+các lớp NguonDL và CanhBao.
+43

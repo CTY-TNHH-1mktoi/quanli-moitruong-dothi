@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 13 TRIỂN KHAI VÀ VẬN HÀNH
+13.1 Môi trường và cấu hình
+Dự án chạy trên Windows với môi trường Python của ứng dụng, SQL Server, ODBC Driver 17
+và trình duyệt. requirements.txt ghi các thư viện chạy, bao gồm scikit-learn 1.8.0 để khớp bundle
+Random Forest, Torch, Transformers, PEFT và các thư viện dữ liệu. Các binary llama.cpp,
+GGUF, tokenizer và mô hình cần có ở vị trí được cấu hình; Internet được dùng khi đọc các
+nguồn ngoài.
+Kết nối SQL được điều khiển bằng DB_SERVER, DB_NAME, DB_DRIVER, DB_USER và
+DB_PASSWORD. Khi không khai báo tài khoản SQL, ứng dụng sử dụng xác thực Windows.
+Cấu hình chatbot cho phép chọn backend tự động, llama_cpp hoặc transformers; cấu hình GPU
+mặc định là 0 layer. Phiên bản triển khai hiện tại ưu tiên CPU, số luồng sinh mặc định là 4 và
+được giới hạn bởi tham số môi trường.
+13.2 Khởi chạy và kiểm tra dịch vụ
+1. Kích hoạt hoặc gọi trực tiếp Python trong .venv đã có các thư viện của dự án.
+2. Xác nhận SQL Server và cơ sở dữ liệu GiamsatMT sẵn sàng; các schema nằm trong
+Demodatabase.sql, location_schema.sql, report_schema.sql và air_map_schema.sql.
+3. Chạy .venv\Scripts\python.exe app.py rồi mở http://127.0.0.1:5000.
+4. Đọc /api/chat/status và kiểm tra một lượt tải địa điểm để phân biệt tình trạng Flask, SQL,
+nguồn dữ liệu và runtime mô hình.
+Ứng dụng có nhánh kiểm tra dịch vụ hiện hữu trước khi khởi tạo thêm phiên chạy trực tiếp,
+nhằm tránh nạp trùng mô hình tại cổng ứng dụng. Các schema bổ sung được kiểm tra và tạo
+bằng ensure_schema trong quá trình sử dụng. Bản báo cáo chỉ khảo sát cơ chế này; việc biên
+soạn không thực hiện migration hoặc thay đổi dữ liệu nghiệp vụ.
+13.3 Các trạng thái cần theo dõi
+Bảng 33. Dấu hiệu vận hành và ý nghĩa
+Thông tin Vị trí quan sát Ý nghĩa
+HTTP Flask 127.0.0.1:5000 và log ứng dụng Xác định dịch vụ web đang trả lời.
+Phân biệt cold, loading, ready, training,
+Runtime chatbot /api/chat/status
+error.
+ThoiGianNguonThoiTiet và Xác định thời điểm dữ liệu nguồn, khác
+Nguồn môi trường
+ThoiGianNguonKhongKhi thời điểm lấy snapshot.
+75

@@ -1,0 +1,8 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+6.5 Luồng tra cứu môi trường theo địa điểm
+Hình 7. Activity của luồng chọn địa điểm và tra cứu
+Luồng kết thúc khi các phần đang hiển thị đã nhận dữ liệu của nơi mới hoặc thông báo lỗi tương
+ứng. Nếu GPS không được cấp quyền, người sử dụng quay về danh sách. Nếu API không tải
+được, giao diện giữ khả năng thử lại. Các kết quả đến muộn được kiểm tra bằng phiên yêu cầu và
+mã địa điểm trước khi cập nhật màn hình.
+37

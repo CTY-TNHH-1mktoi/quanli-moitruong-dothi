@@ -1,0 +1,758 @@
+{
+  "app.py": {
+    "sha256": "29ebc2804ec03484e902a4b70e3b4d60c77ec8ca44da1d873ad15a199f2693f5",
+    "bytes": 23099,
+    "definitions": [
+      {
+        "name": "get_conn",
+        "line": 77,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "rows_to_dicts",
+        "line": 91,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "query",
+        "line": 106,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "invalid_request",
+        "line": 123,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "database_error",
+        "line": 128,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "locations",
+        "line": 134,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "compute_noise",
+        "line": 142,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "get_noise",
+        "line": 148,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "fetch_environment",
+        "line": 156,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "build_alerts",
+        "line": 203,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "build_analysis",
+        "line": 224,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "index",
+        "line": 254,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "capnhat",
+        "line": 259,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "update_environment",
+        "line": 284,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "dulieu_moinhat",
+        "line": 348,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "dulieu_lichsu",
+        "line": 356,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "canhbao",
+        "line": 366,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "phantich",
+        "line": 375,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "chat_snapshot",
+        "line": 383,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "chat",
+        "line": 435,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "chat_status",
+        "line": 485,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "location_catalog.py": {
+    "sha256": "05d55e1c748425a357d3a1154f726e316cb8c45789ad4c8495ce24a994a2aa5c",
+    "bytes": 4246,
+    "definitions": [
+      {
+        "name": "get_location",
+        "line": 14,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "location_mentions",
+        "line": 21,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "named_location",
+        "line": 42,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "location_followup",
+        "line": 48,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "without_locations",
+        "line": 60,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "LocationStore",
+        "line": 67,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  "noise_data.py": {
+    "sha256": "8c640d77f90172f638d9710d4087a2f012b8edd649f1cb94b9928ab2fd61f2dc",
+    "bytes": 5246,
+    "definitions": [
+      {
+        "name": "haversine_km",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "geometry_center",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "read_cells",
+        "line": 33,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "aggregate_noise",
+        "line": 57,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "NoiseData",
+        "line": 76,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  "air_quality_map.py": {
+    "sha256": "a00cf204853ed5db768b5334a5125c47b9d965160da02c898eec0151d5159595",
+    "bytes": 9782,
+    "definitions": [
+      {
+        "name": "AirMapUnavailable",
+        "line": 22,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "finite_value",
+        "line": 26,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "make_grid",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "point_key",
+        "line": 57,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "normalize_samples",
+        "line": 61,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "AirMapRepository",
+        "line": 85,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_air_map_blueprint",
+        "line": 170,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "environment_reports.py": {
+    "sha256": "190d3f2d3d50c18bdcf7e0c39c74186582a784609c6a10e3a3d82057f03b72ce",
+    "bytes": 16774,
+    "definitions": [
+      {
+        "name": "finite_number",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "build_report",
+        "line": 35,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ReportRepository",
+        "line": 170,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_report_blueprint",
+        "line": 237,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "environment_predictor.py": {
+    "sha256": "4e3c743b690c197543f10a8b0bcff8936d0e32e15a4808477830903b583a4721",
+    "bytes": 2029,
+    "definitions": [
+      {
+        "name": "load_model",
+        "line": 33,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "predict_environment",
+        "line": 43,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "chatbot.py": {
+    "sha256": "04d0f5d00c30323bab3b34bafbebfc07a8b8f7fba9d0df46efa6c8d9fd3dfd49",
+    "bytes": 61140,
+    "definitions": [
+      {
+        "name": "ChatbotBusy",
+        "line": 57,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "_training_chat_allowed",
+        "line": 61,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_chat",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_load_runtime",
+        "line": 99,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "runtime_status",
+        "line": 118,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "warm_up_chatbot",
+        "line": 124,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_create_runtime",
+        "line": 135,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_plain_question",
+        "line": 176,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_wants_detail",
+        "line": 181,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_system_prompt",
+        "line": 191,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_reading",
+        "line": 221,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_aqi_guidance",
+        "line": 227,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_provided_aqi_reply",
+        "line": 242,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_requested_fields",
+        "line": 265,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_dashboard_context",
+        "line": 307,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_mentions_other_location",
+        "line": 348,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_weather_reply",
+        "line": 353,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_weather_forecast_topic",
+        "line": 410,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_weather_forecast_reply",
+        "line": 435,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_combined_conditions_reply",
+        "line": 473,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_air_forecast_reply",
+        "line": 492,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "needs_environment_data",
+        "line": 552,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "needs_air_data",
+        "line": 572,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_social_reply",
+        "line": 585,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_consultation_stage",
+        "line": 604,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_reading_followup_label",
+        "line": 630,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_reading_followup_question",
+        "line": 648,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_dialogue_question",
+        "line": 695,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_consultation_reply",
+        "line": 754,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_grounded_reply",
+        "line": 800,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_reference_context",
+        "line": 903,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_generate",
+        "line": 917,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_generate_raw",
+        "line": 928,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_acquire_generation",
+        "line": 1063,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "generate_reply",
+        "line": 1068,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "stream_reply",
+        "line": 1076,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "chat_scope.py": {
+    "sha256": "9c1533fb20d4ca2bd39b31185daeda6fd18f905ffe641e0622bfcb182f02202f",
+    "bytes": 16581,
+    "definitions": [
+      {
+        "name": "_intent_text",
+        "line": 47,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "expand_shorthand",
+        "line": 51,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "future_period",
+        "line": 68,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_helpful_message",
+        "line": 95,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "social_intent",
+        "line": 101,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "current_time_reply",
+        "line": 132,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_time_followup",
+        "line": 141,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "strip_time_references",
+        "line": 160,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "brief_reply_request",
+        "line": 167,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "uncertain_reply",
+        "line": 175,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "assistant_help_intent",
+        "line": 181,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_activity_suggestion",
+        "line": 219,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_activity_question",
+        "line": 240,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_explicit_topic",
+        "line": 266,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_environment_question",
+        "line": 275,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_followup_question",
+        "line": 294,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "chat_knowledge.py": {
+    "sha256": "fff0393221869d866d6f40a397470521b00ff88f796940ea0a10f33788be8e04",
+    "bytes": 14868,
+    "definitions": [
+      {
+        "name": "normalized",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "filter_constraint_followup",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_load_index",
+        "line": 32,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_index",
+        "line": 48,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_documents",
+        "line": 57,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_verified_documents",
+        "line": 61,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_exact_catalog",
+        "line": 70,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_exact_document",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_topic_ids",
+        "line": 84,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "advice_topic",
+        "line": 105,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "practical_answer",
+        "line": 151,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "retrieve",
+        "line": 167,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "exact_answer",
+        "line": 196,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "concept_answer",
+        "line": 202,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_particle_followup",
+        "line": 266,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "is_known_question",
+        "line": 275,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "reference_context",
+        "line": 280,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "chat_learning.py": {
+    "sha256": "71a41f1bef4e12e06895eff66011f697bce1de537adf43919ee8314054ae8078",
+    "bytes": 13574,
+    "definitions": [
+      {
+        "name": "_normal",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_sensitive",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_read_knowledge",
+        "line": 43,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_base_questions",
+        "line": 49,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_answer",
+        "line": 67,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ConversationLearner",
+        "line": 77,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  "chat_feedback.py": {
+    "sha256": "bec30f43d29b98b9794490fa656818f94adc10c6c94b173bbbeca0d091d25906",
+    "bytes": 10773,
+    "definitions": [
+      {
+        "name": "record_helpful_message",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "feedback_events",
+        "line": 47,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_text",
+        "line": 52,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "dialogue",
+        "line": 58,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_feedback",
+        "line": 71,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "FeedbackStore",
+        "line": 93,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_feedback_blueprint",
+        "line": 174,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  "native_chatbot.py": {
+    "sha256": "201fb668af199bad6060a26ab3316e2ce429c8b93605c04accfe7fdf3d76cd50",
+    "bytes": 5431,
+    "definitions": [
+      {
+        "name": "NativeChatbot",
+        "line": 14,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  "static/index.html": {
+    "sha256": "27d47be9dfa142a70daf45e35a19d9e085732c5aabd53baf5e441201ea97b0a9",
+    "bytes": 26272
+  },
+  "static/dashboard.js": {
+    "sha256": "06155c7af6a588e22d3776c9f87438dd660a3d120e40a14a35c45ce63377befe",
+    "bytes": 12123
+  },
+  "static/locations.js": {
+    "sha256": "e4520b981d8df69aaf0609d611b94bd2a8c796e72b40a6390c1a7e0959f5c329",
+    "bytes": 9233
+  },
+  "static/script.js": {
+    "sha256": "58e9032d14ca77b23ddc28d14ab10feacd6782b9291dcd92442a3cb06936b50a",
+    "bytes": 18717
+  },
+  "static/reports.js": {
+    "sha256": "4eb87b2c95d4ea491b8c9e562901ee7dbd1bc46eff36c0453ec072222620cb7f",
+    "bytes": 14042
+  },
+  "static/chat.js": {
+    "sha256": "ea52d7c0b8be5735f0a8c2fed15addca5213fc6f45defaa2d3e7f628a62ac762",
+    "bytes": 12429
+  },
+  "Demodatabase.sql": {
+    "sha256": "677e004613b9b857c26fc8badc29636f57581b4089e671de163cf72ca98e8078",
+    "bytes": 918
+  },
+  "location_schema.sql": {
+    "sha256": "eab66815f3989068d39bbc5ba6951721cf579e351ede12457eb3674a633eba63",
+    "bytes": 1085
+  },
+  "report_schema.sql": {
+    "sha256": "0031a12119bbf66c8583f3d6ecdbf6e3b23233d93a9807d8c6e94b174e774461",
+    "bytes": 989
+  },
+  "air_map_schema.sql": {
+    "sha256": "fe105eb4f6b7a7e41a81cb2dd81e9f62ec63d9b680dff6550685728380096964",
+    "bytes": 541
+  },
+  "models/xanhnon-active.json": {
+    "sha256": "6e16a3c432e6440877e025f877530f9c3ad623d43c745016af028fcab2f78564",
+    "bytes": 500
+  }
+}

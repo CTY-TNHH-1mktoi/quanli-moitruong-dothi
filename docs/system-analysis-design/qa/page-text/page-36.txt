@@ -1,0 +1,9 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+6.4 Use Case tổng thể và quan hệ giữa các ca sử dụng
+Hình 6. Use Case tổng thể theo nhóm nghiệp vụ
+Các UC được gom theo khoảng mã trong sơ đồ để tránh lặp 18 hình bầu dục trên một trang. Đặc
+tả riêng của từng UC sử dụng cùng hậu tố với FR ở chương 5. Cập nhật dữ liệu có thể dẫn tới
+phát sinh cảnh báo; việc xem lịch sử cảnh báo là một mục tiêu riêng. Xuất CSV và in chỉ được
+thực hiện khi đã có báo cáo hiện tại. Giao tiếp xã hội và câu ngoài phạm vi là các nhánh của
+UC13, không tạo thành chức năng quản lý tài khoản.
+36

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "traffic_dust_actions",
+    "question": "Nhà sát trục đường xe tải, làm gì cho bớt bụi lọt vào phòng?",
+    "required_any": [["bụi"], ["khăn ẩm", "lau", "cửa", "HEPA", "máy lọc"]],
+    "forbidden": ["các biện pháp sau:", "không có khả năng truy cập"]
+  },
+  {
+    "id": "dust_without_filter_followup",
+    "question": "Chưa mua được máy lọc, còn cách nào làm ngay không?",
+    "history": [
+      {"role": "user", "content": "Nhà mình gần đường, bụi hay vào phòng."},
+      {"role": "assistant", "content": "Bạn có thể hạn chế mở cửa phía đường lúc nhiều bụi và dùng máy lọc phù hợp diện tích phòng."}
+    ],
+    "required_any": [["lau", "khăn ẩm", "cửa", "hút bụi"]],
+    "forbidden": ["bắt buộc phải mua", "không thể giảm bụi"]
+  },
+  {
+    "id": "consultation_asks_time",
+    "question": "Tôi muốn chạy bộ ngoài trời, bạn tư vấn giúp.",
+    "required_any": [["?"], ["hôm nay", "ngày mai", "lúc nào", "khi nào", "thời điểm", "giờ nào"]],
+    "forbidden": ["giữ ấm", "kính râm"]
+  },
+  {
+    "id": "explains_consultation_question",
+    "question": "Ý là sao nhỉ?",
+    "history": [
+      {"role": "user", "content": "Mình muốn tập thể dục ngoài trời."},
+      {"role": "assistant", "content": "Bạn định tập hôm nay hay một hôm khác?"}
+    ],
+    "required_any": [["hôm nay", "thời điểm", "ngày", "lúc"]],
+    "forbidden": ["không có thông tin cụ thể về chất lượng không khí trong câu hỏi"]
+  },
+  {
+    "id": "dust_context_after_social_turn",
+    "question": "Thế nếu chưa có máy lọc thì sao?",
+    "history": [
+      {"role": "user", "content": "Làm sao giảm bụi bay vào nhà từ đường lớn?"},
+      {"role": "assistant", "content": "Hạn chế mở cửa phía đường khi nhiều bụi, lau bằng khăn ẩm và dùng máy lọc phù hợp nếu có."},
+      {"role": "user", "content": "Cảm ơn nhé."},
+      {"role": "assistant", "content": "Không có gì, bạn nhé."}
+    ],
+    "required_any": [["lau", "khăn ẩm", "cửa", "hút bụi"]],
+    "forbidden": ["bắt buộc phải mua", "không thể giảm bụi"]
+  },
+  {
+    "id": "noise_concrete_actions",
+    "question": "Xe cộ ồn quá, mình nên làm gì để giảm tiếng ồn vào phòng?",
+    "required_any": [["giảm", "hạn chế", "tránh"], ["nguồn ồn", "cửa", "nút tai", "chụp tai", "âm lượng", "tiếp xúc", "khoảng cách"]],
+    "forbidden": ["các biện pháp sau:", "chẩn đoán"]
+  },
+  {
+    "id": "mold_practical_actions",
+    "question": "Nồm ẩm, tường có mốc thì xử lý từ đâu?",
+    "required_any": [["ẩm", "mốc"], ["rò rỉ", "thông gió", "làm sạch", "khô", "hút ẩm"]],
+    "forbidden": ["các biện pháp sau:", "uống thuốc"]
+  },
+  {
+    "id": "current_city_over_old_history",
+    "question": "Còn không khí ở Hà Nội lúc này thì sao?",
+    "history": [
+      {"role": "user", "content": "Giả sử một nơi khác có AQI 20 thì sao?"},
+      {"role": "assistant", "content": "Với giả định AQI 20, chất lượng không khí thuộc mức tốt."}
+    ],
+    "required_any": [["175"], ["xấu"]],
+    "forbidden": ["AQI 20", "không khí tốt", "hoạt động ngoài trời bình thường"]
+  },
+  {
+    "id": "particle_concentration_not_aqi",
+    "question": "Một số đo PM2.5 38 µg/m³ có đồng nghĩa AQI bằng 38 không?",
+    "required_any": [["không"], ["nồng độ"], ["AQI"]],
+    "forbidden": ["AQI bằng 38 là tốt", "AQI 175"]
+  }
+]

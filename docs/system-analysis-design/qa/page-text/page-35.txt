@@ -1,0 +1,15 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Tiến trình Đầu vào Xử lý và đầu ra
+Mã địa điểm và thời Khóa theo nơi; kiểm tra bộ nhớ và ChiTiet SQL. Còn
+2.2 Kiểm tra cache
+gian hiện tại hạn thì trả snapshot.
+Tọa độ và tham chiếu Gọi nguồn thời tiết, không khí; tổng hợp tiếng ồn; giữ
+2.3 Nhận dữ liệu
+tiếng ồn thời điểm nguồn.
+Sinh cảnh báo, phân tích AQI và trạng thái RF; RF lỗi
+2.4 Đánh giá Dictionary DuLieu
+không chặn luồng dữ liệu.
+Ghi các bảng liên quan trong giao dịch; cập nhật JSON;
+2.5 Lưu và trả Dữ liệu cùng kết quả
+trả snapshot sau commit.
+35

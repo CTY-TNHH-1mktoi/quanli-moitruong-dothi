@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-10-21",
+  "review": "Project-written Vietnamese examples checked against the cited primary pages; no independent expert certification.",
+  "purpose": "Specialist multi-turn training supplement, pending batch assembly and answer evaluation; not installed into live knowledge.",
+  "sources": {
+    "airnow_aqi": {
+      "title": "AirNow — AQI Basics",
+      "url": "https://www.airnow.gov/aqi/aqi-basics/"
+    },
+    "who_aqg": {
+      "title": "WHO — What are the WHO Air quality guidelines?",
+      "url": "https://www.who.int/news-room/feature-stories/detail/what-are-the-who-air-quality-guidelines"
+    },
+    "epa_air_cleaners": {
+      "title": "EPA — Guide to Air Cleaners in the Home",
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home"
+    },
+    "epa_sensors": {
+      "title": "EPA — Frequent Questions About Air Sensors",
+      "url": "https://www.epa.gov/air-sensor-toolbox/frequent-questions-about-air-sensors"
+    },
+    "nidcd_noise": {
+      "title": "NIH/NIDCD — Noise-Induced Hearing Loss",
+      "url": "https://www.nidcd.nih.gov/health/noise-induced-hearing-loss"
+    },
+    "openmeteo_air": {
+      "title": "Open-Meteo — Air Quality API",
+      "url": "https://open-meteo.com/en/docs/air-quality-api"
+    }
+  },
+  "cases": [
+    {
+      "id": "aqi_pollutants_context",
+      "topic": "aqi_scope",
+      "source_ids": ["airnow_aqi"],
+      "source_basis": "The AQI covers particle pollution and multiple gaseous pollutants.",
+      "messages": [
+        {"role": "user", "content": "Mình cứ nghĩ chỉ số chất lượng không khí chỉ nói về bụi thôi."},
+        {"role": "assistant", "content": "US AQI còn xét các chất như ozone, CO, SO2 và NO2, ngoài ô nhiễm dạng hạt."},
+        {"role": "user", "content": "Vậy nhìn mỗi bụi thấp là đủ yên tâm về toàn bộ chỉ số ấy chưa?"},
+        {"role": "assistant", "content": "Chưa. Nồng độ bụi thấp không đủ để kết luận toàn bộ US AQI thấp; cần xem chỉ số và các chất ô nhiễm liên quan."}
+      ]
+    },
+    {
+      "id": "who_guideline_not_index",
+      "topic": "guideline_vs_index",
+      "source_ids": ["who_aqg", "airnow_aqi"],
+      "source_basis": "WHO guidelines recommend pollutant levels; US AQI communicates air quality using an index.",
+      "messages": [
+        {"role": "user", "content": "Mình thấy hướng dẫn của WHO và bảng màu AQI, hai cái dùng giống nhau hả?"},
+        {"role": "assistant", "content": "Chúng có mục đích khác nhau: WHO đưa ra mức hướng dẫn cho chất ô nhiễm, còn US AQI diễn đạt chất lượng không khí bằng chỉ số."},
+        {"role": "user", "content": "Nghĩa là không lấy nguyên giá trị ở bảng thứ nhất làm màu ở bảng thứ hai đúng không?"},
+        {"role": "assistant", "content": "Đúng. Cần xác định đại lượng, đơn vị và thời gian lấy trung bình, rồi dùng đúng quy tắc của thang chỉ số cần tính."}
+      ]
+    },
+    {
+      "id": "averaging_period_comparison",
+      "topic": "averaging_period",
+      "source_ids": ["who_aqg"],
+      "source_basis": "The WHO page distinguishes annual, 24-hour and 8-hour exposure periods.",
+      "messages": [
+        {"role": "user", "content": "Có hướng dẫn theo năm và hướng dẫn theo ngày cho chất ô nhiễm, mình nên đọc thế nào?"},
+        {"role": "assistant", "content": "Mỗi mức gắn với một khoảng thời gian lấy trung bình; chúng không phải các ngưỡng thay thế trực tiếp cho nhau."},
+        {"role": "user", "content": "Máy mới báo một lần, so ngay với mức trung bình cả năm rồi kết luận được chứ?"},
+        {"role": "assistant", "content": "Không. Một lần đo không đại diện trung bình năm; cần dữ liệu phù hợp thời gian lấy trung bình và đủ chất lượng trước khi so sánh."}
+      ]
+    },
+    {
+      "id": "ozone_cleaner_followup",
+      "topic": "ozone_cleaner",
+      "source_ids": ["epa_air_cleaners"],
+      "source_basis": "EPA advises avoiding air cleaners that intentionally generate ozone; ozone is a lung irritant.",
+      "messages": [
+        {"role": "user", "content": "Máy tạo ozone được quảng cáo làm sạch phòng, mình cần lưu ý gì?"},
+        {"role": "assistant", "content": "EPA khuyên tránh thiết bị làm sạch không khí cố ý tạo ozone, vì ozone có thể kích ứng phổi."},
+        {"role": "user", "content": "Vậy bật nó lúc mình vẫn ngồi trong phòng để xử lý bụi có hợp lý không?"},
+        {"role": "assistant", "content": "Không nên dùng máy cố ý tạo ozone khi có người trong phòng. Để giảm bụi, ưu tiên giảm nguồn phát và lọc hạt phù hợp."}
+      ]
+    },
+    {
+      "id": "filter_does_not_fix_moisture",
+      "topic": "mold_root_cause",
+      "source_ids": ["epa_air_cleaners"],
+      "source_basis": "Air cleaners do not resolve the moisture problem causing mold.",
+      "messages": [
+        {"role": "user", "content": "Mình đang tìm cách xử lý căn phòng có mùi mốc."},
+        {"role": "assistant", "content": "Cần tìm nguồn ẩm gây mốc; chỉ lọc không khí không xử lý được nguyên nhân đó."},
+        {"role": "user", "content": "Nếu bật máy lọc liên tục, mình khỏi cần kiểm tra chỗ ẩm nữa nhỉ?"},
+        {"role": "assistant", "content": "Vẫn cần kiểm tra và xử lý nguồn ẩm. Máy lọc có thể giữ một phần hạt trong không khí, nhưng không sửa được tình trạng ẩm gây mốc."}
+      ]
+    },
+    {
+      "id": "sensor_bias_in_humidity",
+      "topic": "sensor_uncertainty",
+      "source_ids": ["epa_sensors"],
+      "source_basis": "EPA notes sensor bias, humidity/temperature effects and possible need for field calibration.",
+      "messages": [
+        {"role": "user", "content": "Cảm biến không khí giá rẻ có luôn chính xác như trạm tham chiếu không?"},
+        {"role": "assistant", "content": "Không phải lúc nào cũng vậy. Cảm biến có thể có sai lệch và chịu ảnh hưởng của nhiệt độ, độ ẩm hoặc điều kiện sử dụng."},
+        {"role": "user", "content": "Hôm ẩm nó cao hơn trạm khác thì kết luận ngay là bụi tăng thật được không?"},
+        {"role": "assistant", "content": "Chưa thể kết luận chỉ từ chênh lệch đó. Cần kiểm tra điều kiện đo, thời điểm, vị trí và đánh giá hoặc hiệu chuẩn cảm biến."}
+      ]
+    },
+    {
+      "id": "noise_duration_not_habituation",
+      "topic": "noise_exposure",
+      "source_ids": ["nidcd_noise"],
+      "source_basis": "Noise risk depends on loudness, distance and duration; loud noise can damage hearing.",
+      "messages": [
+        {"role": "user", "content": "Nghe tiếng lớn một chút với cả buổi có giống nhau về nguy cơ không?"},
+        {"role": "assistant", "content": "Thời gian tiếp xúc có ảnh hưởng đến nguy cơ; âm càng lớn thì tổn hại có thể xảy ra trong thời gian càng ngắn."},
+        {"role": "user", "content": "Vậy mình nên ngồi gần lâu hơn để tai quen dần à?"},
+        {"role": "assistant", "content": "Không. Hãy giảm thời gian tiếp xúc và tránh đứng gần nguồn ồn; dùng bảo vệ tai phù hợp khi phải ở nơi rất ồn."}
+      ]
+    },
+    {
+      "id": "grid_estimate_not_street_measurement",
+      "topic": "model_grid_resolution",
+      "source_ids": ["openmeteo_air"],
+      "source_basis": "Open-Meteo supplies CAMS model forecasts on spatial grids, including a global domain.",
+      "messages": [
+        {"role": "user", "content": "Hai khu gần nhau trên bản đồ có số không khí giống nhau, có phải ứng dụng hỏng không?"},
+        {"role": "assistant", "content": "Chưa chắc. Dữ liệu không khí theo ô lưới mô hình có thể cho cùng giá trị ở những tọa độ gần nhau."},
+        {"role": "user", "content": "Nghĩa là số đó không phải cảm biến đang đo ngay trước cửa nhà mình?"},
+        {"role": "assistant", "content": "Đúng. Giá trị từ ô lưới mô hình không đồng nghĩa số đo trực tiếp trước cửa nhà; cần phân biệt nguồn và độ phân giải dữ liệu."}
+      ]
+    }
+  ]
+}

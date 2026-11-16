@@ -1,0 +1,11 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+6.3 DFD mức 1 của cập nhật dữ liệu
+Hình 5. DFD mức 1 của tiến trình cập nhật và đánh giá
+Đầu vào của tiến trình 2.0 là mã địa điểm và yêu cầu cập nhật; đầu ra là snapshot hoặc lỗi. Khi
+phân rã, các bước 2.1–2.5 giữ nguyên hai đầu giao tiếp đó. Nhánh cache trả cùng cấu trúc JSON
+với nhánh lấy mới. Lưu bản ghi, cảnh báo và phân tích chỉ diễn ra khi đã có dữ liệu nguồn sử
+dụng được và việc commit thành công.
+Bảng 9. Đặc tả các tiến trình con của cập nhật
+Tiến trình Đầu vào Xử lý và đầu ra
+2.1 Xác định địa điểm location Kiểm tra danh mục; trả cấu hình tọa độ hoặc lỗi 400.
+34

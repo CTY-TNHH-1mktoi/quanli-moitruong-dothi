@@ -1,0 +1,40 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Bảng 25. Các biến ngữ cảnh và cách sử dụng
+Biến Nguồn xác định Điều kiện giữ hoặc thay
+Danh mục đang chọn hoặc tên được Giữ khi câu nối tiếp không đổi nơi; tên mới phải
+Địa điểm
+nêu rõ được nhận diện từ danh mục.
+Giữ khi câu rút gọn còn liên quan; hỏi lại khi hai
+Chủ đề Câu hỏi hiện tại và lượt user liên quan
+chủ đề cùng có thể đúng.
+Hôm nay, mai, ngày kia hoặc ngữ Thông tin ngày mới thay ngày cũ; câu hiện tại
+Ngày
+cảnh ngày dùng mốc hiện tại.
+Giữ khi hỏi thêm chỉ số; giờ mới thay giờ cũ; dữ
+Giờ và buổi Giờ cụ thể hoặc buổi được nhận biết
+liệu theo giờ nguồn.
+Đổi từ nhiệt độ sang độ ẩm không thêm các chỉ
+Chỉ số cần trả Từ khóa và trường được hỏi
+số không được hỏi.
+Điều chỉnh nội dung và giới hạn sinh trong phạm
+Mức chi tiết Yêu cầu ngắn, kỹ hoặc đầy đủ
+vi cấu hình.
+11.4 Truy xuất dữ liệu và xử lý thiếu
+Số liệu hiện tại lấy từ snapshot hoặc nguồn đọc theo câu hỏi. Dữ liệu dự báo được truy xuất
+riêng, cache 600 giây theo mã địa điểm, tọa độ và ngày. Thời tiết dự báo hiện dùng nhiệt độ và
+độ ẩm; không khí dự báo được đọc từ Open-Meteo/CAMS. Các chuỗi dữ liệu giờ phải phù hợp
+cửa sổ cần trả; thiếu giờ quan trọng không được tự nội suy thành một câu trả lời chắc chắn.
+Câu hỏi về thời tiết chỉ trả trường thời tiết cần thiết. Câu hỏi thiếu dữ liệu được giải thích ở đúng
+phần cần dùng, không thêm nhận xét về một chỉ số người sử dụng không hỏi. Hỏi riêng độ ẩm
+không kéo tiếng ồn hoặc AQI vào phản hồi. Các câu dự báo có nhãn dự báo, tên nơi và ngày giờ
+tương ứng, để tách khỏi số liệu bảng giám sát.
+11.5 Kho tri thức và tư vấn chuyên môn
+knowledge.json chứa 26 tài liệu cùng mã nguồn tham chiếu. Nội dung được tìm bằng câu mẫu,
+chủ đề, các quy tắc và TF-IDF trên n-gram ký tự từ 3 đến 5. Cơ chế này là tra cứu văn bản có
+kiểm soát; dự án không vận hành một cơ sở dữ liệu vector độc lập. reference_context đưa các
+đoạn phù hợp vào phần ngữ cảnh khi cần mô hình sinh.
+Các đáp án tư vấn có thể điều chỉnh theo nội dung người sử dụng vừa nêu, chẳng hạn muốn giảm
+bụi gần đường lớn nhưng chưa có máy lọc. Việc sử dụng tình huống trong hội thoại không tạo hồ
+sơ cá nhân hoặc hệ gợi ý theo tài khoản. Nguồn được lưu ở mức tài liệu tri thức; không có định
+dạng trích dẫn bấm được được bảo đảm trong mọi câu trả lời của widget.
+65

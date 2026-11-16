@@ -1,0 +1,70 @@
+[
+  {
+    "id": "confirmation_forecast_weather",
+    "question": "Chỉ đọc hai con số ngày mai trong bản minh họa đó cho mình.",
+    "history": [
+      {"role": "user", "content": "Một bản dự báo giả lập cho Hà Nội ghi hôm nay 31 °C, 88%; ngày mai 28.2 °C và độ ẩm 61%."},
+      {"role": "assistant", "content": "Mình sẽ đọc riêng thông tin cho từng ngày trong bản minh họa."}
+    ],
+    "time_scope": "tomorrow",
+    "required_any": [["28.2", "28,2"], ["61"]],
+    "forbidden": ["31 °C", "88%", "24.8", "95%"]
+  },
+  {
+    "id": "confirmation_future_air",
+    "question": "Theo đúng giả thiết ấy, kế hoạch tập nặng ngày mai nên thay đổi gì?",
+    "history": [
+      {"role": "user", "content": "Xét giả thiết US AQI tại Hà Nội hôm nay 39, còn ngày mai 205; đây không phải dữ liệu thật."},
+      {"role": "assistant", "content": "Mình sẽ phân biệt hai thời điểm trong giả thiết."}
+    ],
+    "time_scope": "tomorrow",
+    "required_any": [["205"], ["Rất xấu"], ["tránh", "hạn chế"]],
+    "forbidden": ["39", "175", "bình thường"]
+  },
+  {
+    "id": "confirmation_noise_exposure",
+    "question": "Cứ kéo dài buổi nghe nhạc lớn mỗi ngày để quen tai có phải cách bảo vệ thính giác không?",
+    "check_noise_duration": true,
+    "required_any": [["không", "đừng"], ["giảm", "rút ngắn", "hạn chế"], ["thời gian"]],
+    "forbidden": ["nên nghe lâu", "càng lâu càng tốt"]
+  },
+  {
+    "id": "confirmation_ozone_at_home",
+    "question": "Gia đình đang ngồi trong phòng thì có nên bật máy chủ động phát O3 không bạn?",
+    "required_any": [["không nên", "tránh"], ["ozone", "O3"], ["phổi", "kích ứng"]],
+    "forbidden": ["an toàn tuyệt đối", "không có dữ liệu"]
+  },
+  {
+    "id": "confirmation_sensor_bias",
+    "question": "Thiết bị PM mini lệch trạm đúng lúc không khí ẩm hơn, vậy đã chứng minh bụi thật sự tăng chưa?",
+    "required_any": [["chưa", "không đủ"], ["độ ẩm", "hiệu chuẩn", "sai lệch"]],
+    "forbidden": ["chắc chắn bụi tăng", "tôi không có dữ liệu giám sát AQI"]
+  },
+  {
+    "id": "confirmation_topic_question",
+    "question": "Vậy chuyển qua hôm kế nữa được chứ?",
+    "history": [
+      {"role": "user", "content": "Mình vừa xem cả biểu đồ khí tượng và chỉ số chất lượng không khí trên ứng dụng."},
+      {"role": "assistant", "content": "Bạn có thể hỏi về thời tiết hoặc chất lượng không khí."}
+    ],
+    "required_any": [["?"], ["thời tiết"], ["không khí", "AQI"]],
+    "forbidden": ["24.8", "95%", "175"]
+  },
+  {
+    "id": "confirmation_field_correction",
+    "question": "Khoan, chỉ cần nhắc số phần trăm độ ẩm đang cập nhật thôi nhé.",
+    "readings": {"NhietDo": 22.4, "DoAm": 71},
+    "history": [
+      {"role": "user", "content": "Mình muốn xem thời tiết ở Hà Nội."},
+      {"role": "assistant", "content": "Bạn cần cả nhiệt độ và độ ẩm phải không?"}
+    ],
+    "required_any": [["71"]],
+    "forbidden": ["22.4", "24.8", "AQI", "tiếng ồn", "95%"]
+  },
+  {
+    "id": "confirmation_friendly_opening",
+    "question": "Chào trợ lý Xanh Non nha, cho mình hỏi chút được không?",
+    "required_any": [["chào", "được", "mình đây"], ["bạn"]],
+    "forbidden": ["tôi ở Hà Nội", "mình sống", "không liên quan", "AQI 175"]
+  }
+]

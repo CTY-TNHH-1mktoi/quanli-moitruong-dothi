@@ -1,0 +1,61 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Mã và yêu Điều kiện trước và đầu Bước thực hiện và kết quả
+Bằng chứng và trạng thái
+cầu vào mong đợi
+Đã kiểm tra dữ liệu thật
+Mở tổng quan. Giá trị, đơn vị, địa
+TC07 Snapshot có metadata 27/10.
+điểm và ghi chú tiếng ồn đúng
+FR04 nguồn và thời gian riêng home-live-desktop.png;
+snapshot.
+live-verification.json
+Đã có hồ sơ kiểm tra
+Nhấn marker, zoom, về vị trí và
+07/10; không chạy lại
+TC08 Nền OSM sẵn sàng; sau thử lại. Giữ dấu tham chiếu; lỗi
+trong phiên biên soạn.
+FR05 đó giả lập tải nền lỗi nền không biến thành dữ liệu AQI
+tests/browser/check_map.p
+giả.
+y; TEST_REPORT.md
+Phạm vi quá rộng, ngoài Gọi lưới. Không quá 196 điểm;
+TC09 Kiểm thử đơn vị có mock.
+vùng hoặc mẫu nguồn dữ liệu thiếu giữ trống; phạm vi
+FR06 test_air_quality_map
+thiếu sai trả lỗi phù hợp.
+13 kiểm tra JavaScript đạt
+Chạy kiểm tra nội suy, phân mức
+TC10 AQI bằng 0, góc lưới trong hồ sơ 27/10.
+và màu. Không biến giá trị thiếu
+FR06 thiếu và giá trị trên 500 tests/test_air_overlay.cjs;
+thành 0; nhận đúng 0 hợp lệ.
+javascript-tests.txt
+Bảng 29. Tình huống kiểm thử xu hướng cảnh báo và báo cáo
+Mã và yêu Điều kiện trước và đầu Bước thực hiện và kết quả
+Bằng chứng và trạng thái
+cầu vào mong đợi
+Đã kiểm tra bằng dữ liệu
+Mở #trends. Trục số có mốc phù
+TC11 Lịch sử kiểm thử có các giả lập 27/10.
+hợp, nhãn thời gian và giá trị
+FR07 giá trị 10, 20 và 36,4 browser-checks.json;
+cuối; không tràn ngang ở 390 px.
+trends-restored-1600.png
+Đã kiểm tra giao diện
+Mở chuông, đóng bằng X hoặc
+TC12 Cảnh báo có dữ liệu, rỗng 27/10.
+Esc; đổi nơi. Bảng đúng địa điểm
+FR08 và lỗi browser-checks.json;
+và số đếm phản ánh mục đã tải.
+dashboard.js
+Đọc DuDoanRF. TrangThai=ok Đã kiểm tra RF qua HTTP
+TC13 Năm giá trị đủ và bundle
+khi suy luận được; nhãn RF được 27/10.
+FR09 mô hình hiện tại
+tách khỏi mức US AQI. live-verification.json
+Hai snapshot PM2.5 bằng Tính báo cáo. Trung bình 30, min Kiểm thử đơn vị có dữ liệu
+TC14
+10 và 50; hai cảnh báo 10, max 50, thay đổi 40; đếm cố định.
+FR10
+trong kỳ cảnh báo và mẫu thiếu đúng. test_environment_reports
+70

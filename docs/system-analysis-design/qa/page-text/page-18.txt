@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+5.2 FR01 Chọn và tìm kiếm địa điểm
+Mục đích và tác nhân. Xác định địa điểm dùng chung cho chỉ số, bản đồ, cảnh báo, báo cáo và
+hội thoại. Tác nhân: A01. Ca sử dụng tương ứng: UC01.
+Điều kiện trước. Danh mục địa điểm đã tải thành công. Ứng dụng không ở trạng thái khóa lựa
+chọn do đang chat hoặc xử lý báo cáo.
+Đầu vào và giao diện. Người sử dụng chọn MaDiaDiem trong select hoặc nhập từ khóa tối đa
+80 ký tự vào ô tìm kiếm. Từ khóa được chuẩn hóa để tìm không dấu; kết quả có thể là địa điểm
+hoặc mục chức năng. Vị trí thao tác: UI01 và thanh đầu trang.
+Luồng chính.
+1. Tải GET /api/diadiem và tạo các nhóm lựa chọn từ danh mục.
+2. Lọc gợi ý theo từ khóa; người sử dụng chọn bằng chuột hoặc phím mũi tên và Enter.
+3. Nếu là địa điểm, cập nhật lựa chọn, lưu mã vào localStorage và phát locationchange; nếu là
+chức năng, điều hướng tới hash tương ứng.
+4. Các thành phần nạp lại dữ liệu theo mã mới; kết quả của yêu cầu cũ được bỏ qua.
+Điều kiện sau và đầu ra. Sau thao tác, tên địa điểm và mã dùng trong yêu cầu API thống nhất.
+Tải lại trang giữ lựa chọn hợp lệ gần nhất. Tìm kiếm không làm thay đổi danh mục gốc.
+Luồng thay thế và ngoại lệ. Không có kết quả thì hiển thị trạng thái tương ứng. Danh mục lỗi
+có nút thử lại. Mã gửi trực tiếp không thuộc danh mục bị API từ chối với HTTP 400; mã không
+được tự đổi sang một nơi khác.
+Thiết kế và bằng chứng. static/locations.js, dashboard.js và location_catalog.get_location. GET
+/api/diadiem đồng bộ metadata qua LocationStore. Kho liên quan: DiaDiem và locations.json.
+Quy tắc và nghiệm thu. BR01, BR14. Kiểm thử: TC01, TC02.
+5.3 FR02 Lấy địa điểm gần nhất từ vị trí hiện tại
+Mục đích và tác nhân. Rút ngắn việc chọn địa điểm bằng cách đối chiếu vị trí thiết bị với các
+tọa độ sẵn có. Tác nhân: A01. Ca sử dụng tương ứng: UC02.
+Điều kiện trước. Danh mục đã sẵn sàng, trình duyệt hỗ trợ Geolocation và trang được mở trong
+ngữ cảnh an toàn như localhost hoặc HTTPS.
+Đầu vào và giao diện. Nút Lấy vị trí hiện tại yêu cầu quyền truy cập vị trí. Tọa độ latitude và
+longitude phải là số hữu hạn trong phạm vi địa lý hợp lệ. Vị trí thao tác: UI01.
+Luồng chính.
+1. Người sử dụng nhấn nút; giao diện hiển thị trạng thái đang định vị và vô hiệu hóa thao tác
+trùng.
+2. Trình duyệt xin quyền, lấy tọa độ với timeout 12 giây và không dùng tọa độ cũ.
+18

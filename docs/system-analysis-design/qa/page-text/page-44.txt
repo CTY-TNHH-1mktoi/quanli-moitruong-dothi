@@ -1,0 +1,8 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+6.10 Vòng đời runtime chatbot
+Hình 13. State Diagram của runtime chatbot
+Runtime bắt đầu ở cold, chuyển loading khi nạp và ready khi thành công; nạp thất bại chuyển
+error. Trạng thái trả ra có thể là training khi khóa huấn luyện không cho phép suy luận đồng thời.
+Với cấu hình cho phép dùng chung tài nguyên, phản hồi giữ trạng thái runtime và thêm
+background_training. Việc nhận biết ready không kiểm tra khả năng trả lời đúng mọi câu hỏi.
+44

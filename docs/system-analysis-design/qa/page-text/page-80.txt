@@ -1,0 +1,50 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+PHỤ LỤC B BẰNG CHỨNG MÃ NGUỒN
+Bảng 35. Danh mục mã nguồn phục vụ kiểm chứng
+Mã Tệp và điểm xử lý Nội dung đối chiếu
+app.py: capnhat, update_environment, Nguồn dữ liệu, cache, giao dịch và
+S01
+fetch_environment snapshot.
+Ngưỡng, nhãn phân tích, giới hạn truy vấn
+S02 app.py: build_alerts, build_analysis, các route đọc
+và lọc địa điểm.
+location_catalog.py: get_location, LocationStore;
+S03 Danh mục, địa danh và đồng bộ SQL.
+locations.json
+noise_data.py: read_cells, aggregate_noise, Lọc vùng, tổng hợp năng lượng và cache
+S04
+NoiseData tệp tiếng ồn.
+environment_predictor.py: load_model, Đặc trưng, nhãn, dữ liệu thiếu và bundle
+S05
+predict_environment RF.
+Lưới, nguồn CAMS Global, số điểm và
+S06 air_quality_map.py: make_grid, AirMapRepository
+cache theo giờ.
+environment_reports.py: build_report, Thống kê, kỳ, snapshot báo cáo và cách ly
+S07
+ReportRepository địa điểm.
+Demodatabase.sql; location_schema.sql;
+S08 Sáu bảng, hai FK vật lý và các chỉ mục.
+report_schema.sql; air_map_schema.sql
+Bố cục, điều hướng hash, menu, chuông và
+S09 static/index.html; dashboard.js; dashboard.css
+tìm kiếm.
+Định vị, lựa chọn, cache trên giao diện,
+S10 static/locations.js; script.js
+trạng thái tải và đồ thị.
+static/map.js; air-overlay.js;
+S11 Tương tác bản đồ, nội suy và thang màu.
+tests/test_air_overlay.cjs
+Báo cáo, xuất tệp, chat nổi, history và luồng
+S12 static/reports.js; static/chat.js
+SSE.
+chatbot.py: validate_chat, _generate_raw, Kiểm tra dữ liệu, thứ tự nhánh trả lời và
+S13
+_dialogue_question, stream_reply ngữ cảnh.
+chat_scope.py; chat_clarification.py;
+S14 Phạm vi, câu hỏi làm rõ và mốc thời gian.
+chat_time_context.py
+Nguồn hiện tại, dự báo, cache và kiểm tra
+S15 chat_air_data.py; chat_weather_data.py
+chuỗi giờ.
+80

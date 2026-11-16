@@ -1,0 +1,54 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Trong tám câu chat thật được lưu, thời gian hoàn tất nằm từ 0,032 đến 2,218 giây. Các câu này
+chủ yếu đi qua nhánh quy tắc, tra cứu hoặc nguồn dự báo có cache, nên không đại diện cho tốc
+độ sinh tự do của mô hình. Kết quả không được sử dụng như chứng nhận độ chính xác chuyên
+môn hoặc độ trễ cam kết của toàn hệ thống.
+12.3 Danh mục tình huống kiểm thử và nghiệm thu
+Mỗi dòng dưới đây quy định điều kiện trước hoặc dữ liệu, thao tác, kết quả mong đợi và tình
+trạng bằng chứng. Trạng thái “đặc tả nghiệm thu” có nghĩa hồ sơ chưa chứa kết quả chạy riêng
+đầy đủ cho tình huống đó. Các bộ đơn vị có mock sử dụng dữ liệu cố định hoặc kho tạm; chúng
+không sửa cơ sở dữ liệu nghiệp vụ đang chạy.
+Bảng 28. Tình huống kiểm thử địa điểm giám sát và bản đồ
+Mã và yêu Điều kiện trước và đầu Bước thực hiện và kết quả
+Bằng chứng và trạng thái
+cầu vào mong đợi
+Tải danh mục, tìm không dấu, Đã kiểm tra giao diện
+Danh mục 86 địa điểm; từ
+TC01 chọn kết quả. Mã địa điểm hoặc 27/10.
+khóa cau giay hoặc xu
+FR01 hash chức năng đổi đúng; tải lại browser-checks.json;
+huong
+giữ nơi đã chọn. test_locations
+Có kiểm thử cách ly địa
+Đổi nơi trong lúc tải. Dữ liệu nơi
+TC02 Hai địa điểm và phản hồi điểm; kiểm tra UI 27/10.
+cũ không ghi đè tên, chỉ số hoặc
+FR01, FR04 nơi cũ đến muộn test_locations; mã phiên
+nội dung báo cáo của nơi mới.
+trong script.js
+Nhấn Lấy vị trí. Chọn đúng mục Đã kiểm tra GPS giả lập
+GPS giả lập gần tọa độ
+TC03 gần nhất; lỗi quyền và timeout 27/10.
+danh mục; sau đó từ chối
+FR02 hiển thị thông báo, vẫn chọn thủ tests/browser/check_geolo
+quyền hoặc timeout
+công. cation.py; ảnh kết quả
+Kiểm thử cache và cách ly;
+Gửi cập nhật đồng thời. Các yêu
+TC04 Snapshot cùng địa điểm hồ sơ API/SQL 07/10.
+cầu dùng lại kết quả còn hạn và
+FR03 còn hạn dưới 600 giây test_locations;
+không ghi chéo dữ liệu nơi khác.
+TEST_REPORT.md
+Đặc tả nghiệm thu lỗi giao
+Gửi cập nhật. Mã lỗi và trường loi dịch; chưa có kết quả riêng
+TC05 Nguồn trả lỗi hoặc
+đúng; giao diện không báo tải mới cho mọi điểm lỗi.
+FR03 pyodbc phát sinh ngoại lệ
+thành công. app.update_environment;
+test_locations
+Chạy phân loại. Trả Đã kiểm tra mô hình và
+TC06 Thiếu TiengOn trong bộ thieu_du_lieu; dữ liệu còn lại trường thiếu trong hồ sơ.
+FR03, FR09 năm giá trị được trình bày, không lấy tiếng environment_predictor.py;
+ồn nơi khác. TEST_REPORT.md
+69

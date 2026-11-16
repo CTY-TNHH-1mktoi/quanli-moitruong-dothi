@@ -1,0 +1,29 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Sáu khoảng AQI được đối chiếu với tài liệu AirNow; tên tiếng Việt là cách đặt nhãn trong ứng
+dụng [T08]. US AQI khác nồng độ PM2.5 tại một giờ. Một giá trị bụi đơn lẻ hoặc một màu bản
+đồ không phải kết luận tuân thủ hay vi phạm quy chuẩn môi trường.
+build_analysis ưu tiên US_AQI của nguồn. Khi trường này thiếu, hàm đang gán các mức AQI
+đại diện theo khoảng PM2.5 là 25, 75, 125, 175 hoặc 250. Đây là nhánh quy tắc thay thế trong
+mã, không phải phép tính đầy đủ chỉ số US AQI. Nếu cả PM2.5 cũng trống, biểu thức hiện tại
+dùng 0 ở bước này; nhãn phân tích khi đó không xác nhận đã có dữ liệu không khí. Trên giao
+diện và trong hội thoại, trạng thái thiếu của giá trị nguồn vẫn có ý nghĩa riêng.
+10.6 Phân loại Random Forest
+Mô hình nhận năm đặc trưng theo đúng thứ tự: pm25, pm10, temperature_c, humidity_pct và
+noise_db. Bundle chứa air_quality_model và noise_level_model. Nhãn chất lượng không khí có
+bốn mức, nhãn tiếng ồn có ba mức. Các nhãn này được tạo theo quy tắc của bộ dữ liệu huấn
+luyện minh họa nên số mức và ý nghĩa không trùng hoàn toàn với sáu mức US AQI.
+Nếu thiếu tiếng ồn ở một nơi, hệ thống không suy đoán thêm để đủ đầu vào mô hình.
+predict_environment trả thieu_du_lieu và danh sách trường thiếu. Lỗi model bundle hoặc suy
+luận được chuyển thành loi_mo_hinh trong snapshot; dữ liệu từ các nguồn vẫn được lưu. Kết quả
+RF là phân loại một hàng đầu vào, không phải mô hình dự báo diễn biến các ngày tiếp theo.
+10.7 Thống kê và báo cáo theo thời gian
+Báo cáo chuẩn hóa các giá trị hợp lệ, đếm số thiếu và tính min, max, giá trị gần nhất cho từng
+thông số. Với các thông số ngoài tiếng ồn, hệ thống tính trung bình cộng các snapshot có dữ liệu
+và độ thay đổi giữa lần đầu với lần cuối. Tiếng ồn không được tính lại trung bình cộng hoặc độ
+thay đổi vì giá trị đã là tổng hợp vùng. Thống kê này mô tả các snapshot được thu, không phải
+trung bình có trọng số theo thời gian quan trắc liên tục.
+Kỳ 24 giờ nhóm xu hướng PM2.5 theo giờ; kỳ 7 và 30 ngày nhóm theo ngày. Mỗi nhóm có số
+bản ghi, số giá trị PM2.5 hợp lệ, trung bình và cực đại. Cảnh báo được lọc lại theo các mã nguồn
+trong kỳ để tránh ghép sự kiện không thuộc dữ liệu báo cáo. Báo cáo còn giữ số nguồn, số bản
+ghi có cảnh báo và tỷ lệ, cùng nội dung quy tắc có căn cứ từ chính thống kê này.
+63

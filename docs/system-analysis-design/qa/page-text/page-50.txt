@@ -1,0 +1,32 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+8.2 Từ điển bảng DiaDiem
+Bảng 12. Cấu trúc bảng DiaDiem
+Cột Kiểu và ràng buộc Ý nghĩa
+MaDiaDiem VARCHAR(64), PK Mã ổn định trong danh mục.
+Ten NVARCHAR(200), NOT NULL Tên hiển thị.
+Nhom NVARCHAR(120), NOT NULL Nhóm lựa chọn địa điểm.
+ViDo và KinhDo FLOAT, NOT NULL Tọa độ lấy dữ liệu thời tiết và không khí.
+ViDoTiengOn và
+FLOAT, NOT NULL Tọa độ tham chiếu dữ liệu tiếng ồn.
+KinhDoTiengOn
+TenKhuVucTiengOn NVARCHAR(200), NOT NULL Tên khu vực tiếng ồn theo nguồn.
+ChiTiet NVARCHAR(MAX), NULL Metadata JSON của địa điểm.
+locations.json là danh mục cấu hình được ứng dụng đọc khi khởi động.
+LocationStore.ensure_schema đưa các thuộc tính tương ứng vào DiaDiem theo cơ chế cập nhật
+hoặc thêm. Bảng này không có màn hình CRUD địa điểm; việc đồng bộ không biến các mục
+thành trạm cảm biến.
+8.3 Từ điển bảng NguonDL
+Bảng 13. Cấu trúc bảng NguonDL
+Cột Kiểu và ràng buộc Ý nghĩa
+Manguon INT IDENTITY, PK Định danh snapshot.
+TenNguon NVARCHAR(100), NOT NULL Tên nguồn gắn với địa điểm.
+ThoiGian DATETIME, NOT NULL Thời điểm ứng dụng lấy và lưu dữ liệu.
+PM25 và PM10 DECIMAL(6,2), NULL Nồng độ bụi, µg/m³.
+NhietDo DECIMAL(5,2), NULL Nhiệt độ, °C.
+DoAm DECIMAL(5,2), NULL Độ ẩm tương đối, %.
+TiengOn DECIMAL(6,2), NULL Giá trị tổng hợp tiếng ồn, dBA.
+MaDiaDiem VARCHAR(64), NULL Mã liên kết địa điểm ở tầng ứng dụng.
+Snapshot JSON gồm dữ liệu nguồn và kết
+ChiTiet NVARCHAR(MAX), NULL
+quả.
+50

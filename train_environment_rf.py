@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "iscape_data"
 MODEL_PATH = ROOT / "environment_rf.joblib"
 META_PATH = ROOT / "environment_rf_metadata.json"
-RECORD_ID = "3570680"  # iSCAPE Citizen Science Workshops Data (CC BY 4.0)
+RECORD_ID = "3570680"  # iSCAPE Citizen Science Workshops Data (CC0, Zenodo record metadata)
 FILES = [
     "5129.csv", "5464.csv", "9561.csv", "5271.csv", "5121.csv", "5434.csv",
     "5164.csv", "5391.csv", "5630.csv", "5104.csv", "5117.csv",
@@ -135,7 +135,7 @@ def main():
     metadata = {
         "dataset": "iSCAPE Citizen Science Workshops Data",
         "dataset_url": "https://zenodo.org/records/3570680",
-        "license": "CC BY 4.0",
+        "license": "CC0-1.0",
         "source_files": FILES,
         "rows_used": int(len(data)),
         "features": FEATURES,

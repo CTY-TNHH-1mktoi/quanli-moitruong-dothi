@@ -1,0 +1,40 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+7.2 Phân chia thành phần
+Bảng 11. Trách nhiệm các thành phần kiến trúc
+Thành phần Trách nhiệm Giao tiếp chính
+Điều hướng, chọn địa điểm, khóa trạng thái bận, HTTP JSON, SSE, sự kiện
+Giao diện
+dựng DOM và đồ thị locationchange
+Điều phối nguồn, cache, giao dịch và truy vấn lịch
+Routes giám sát app.py và pyodbc
+sử
+AirMapRepository; Open-
+Bản đồ Tạo lưới, chia sẻ cache mẫu, trả ma trận theo vùng
+Meteo; SQL
+Báo cáo Đọc dữ liệu theo kỳ, tính thống kê và lưu nội dung build_report; ReportRepository
+Giải nghĩa ý định, ngữ cảnh, nguồn dữ liệu, tri thức
+Hội thoại chatbot; các module chat_*
+và đầu ra
+NativeChatbot; HTTP
+Suy luận native Quản lý tiến trình mô hình và nhận token sinh
+loopback
+FeedbackStore;
+Dữ liệu học Ghi góp ý, biến thể câu hỏi và dữ liệu đã duyệt
+ConversationLearner; SQLite
+Các script train, evaluate,
+Huấn luyện Lọc tập học, LoRA, kiểm tra, xuất bản ứng viên
+export và manifest
+7.3 Hợp đồng trao đổi dữ liệu
+Các API dữ liệu trả JSON, trong đó lỗi nghiệp vụ thường có trường loi. Các mã 400, 404, 413,
+429, 502 và 503 được dùng tùy tình huống cụ thể. Luồng chat sử dụng cùng endpoint với cờ
+stream=true và kiểu text/event-stream. Client xử lý từng sự kiện, vì vậy phản hồi sinh dần không
+được coi như một JSON duy nhất.
+Snapshot giám sát bao gồm định danh nguồn, thời điểm lấy, địa điểm, bộ giá trị nguồn, kết quả
+RF, danh sách cảnh báo và phân tích. Nội dung này cũng được lưu trong NguonDL.ChiTiet. Các
+API lịch sử trả hàng dữ liệu dạng danh sách; báo cáo trả cả thống kê và dữ liệu nguồn đã dùng.
+Chi tiết tham số và giới hạn được trình bày ở phụ lục A.
+7.4 Xử lý đồng thời và tính nhất quán
+Máy chủ dùng khóa riêng cho từng địa điểm khi cập nhật snapshot. Điều này ngăn các yêu cầu
+cùng nơi chạy đồng thời trong một tiến trình, đồng thời cho phép tách cache giữa các nơi. Bản đồ
+dùng khóa của AirMapRepository để chia sẻ mẫu; NoiseData dùng một khóa để quản lý tệp
+46

@@ -1,0 +1,45 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+9.10 Đặc tả các thành phần điều khiển dùng chung
+Bảng 21. Hành vi thành phần giao diện
+Thành phần Điều kiện và thao tác Kết quả hoặc ngoại lệ
+Nhấn menu khi đang đóng; nhấn X Mở hoặc đóng drawer; ẩn nút menu khi
+Nút menu và X
+hoặc Esc khi đang mở mở; trả focus khi đóng.
+Nhập từ khóa, di chuyển bằng phím Gợi ý địa điểm hoặc chức năng; không
+Tìm kiếm đầu trang
+và Enter có kết quả thì giữ lựa chọn hiện tại.
+Danh mục sẵn sàng, không có tác vụ Lưu mã, phát locationchange và tải lại
+Danh sách địa điểm
+khóa nội dung liên quan.
+Trang an toàn, chưa có yêu cầu định Xin quyền; tự chọn mục gần nhất; lỗi vẫn
+Lấy vị trí hiện tại
+vị đang chạy cho chọn thủ công.
+Đổi trạng thái chờ rồi hiển thị snapshot
+Cập nhật dữ liệu Không tải trùng cùng phiên
+hoặc thông báo lỗi.
+Hiện lịch sử đúng nơi; số đếm không là
+Chuông và nút đóng Nhấn chuông mở; X, Esc đóng
+số chưa đọc có lưu bền.
+Công tắc và độ đậm Ẩn hoặc hiện; đổi alpha lớp phủ, không
+Lớp bản đồ đã khởi tạo
+AQI thay giá trị nguồn.
+Mở popup tên, tọa độ và nguồn; không
+Marker bản đồ Nhấn tại dấu tham chiếu
+mở CRUD trạm.
+POST, lưu SQL, HTTP 201; lỗi hiển thị
+Tạo báo cáo Kỳ hợp lệ và không đang bận
+tại báo cáo.
+Đọc nội dung hoặc tăng phân trang; 404
+Mở và Xem thêm Có lịch sử; không đang bận
+không tự mở nơi khác.
+Tải tệp hoặc mở hộp thoại in; không gọi
+CSV và In Đã có báo cáo; CSV cần có dữ liệu
+endpoint xuất PDF.
+Gửi stream, hủy nhận hoặc xóa ngữ cảnh
+Gửi Dừng Bắt đầu lại Theo trạng thái của phiên hội thoại
+đang giữ trong trang.
+Các trạng thái hiển thị gắn với kết quả từng thành phần. Ứng dụng không có chế độ offline đầy
+đủ; khi mất kết nối, dữ liệu đã tải trong cùng trang có thể còn được hiển thị cùng lỗi tải mới.
+Phần thanh cuộn được ẩn về hình thức nhưng thao tác cuộn vẫn được giữ. Kiểm tra giao diện
+được thực hiện ở cả kích thước máy tính và điện thoại.
+60

@@ -1,0 +1,33 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+8.5 Từ điển bảng BaoCaoMT và MauBanDoKhongKhi
+Bảng 16. Cấu trúc bảng BaoCaoMT
+Cột Kiểu và ràng buộc Ý nghĩa
+MaBaoCao INT IDENTITY, PK Mã báo cáo.
+VARCHAR(64), NOT NULL; mặc
+MaDiaDiem Mã địa điểm của báo cáo.
+định hanoi
+TieuDe NVARCHAR(200), NOT NULL Tên báo cáo.
+TuNgay và DenNgay DATETIME2, NOT NULL Khoảng dữ liệu được tổng hợp.
+ThoiGianTao DATETIME2, NOT NULL Thời điểm tạo snapshot báo cáo.
+SoNgay INT, NOT NULL Kỳ 1, 7 hoặc 30 do API kiểm tra.
+SoBanGhi và SoCanhBao INT, NOT NULL Tổng số bản ghi và cảnh báo trong kỳ.
+NoiDung NVARCHAR(MAX), NOT NULL JSON đầy đủ của báo cáo đã tạo.
+Bảng 17. Cấu trúc bảng MauBanDoKhongKhi
+Cột Kiểu và ràng buộc Ý nghĩa
+MaMau INT IDENTITY, PK Mã lần lấy mẫu.
+Khóa tra cứu điểm tọa độ; không là FK
+MaViTri VARCHAR(64), NOT NULL
+địa điểm.
+ViDo và KinhDo FLOAT, NOT NULL Tọa độ điểm lưới yêu cầu.
+ThoiGianLay DATETIME2, NOT NULL Thời điểm ứng dụng lấy mẫu.
+Thời điểm do nguồn không khí cung
+ThoiGianNguon DATETIME2, NULL
+cấp.
+US_AQI và PM25 FLOAT, NULL Giá trị mẫu mô hình.
+ChiTiet NVARCHAR(MAX), NOT NULL JSON gắn tọa độ và giá trị nguồn.
+8.6 Kho góp ý và kho học câu hỏi trong SQLite
+Hai cơ sở SQLite có phạm vi riêng, không khai báo khóa ngoại sang SQL Server. feedback chứa
+một hàng cho mỗi payload có fingerprint duy nhất; questions dùng question_key làm khóa chính.
+document_id trong questions tham chiếu mã tài liệu trong JSON ở cấp ứng dụng, không phải
+một FK tới bảng SQL.
+52

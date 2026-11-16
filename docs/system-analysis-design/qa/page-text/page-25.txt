@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+4. Đọc NoiDung JSON đã lưu, kiểm tra mã địa điểm và dựng lại phần thống kê, biểu đồ cùng
+bảng dữ liệu.
+Điều kiện sau và đầu ra. Nội dung hiển thị khớp snapshot báo cáo đã lưu. Mở lại không tạo báo
+cáo mới.
+Luồng thay thế và ngoại lệ. Mã không tồn tại hoặc không thuộc địa điểm được yêu cầu trả 404.
+Lỗi mạng và lỗi SQL có thông báo riêng. Đổi nơi xóa báo cáo đang xem của nơi cũ.
+Thiết kế và bằng chứng. ReportRepository.list và get; static/reports.js: openReport và phần lịch
+sử. Đọc BaoCaoMT; không ghi dữ liệu khi mở.
+Quy tắc và nghiệm thu. BR01, BR07, BR14. Kiểm thử: TC15, TC16.
+5.13 FR12 Xuất CSV và in báo cáo
+Mục đích và tác nhân. Đưa nội dung báo cáo đang mở ra tệp dữ liệu hoặc bản in. Tác nhân:
+A01. Ca sử dụng tương ứng: UC12.
+Điều kiện trước. Đã mở báo cáo hợp lệ. CSV yêu cầu báo cáo có bản ghi; in yêu cầu có báo cáo
+hiện tại.
+Đầu vào và giao diện. Nút Tải CSV và In báo cáo. Dữ liệu đầu vào lấy từ báo cáo hiện tại trên
+trình duyệt, không đọc một kỳ khác từ API. Vị trí thao tác: UI07.
+Luồng chính.
+1. Kiểm tra trạng thái báo cáo và địa điểm hiện tại.
+2. Với CSV, tạo các cột dữ liệu và số cảnh báo tương ứng từng bản ghi; mã hóa UTF-8 có BOM,
+xử lý dấu phân cách và nội dung có thể bị hiểu là công thức.
+3. Tạo Blob và tải tệp có tên chứa mã địa điểm cùng mã báo cáo.
+4. Với in, gọi window.print; CSS in ẩn menu và chatbot. Người sử dụng có thể chọn máy in hoặc
+lưu PDF trong hộp thoại trình duyệt.
+Điều kiện sau và đầu ra. CSV có 17 cột và nhận diện đúng báo cáo. Bản in sử dụng nội dung
+đang xem; máy chủ không cung cấp endpoint xuất PDF trong phiên bản này.
+Luồng thay thế và ngoại lệ. Khi chưa có báo cáo hoặc đang bận, nút bị vô hiệu hóa. Báo cáo
+rỗng không xuất CSV. Hủy hộp thoại in không thay đổi báo cáo đã lưu.
+Thiết kế và bằng chứng. static/reports.js: csvCell, trình xử lý reportCsv và reportPrint; quy tắc
+@media print trong CSS. Không ghi thêm vào cơ sở dữ liệu.
+Quy tắc và nghiệm thu. BR07, BR08. Kiểm thử: TC17.
+5.14 FR13 Gửi và điều khiển hội thoại
+Mục đích và tác nhân. Cho phép trao đổi với Xanh Non trong cửa sổ chat nổi mà không rời
+chức năng đang xem. Tác nhân: A01. Ca sử dụng tương ứng: UC13.
+25

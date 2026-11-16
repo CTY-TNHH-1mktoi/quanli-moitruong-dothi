@@ -1,0 +1,19 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 18. Giao diện tổng quan trên máy tính
+Ảnh chạy ứng dụng lưu ngày 27/10/2026. Các giá trị trong ảnh minh họa snapshot tại thời điểm chụp, không phải
+số liệu cập nhật ở thời điểm đọc báo cáo.
+9.3 UI02 Chỉ số môi trường
+Thẻ US AQI trình bày giá trị, tên mức, màu và nội dung đánh giá. Năm thẻ còn lại trình bày
+PM2.5, PM10, nhiệt độ, độ ẩm và tiếng ồn. Tên đơn vị gắn với từng giá trị; nhãn theo dõi trên
+mỗi thẻ lấy từ cảnh báo nội bộ tương ứng. Thẻ không phải nút điều hướng tới hồ sơ trạm. Khi
+thiếu giá trị, giao diện biểu diễn chưa có dữ liệu thay vì tự tạo một thông số.
+Phần ghi chú tiếng ồn thể hiện khu vực tổng hợp và lần đo gần nhất trong nguồn. Thời gian ở
+khối Cập nhật gần nhất là lúc ứng dụng lấy snapshot. UI02 dùng dữ liệu đã tải theo FR03 và các
+hàm renderCurrent, renderAnalysis; không có bộ chọn thông số tùy ý hoặc chỉnh sửa ngưỡng tại
+màn hình này. UC liên quan là UC04.
+9.4 UI03 Bản đồ chất lượng không khí
+Phía trên bản đồ có tên nơi, tọa độ, nút về địa điểm đã chọn, toàn màn hình và mở bản đồ lớn.
+Phần lớp phủ có công tắc và thanh độ đậm. Marker cung cấp popup tham chiếu; bản đồ cho phép
+kéo và thay mức zoom. Lớp màu nhận dữ liệu từ /api/bando/khongkhi, trong khi ảnh nền do
+Leaflet tải trực tiếp [T07].
+57

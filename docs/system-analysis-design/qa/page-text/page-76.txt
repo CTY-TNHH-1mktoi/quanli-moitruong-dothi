@@ -1,0 +1,37 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Thông tin Vị trí quan sát Ý nghĩa
+TiengOn_ChiTiet và tệp noise- Kiểm tra vùng, số mẫu, ngày đo và bản
+Tiếng ồn
+vietnam.zip dữ liệu dùng lại.
+Phân biệt đang chạy, chưa có thay đổi
+Huấn luyện Trạng thái JSON và lịch Windows
+dữ liệu, thiếu tài nguyên và kết thúc.
+Nhận diện tệp phát hành, hash và lịch
+Bản mô hình hoạt động models/xanhnon-active.json
+sử kích hoạt.
+13.4 Lịch tự động và giới hạn tài nguyên
+Lịch Windows XanhNon-Train-Reviewed-Data gọi daily_train_xanhnon.py từ thư mục dự án.
+Script kiểm tra điều kiện tài nguyên và dấu vết dữ liệu trước khi học; cấu hình lịch hiện có dùng
+tập pilot giới hạn 128 mẫu train và 24 validation, không mặc định học lại toàn bộ kho ở mỗi lần
+gọi. Dữ liệu không đổi có thể được bỏ qua theo fingerprint.
+Hồ sơ vận hành ngày 27/10/2026 ghi nhận lịch đã chạy và chuyển waiting_for_memory,
+model_activated=false. Bản phát hành XanhNon-Style-v2 tiếp tục được dùng. Tiền kiểm tra 576
+mẫu đã thành công không được diễn giải thành việc lịch đã thực hiện bước tối ưu trọng số. Công
+cụ đánh giá, xuất và quản lý release là các bước tách biệt.
+13.5 Lưu trữ sao lưu và phục hồi
+Các nhóm tài sản cần nhận diện trong vận hành gồm dữ liệu SQL Server, hai SQLite, tri thức
+JSON, danh mục địa điểm, manifest phát hành, GGUF và checkpoint huấn luyện. Repository
+hiện có hồ sơ phục hồi, kiểm tra hash và các công cụ sao chép hoặc xuất tài sản mô hình; không
+có màn hình quản trị sao lưu SQL hoặc lịch sao lưu cơ sở dữ liệu được khai báo trong source
+ứng dụng.
+Đợt phục hồi đã giữ lại một checkpoint trọng số gộp để làm điểm bắt đầu cho LoRA mới.
+Checkpoint gộp không khôi phục chính xác optimizer, RNG hoặc adapter riêng của lần học cũ.
+Công cụ training_resume xử lý trạng thái học nếu có đầy đủ tệp cần thiết; thiếu tài sản không
+được ghi nhận như một lần resume đúng trạng thái. Việc lưu snapshot SQL giúp sử dụng lại
+cache còn hạn sau khi khởi động lại ứng dụng.
+13.6 Phạm vi bảo mật hiện có
+Flask chỉ công bố thư mục static, không phục vụ toàn bộ thư mục dự án; native server chỉ lắng
+nghe loopback. Truy vấn nghiệp vụ dùng tham số và lỗi SQL được ghi log, còn người sử dụng
+nhận thông báo chung. CSV xử lý ký tự có nguy cơ bị hiểu như công thức, nội dung chat dùng
+textContent. Các thao tác ghi học và góp ý có kiểm tra Origin theo những nhánh được triển khai.
+76

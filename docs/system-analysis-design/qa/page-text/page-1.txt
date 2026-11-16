@@ -1,0 +1,9 @@
+BÁO CÁO PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+Hệ thống thông tin quản lý
+và giám sát môi trường đô thị
+Dự án demoth1
+Trợ lý môi trường Xanh Non
+Nhóm 1
+Hồ sơ phân tích chức năng Mô hình hóa hệ thống
+Thiết kế dữ liệu Thiết kế giao diện Kiểm thử
+Tháng 10 năm 2026

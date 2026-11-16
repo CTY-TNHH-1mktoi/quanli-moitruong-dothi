@@ -1,0 +1,36 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+4. Tổng hợp các mẫu giờ có trong cửa sổ yêu cầu và trả đúng trường được hỏi, kèm tên nơi và
+mốc thời gian.
+Điều kiện sau và đầu ra. Câu hỏi nối tiếp dùng cùng chủ đề khi có căn cứ. Dự báo thời tiết hiện
+có nhiệt độ và độ ẩm; dự báo không khí dùng dữ liệu Open-Meteo/CAMS. Yêu cầu 18:30 được
+gắn với khoảng dữ liệu giờ tương ứng.
+Luồng thay thế và ngoại lệ. Nguồn thiếu hoặc chuỗi giờ không đủ thì không điền giá trị giả.
+Đổi sang chủ đề ngoài môi trường dừng kế thừa ngữ cảnh. Số trong câu trả lời cũ không được
+dùng làm phép đo mới.
+Thiết kế và bằng chứng. chatbot.py: _dialogue_question, _consultation_reply, các nhánh
+weather/air; chat_time_context.py; chat_clarification.py; chat_weather_data.py;
+chat_air_data.py. Cache dự báo 600 giây theo nơi, tọa độ và ngày.
+Quy tắc và nghiệm thu. BR03, BR09–BR11. Kiểm thử: TC20, TC21.
+5.16 FR15 Giải thích và tư vấn từ tri thức có nguồn
+Mục đích và tác nhân. Trả lời câu hỏi kiến thức, cách giảm tiếp xúc với bụi và các tình huống
+môi trường bằng nội dung có nguồn. Tác nhân: A01. Ca sử dụng tương ứng: UC15.
+Điều kiện trước. Câu hỏi thuộc phạm vi hoặc là giao tiếp cơ bản và giới thiệu chức năng được
+hệ thống nhận biết.
+Đầu vào và giao diện. Câu hỏi tự nhiên tiếng Việt, gồm các biến thể không dấu và câu ngắn.
+Người sử dụng có thể yêu cầu ngắn gọn, chi tiết hoặc nêu một hạn chế cụ thể như chưa có máy
+lọc. Vị trí thao tác: UI08.
+Luồng chính.
+1. Chuẩn hóa tiếng Việt, nhận ý định và ưu tiên câu trả lời chuyên biệt đã kiểm tra.
+2. Tìm nội dung phù hợp trong knowledge.json theo câu mẫu, chủ đề hoặc chỉ mục TF-IDF ký
+tự.
+3. Nếu đã có đáp án chắc chắn, trả trực tiếp; nếu cần mô hình sinh, đưa tri thức và dữ liệu liên
+quan vào ngữ cảnh.
+4. Làm sạch nội dung trước khi hiển thị, hạn chế lặp số liệu không liên quan và phần hướng dẫn
+nội bộ.
+Điều kiện sau và đầu ra. Trợ lý giải thích khái niệm, đưa cách thực hiện và lý do trong phạm vi
+nguồn có sẵn. Kho khảo sát có 26 tài liệu; các bộ chat tổng quát không được dùng như nguồn xác
+nhận kiến thức AQI.
+Luồng thay thế và ngoại lệ. Ngoài phạm vi trả câu giới thiệu cố định. Nội dung chưa đủ căn cứ
+có thể được hỏi lại hoặc thông báo chưa có dữ liệu cần thiết. Không có chứng nhận độ chính xác
+chuyên môn chung từ các bài thử hiện có.
+27

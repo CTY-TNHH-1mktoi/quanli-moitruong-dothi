@@ -1,0 +1,41 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+12.4 Ma trận tác nhân chức năng và phạm vi quyền
+Bảng 31. Tác nhân và nhóm chức năng
+Nhóm chức năng A01 Người sử dụng A02 Người vận hành Hệ thống ngoài
+GPS do trình duyệt
+FR01–02 Địa điểm Sử dụng trên web Không có quyền web riêng
+cung cấp
+FR03–09 Giám sát và bản Tra cứu và yêu cầu cập Khởi chạy và theo dõi dịch Open-Meteo,
+đồ nhật vụ NoiseCapture, OSM
+Tạo mở xuất, không cần Truy cập dữ liệu bằng Không có vai trò quản
+FR10–12 Báo cáo
+đăng nhập quyền máy nếu có trị ngoài
+FR13–16 Hội thoại và Chat và xác nhận hữu Duyệt góp ý bằng công cụ Open-Meteo cho dữ
+góp ý ích cục bộ liệu cần đọc
+Nguồn dữ liệu tải về,
+FR17–18 Runtime và Không có màn hình Chạy lệnh và quản lý dữ
+không có API
+huấn luyện huấn luyện liệu mô hình
+ChatGPT
+12.5 Ma trận truy vết xuyên suốt
+Ma trận sau đồng thời thể hiện quan hệ chức năng với giao diện, API, lớp hoặc module, dữ liệu
+và kiểm thử. Các UC dùng cùng hậu tố với FR. Nhóm luồng tham chiếu là L1 tra cứu và cập
+nhật, L2 bản đồ và xu hướng, L3 báo cáo, L4 hội thoại, L5 dữ liệu học và vận hành. Sequence,
+Activity và State ở chương 6 giải thích các tương tác tương ứng.
+Bảng 32. Truy vết yêu cầu đến thiết kế và kiểm thử
+FR và
+UI và luồng API hoặc module xử lý Kho dữ liệu Kiểm thử
+UC
+/diadiem; locations.js;
+01–02 UI01; L1 D1; localStorage TC01–03
+LocationStore
+03–04 UI01–02; L1 /capnhat; /dulieu/moinhat; app.py D1 D2 D3 TC04–07
+/bando/khongkhi;
+05–06 UI03; L2 D4; ảnh nền OSM TC08–10
+AirMapRepository; map.js
+07 UI04; L2 /dulieu/lichsu; drawTrend D2 TC11
+08 UI06; L1 /canhbao; renderAlerts D2 D3 TC12
+predict_environment;
+09 UI05; L1 D2 D3 D8 TC06 TC13
+build_analysis
+73

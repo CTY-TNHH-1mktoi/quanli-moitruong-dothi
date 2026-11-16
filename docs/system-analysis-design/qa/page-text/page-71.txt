@@ -1,0 +1,58 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Mã và yêu Điều kiện trước và đầu Bước thực hiện và kết quả
+Bằng chứng và trạng thái
+cầu vào mong đợi
+Đơn vị có mock; lưu mở
+Tạo, lưu và mở báo cáo. Kỳ hợp SQL thật có hồ sơ 07/10.
+TC15 days là 1, 7, 30; thử thêm
+lệ trả 201; kỳ sai trả 400; nội dung test_environment_reports;
+FR10, FR11 true, 2 và giá trị sai
+mở lại khớp snapshot. test_locations;
+TEST_REPORT.md
+Gọi chi tiết bằng mã nơi khác. Trả Kiểm thử cách ly báo cáo
+TC16 Mã báo cáo tồn tại nhưng
+404, không tiết lộ nội dung báo theo địa điểm.
+FR11 location khác
+cáo qua nhầm ngữ cảnh. test_locations
+CSV có hồ sơ 07/10; hộp
+thoại in là tình huống
+Báo cáo có tiếng Việt, Tải CSV và mở in. CSV có BOM,
+TC17 nghiệm thu giao diện.
+nguồn bắt đầu bằng dấu = escape phù hợp và đúng nơi; hộp
+FR12 static/reports.js;
+và 17 cột thoại in dùng báo cáo hiện tại.
+tests/browser/check_locati
+ons.py
+Bảng 30. Tình huống kiểm thử hội thoại dữ liệu học và vận hành
+Mã và yêu Điều kiện trước và đầu Bước thực hiện và kết quả
+Bằng chứng và trạng thái
+cầu vào mong đợi
+Kiểm thử xác thực dữ liệu
+message rỗng, quá 8.000
+TC18 Gửi POST chat. Trả lỗi 400; body đầu vào.
+ký tự hoặc history sai vai
+FR13 quá lớn bị từ chối 413. test_chat_stream;
+trò
+chatbot.validate_chat
+Đã kiểm tra JSON/SSE và
+Cùng câu hỏi trong JSON Đối chiếu reply cuối; đóng mở
+TC19 widget 27/10.
+và SSE; thu gọn khi đang widget. Câu hoàn tất nhất quán và
+FR13 live-verification.json;
+trả lời hội thoại không bị xóa.
+browser-checks.json
+Đơn vị và câu hỏi thật đã
+Hỏi thời tiết mai ở Đà Gửi chuỗi câu. Giữ đúng nơi,
+TC20 kiểm tra 27/10.
+Nẵng 18:30 rồi hỏi độ ẩm ngày và khoảng 18:00–19:00; đổi
+FR14 test_chat_reading_followu
+và không khí chỉ số không mất ngữ cảnh.
+ps; live-verification.json
+Đã có kiểm thử và câu hỏi
+Chỉ hỏi lúc 18 giờ khi Gửi yêu cầu. Trợ lý hỏi lại ngày
+TC21 thật 27/10.
+chưa rõ ngày; hoặc câu hoặc chủ đề cần thiết, không tự
+FR14 test_chat_clarification;
+nối tiếp mơ hồ chọn chắc chắn.
+live-verification.json
+71

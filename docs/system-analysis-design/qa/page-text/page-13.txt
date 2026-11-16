@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 3 PHƯƠNG PHÁP PHÂN TÍCH VÀ THIẾT KẾ
+3.1 Phân tích theo chức năng
+Phân tích theo chức năng bắt đầu từ các công việc mà hệ thống phải thực hiện. BFD chia nghiệp
+vụ thành những nhóm có mục tiêu rõ ràng. DFD thể hiện dữ liệu đi từ tác nhân qua các tiến trình,
+được đọc hoặc ghi ở kho nào và trả về dưới dạng gì. Trong dự án này, cập nhật dữ liệu, đánh giá
+ngưỡng và lập báo cáo là những luồng phù hợp để phân tích theo cách đó.
+Sơ đồ ngữ cảnh xác định ranh giới ứng dụng; DFD mức 0 phân rã các tiến trình chính; mức 1 mô
+tả cập nhật môi trường. Mã FR, UC và BR lần lượt định danh chức năng, ca sử dụng và quy tắc,
+được dùng thống nhất trong đặc tả và kiểm thử.
+3.2 Phân tích hướng đối tượng
+UML được dùng để mô tả mục tiêu của tác nhân, sự phối hợp giữa thành phần và vòng đời của
+mô hình hội thoại. Use Case biểu diễn hành vi nhìn từ người sử dụng; Activity biểu diễn trình tự
+công việc; Sequence thể hiện các lời gọi giữa giao diện, API, lớp xử lý và lưu trữ. Class Diagram
+mô tả các lớp Python thực sự tồn tại và trách nhiệm của chúng [T04].
+Đối tượng địa điểm, snapshot, cảnh báo và báo cáo được phân tích ở cấp miền nghiệp vụ. Trong
+mã nguồn hiện tại, nhiều đối tượng được biểu diễn bằng dictionary hoặc hàng SQL, không phải
+lớp ORM. Báo cáo phân biệt mô hình miền với sơ đồ lớp triển khai để không đồng nhất tên bảng
+với tên lớp.
+Bảng 5. Đối chiếu hai cách phân tích trong dự án
+Nội dung Theo chức năng Theo đối tượng
+Trọng tâm Công việc và dữ liệu vào ra Trách nhiệm và sự cộng tác
+Mô hình chính BFD, DFD, đặc tả tiến trình Use Case, Class, Activity, Sequence, State
+Ứng dụng trong Làm rõ cập nhật, cảnh báo, tổng hợp báo Làm rõ repository, runtime chatbot và xử
+demoth1 cáo lý nhiều lượt
+LocationStore, ReportRepository,
+Các hàm điều phối trong app.py và
+Căn cứ triển khai AirMapRepository, NativeChatbot và các
+chatbot.py
+lớp lưu học
+3.3 Cách tổ chức hồ sơ
+Phân tích chức năng là trục mô tả nghiệp vụ, phù hợp với cách điều phối bằng hàm và module
+trong Flask. UML bổ sung tương tác và trách nhiệm; ERD mô tả lưu trữ. Các mô hình được liên
+kết với yêu cầu, API, dữ liệu và kiểm thử.
+13

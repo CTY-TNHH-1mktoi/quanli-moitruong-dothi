@@ -16,6 +16,7 @@ Chạy:
 import io
 import json
 import os
+import sqlite3
 import time
 import zipfile
 from datetime import datetime
@@ -33,6 +34,11 @@ from air_quality_map import create_air_map_blueprint
 from location_catalog import DEFAULT_LOCATION, LOCATIONS, LocationStore, get_location
 from noise_data import NoiseData, aggregate_noise, read_cells
 from chatbot import ChatbotBusy, generate_reply, runtime_status, stream_reply, validate_chat, warm_up_chatbot
+from chatbot import needs_environment_data, needs_air_data, ACTIVE_RELEASE
+from chat_air_data import AirDataUnavailable, get_air_data, number as air_number
+from chat_feedback import (FeedbackStore, create_feedback_blueprint, is_helpful_message,
+                           record_helpful_message, feedback_events)
+from chat_learning import ConversationLearner
 
 # ---------------------------------------------------------------------------
 # CẤU HÌNH (có thể đặt bằng biến môi trường, không cần sửa code)
@@ -107,6 +113,10 @@ def query(sql, params=()):
 location_store = LocationStore(lambda: get_conn())
 app.register_blueprint(create_report_blueprint(lambda: get_conn(), rows_to_dicts, location_store.ensure_schema))
 app.register_blueprint(create_air_map_blueprint(lambda: get_conn()))
+feedback_store = FeedbackStore()
+conversation_learner = ConversationLearner()
+app.register_blueprint(create_feedback_blueprint(
+    feedback_store, lambda: ACTIVE_RELEASE.get("name", "XanhNon-base")))
 
 
 @app.errorhandler(ValueError)
@@ -370,6 +380,57 @@ def phantich():
                             WHERE n.MaDiaDiem=? ORDER BY p.ThoiGian DESC, p.Maphantich DESC""", (limit, location["MaDiaDiem"])))
 
 
+def chat_snapshot(location, message, history):
+    """Restore saved readings after a restart; chat doesn't depend on a refresh click."""
+    identifier = location["MaDiaDiem"]
+    cached = environment_cache.get(identifier, {})
+    snapshot = cached.get("result") or (last_result if identifier == DEFAULT_LOCATION else None)
+    if not needs_environment_data(message, history):
+        return snapshot or {"DiaDiem": location, "DuLieu": {}}
+    if snapshot and snapshot.get("DiaDiem", {}).get("MaDiaDiem") != identifier:
+        snapshot = None
+    if not snapshot:
+        try:
+            location_store.ensure_schema()
+            rows = query("""SELECT TOP 1 * FROM NguonDL WHERE MaDiaDiem = ?
+                            ORDER BY ThoiGian DESC, Manguon DESC""", (identifier,))
+            if rows:
+                row = rows[0]
+                saved = json.loads(row["ChiTiet"]) if row.get("ChiTiet") else {}
+                if isinstance(saved, dict) and saved.get("DiaDiem", {}).get("MaDiaDiem") == identifier and isinstance(saved.get("DuLieu"), dict):
+                    snapshot = {**saved, "DiaDiem": location, "ThoiGian": row["ThoiGian"]}
+                else:
+                    snapshot = {"DiaDiem": location, "ThoiGian": row["ThoiGian"],
+                                "DuLieu": {key: row.get(key) for key in ("PM25", "PM10", "NhietDo", "DoAm", "TiengOn")}}
+        except (pyodbc.Error, ValueError, TypeError):
+            app.logger.warning("Chưa đọc được số liệu đã lưu cho hội thoại tại %s", identifier)
+    snapshot = snapshot or {"DiaDiem": location, "DuLieu": {}}
+    try:
+        age = time.time() - datetime.fromisoformat(snapshot.get("ThoiGian", "")).timestamp()
+    except (ValueError, TypeError):
+        age = 0 if cached.get("result") else float("inf")
+    if age < 0 or age >= API_REFRESH_SECONDS:
+        snapshot = {**snapshot, "DuLieuCu": True}
+    if needs_air_data(message, history) and (age < 0 or age >= API_REFRESH_SECONDS or air_number(snapshot.get("DuLieu", {}).get("US_AQI")) is None):
+        # This is a read-only air request, separate from writing monitoring records.
+        try:
+            data = get_air_data(location)
+            current = data["current"]
+            if air_number(current.get("us_aqi")) is not None:
+                snapshot = {**snapshot, "ThoiGian": data["LayLuc"], "DuLieuCu": False,
+                            "ThoiTietCu": snapshot.get("ThoiTietCu", snapshot.get("DuLieuCu", False)),
+                            "ThoiGianThoiTiet": snapshot.get("ThoiGianThoiTiet", snapshot.get("ThoiGian")),
+                            "DuLieu": {**snapshot["DuLieu"], "US_AQI": current["us_aqi"],
+                                       "PM25": current.get("pm2_5"), "PM10": current.get("pm10"),
+                                       "ThoiGianNguonKhongKhi": current.get("time")}}
+            elif age >= API_REFRESH_SECONDS:
+                snapshot = {**snapshot, "DuLieuCu": True}
+        except AirDataUnavailable:
+            if age < 0 or age >= API_REFRESH_SECONDS:
+                snapshot = {**snapshot, "DuLieuCu": True}
+    return snapshot
+
+
 @app.route("/api/chat", methods=["POST"])
 def chat():
     if request.content_length is not None and request.content_length > 2 * 1024 * 1024:
@@ -378,9 +439,30 @@ def chat():
         body = request.get_json(silent=True)
         message, history = validate_chat(body)
         location = get_location(body.get("location"))
-        cached = environment_cache.get(location["MaDiaDiem"], {})
-        snapshot = cached.get("result") or (last_result if location["MaDiaDiem"] == DEFAULT_LOCATION else None)
-        snapshot = snapshot or {"DiaDiem": location, "DuLieu": {}}
+        if is_helpful_message(message):
+            if request.headers.get("Origin") not in {None, "null", request.host_url.rstrip("/")}:
+                return jsonify({"loi": "Hãy gửi đánh giá từ trang Xanh Non đang mở."}), 403
+            result = record_helpful_message(message, history, location, feedback_store,
+                                            ACTIVE_RELEASE.get("name", "XanhNon-base"))
+            if body.get("stream") is True:
+                return Response(feedback_events(result), mimetype="text/event-stream",
+                                headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+            return jsonify(result)
+        if body.get("learn_from_chat") is True:
+            if request.headers.get("Origin") not in {None, "null", request.host_url.rstrip("/")}:
+                return jsonify({"loi": "Hãy trò chuyện từ trang Xanh Non đang mở."}), 403
+            try:
+                learned = conversation_learner.observe(message, history)
+            except (OSError, ValueError, sqlite3.Error):
+                app.logger.warning("Chưa cập nhật được câu hỏi tự học", exc_info=True)
+                learned = None
+            if learned:
+                result = {"reply": learned, "truncated": False}
+                if body.get("stream") is True:
+                    return Response(feedback_events(result), mimetype="text/event-stream",
+                                    headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+                return jsonify(result)
+        snapshot = chat_snapshot(location, message, history)
         if body.get("stream") is True:
             return Response(
                 stream_reply(message, history, snapshot), mimetype="text/event-stream",
@@ -405,6 +487,14 @@ def chat_status():
 
 
 if __name__ == "__main__":
+    # Starting from VS Code while the app is open must not load another model.
+    try:
+        existing = requests.get('http://127.0.0.1:5000/api/chat/status', timeout=2)
+        if existing.ok and existing.json().get('state') in {'cold','loading','ready','training','error'}:
+            print('Xanh Non đang chạy tại http://127.0.0.1:5000', flush=True)
+            raise SystemExit(0)
+    except (requests.RequestException, ValueError):
+        pass
     # A reloader would unload the resident chatbot whenever source files change.
     if os.getenv("CHATBOT_PRELOAD", "1") == "1":
         warm_up_chatbot()

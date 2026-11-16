@@ -1,0 +1,748 @@
+{
+  "checked_at": "2026-10-27T23:24:14.111837+07:00",
+  "tests_run": 180,
+  "passed": 179,
+  "failures": 1,
+  "errors": 0,
+  "tests": [
+    {
+      "id": "test_locations.LocationIsolationTests.test_chat_does_not_use_hanoi_readings_for_an_unloaded_city",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.LocationIsolationTests.test_history_alerts_and_analysis_filter_the_selected_place",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.LocationIsolationTests.test_latest_question_includes_selected_readings_and_explicit_missing_noise",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.LocationIsolationTests.test_report_noise_advice_names_the_selected_city",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.LocationIsolationTests.test_simultaneous_refreshes_save_one_snapshot_per_place",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.LocationIsolationTests.test_switching_places_uses_separate_caches",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.LocationIsolationTests.test_unknown_place_never_falls_back_to_hanoi",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.NoiseLocationTests.test_energy_average_excludes_nearby_cells_from_other_regions",
+      "status": "passed"
+    },
+    {
+      "id": "test_locations.NoiseLocationTests.test_missing_region_is_not_filled_from_another_place",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportAnalysisTests.test_empty_period_is_not_reported_as_safe",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportAnalysisTests.test_hourly_and_daily_buckets_preserve_missing_dates",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportAnalysisTests.test_missing_and_nonfinite_values_are_not_zero_or_json_nan",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportAnalysisTests.test_noise_is_not_averaged_as_arithmetic_decibels",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportAnalysisTests.test_statistics_and_alert_percentages_use_correct_denominators",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportRouteTests.test_invalid_periods_do_not_create_database_reports",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportRouteTests.test_save_and_reopen_use_the_stored_snapshot",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportRouteTests.test_selected_place_is_sent_to_every_repository_operation",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportRouteTests.test_sql_failure_does_not_claim_a_report_was_saved",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportRouteTests.test_unknown_place_does_not_read_or_save_a_report",
+      "status": "passed"
+    },
+    {
+      "id": "test_environment_reports.ReportRouteTests.test_unknown_saved_report_returns_404",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirGridTests.test_grid_covers_viewport_with_bounded_work",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirGridTests.test_invalid_and_outside_bounds_do_not_trigger_country_wide_sampling",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirGridTests.test_partial_or_misordered_source_responses_are_not_assigned_to_wrong_places",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirGridTests.test_samples_preserve_requested_coordinates_source_time_and_missing_values",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirRepositoryTests.test_parallel_same_points_fetch_and_save_once",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirRepositoryTests.test_source_failure_does_not_invent_values_or_write_samples",
+      "status": "passed"
+    },
+    {
+      "id": "test_air_quality_map.AirRouteTests.test_invalid_bounds_and_unknown_location_return_400_without_fetching",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_all_current_knowledge_questions_stay_in_scope",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_environment_weather_noise_and_application_questions_stay_in_scope",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_json_and_stream_return_the_identical_unrelated_reply",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_short_followup_inherits_environment_context",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_unrelated_new_topic_is_blocked_despite_previous_environment_context",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_unrelated_requests_receive_exact_reply_without_loading_model",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_scope.ChatScopeTests.test_unrelated_turn_breaks_followup_context",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_activity_explanations_are_not_mistaken_for_current_advice",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_activity_followup_uses_latest_user_topic",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_casual_outdoor_questions_are_not_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_help_requests_recognize_roles_and_different_question_forms",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_implicit_daily_activity_requests_use_real_aqi",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_other_subjects_do_not_turn_into_help_or_activity_advice",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_intents.NaturalIntentTests.test_screenshot_questions_work_in_both_json_and_stream",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_social.SocialTests.test_abbreviated_subjectless_air_question_uses_actual_reading",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_social.SocialTests.test_basic_social_turns_work_without_model_or_environment_data",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_social.SocialTests.test_politeness_does_not_swallow_a_real_question_or_open_unrelated_topics",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.DatasetTests.test_exported_data_has_no_split_leaks_or_wrong_identity",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.DatasetTests.test_long_answers_are_rejected_without_sentence_truncation",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.DatasetTests.test_shared_qa_pair_merges_original_groups",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.DatasetTests.test_wrong_identity_and_fake_actions_are_filtered",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_conversational_followup_retrieves_facts_but_new_topic_does_not_inherit_them",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_conversational_subject_selects_relevant_facts",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_current_reading_question_cannot_be_answered_from_static_knowledge",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_detailed_conceptual_answer_receives_references_without_live_measurements",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_every_knowledge_entry_has_resolvable_sources",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_followup_retrieval_uses_user_context_not_assistant_inventions",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_general_missing_data_faq_is_not_replaced_with_current_readings",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_known_faq_can_answer_without_model",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_knowledge.KnowledgeTests.test_unrelated_question_has_no_environment_answer",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_completeness_guard_keeps_real_short_answers_and_lists",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_detail_has_actual_steps_and_default_does_not_repeat_the_user_as_self",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_eos_after_an_intro_is_still_marked_unfinished_for_json_and_sse",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_measurements_definitions_clinical_and_mixed_questions_are_not_hijacked",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_missing_device_is_respected_in_short_followup_after_thanks",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_no_filter_constraint_supports_natural_variants_across_social_turns",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_screenshot_json_and_stream_both_include_measures",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_advice.PracticalAdviceTests.test_varied_questions_get_measures_from_reviewed_topics_without_a_model",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_comparison_and_particle_followup_keep_needed_facts",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_conceptual_followup_keeps_topic_without_current_readings",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_detailed_weather_prompt_does_not_receive_air_noise_or_unrelated_reference",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_explicit_multi_topic_question_keeps_all_requested_fields",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_forecast_hypothetical_and_causal_questions_do_not_receive_current_weather",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_general_explanations_never_receive_current_measurements",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_hypothetical_aqi_uses_given_value_and_verified_category",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_individual_measurement_does_not_add_other_measurements",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_measurement_question_does_not_append_unsolicited_aqi_activity_advice",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_missing_aqi_does_not_add_a_warning_to_weather_answer",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_noise_context_has_its_own_source_and_no_unrelated_fields",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_numeric_validity_zero_and_negative_temperature_are_preserved",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_only_requested_missing_measurement_is_reported",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_question_comment_is_removed_before_stream_deltas",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_weather_facts_return_only_temperature_and_humidity",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_weather_json_and_stream_match",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_relevance.AnswerRelevanceTests.test_weather_never_inherits_measurements_from_another_city",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_busy_request_is_rejected_and_disconnect_cancels_worker",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_followup_accepts_a_long_vietnamese_reply_in_history",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_json_clients_still_receive_the_complete_reply",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_stream_preserves_vietnamese_and_finishes_once",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_stream_retains_truncation_flag_for_continuation",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_transformers_continues_the_same_reply_until_eos",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_stream.ChatStreamTests.test_worker_error_ends_the_stream_with_an_error_event",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_air_refresh_does_not_relabel_old_weather_as_current",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_api_failure_does_not_deny_access_to_existing_current_air",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_cache_is_location_scoped_and_rolls_over_at_midnight",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_followup_keeps_air_topic_and_forecast_place",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_forecast_is_for_local_tomorrow_not_current_aqi_and_not_rain",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_forecast_rejects_partial_missing_invalid_or_past_data",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_saved_other_city_cannot_leak_its_aqi_into_selected_city",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_saved_snapshot_restores_air_after_server_restart_without_refresh",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_screenshot_json_and_stream_match_with_real_forecast_shape",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_air_data.AirDataTests.test_time_windows_follow_vietnam_midnight_and_requested_period",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_failed_forecast_does_not_invent_tomorrow_from_current_weather",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_incomplete_invalid_or_duplicate_hours_do_not_become_full_day_forecasts",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_json_and_stream_work_while_training_without_sql_or_air_quality_requests",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_provider_cache_is_scoped_by_place_and_local_day_and_requires_correct_units",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_short_future_followup_keeps_weather_city_across_thanks",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_user_question_uses_tomorrow_forecast_without_model_or_current_readings",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_weather_forecast.WeatherForecastTests.test_weather_forecast_honors_single_fields_morning_and_negative_temperature",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_both_is_a_valid_choice_and_returns_both_topics_for_same_day",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_choice_uses_original_day_and_selected_place_instead_of_current_readings",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_full_new_question_overrides_pending_time_and_topic",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_json_and_stream_ask_without_sql_then_weather_choice_gets_forecast",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_missing_topic_asks_one_short_question_without_model_or_data",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_mixed_context_choice_keeps_named_city_across_subsequent_time_change",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_mixed_topics_ask_but_one_clear_topic_does_not",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_social_turn_does_not_lose_pending_choice_and_unknown_choice_can_ask_again",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_clarification.TopicClarificationTests.test_unrelated_requests_and_intervening_topics_stay_out_of_scope",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_both_topics_and_clarification_choice_keep_the_same_explicit_hour",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_clock_change_wordings_and_new_day_never_become_unrelated_or_keep_old_hour",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_current_resets_forecast_date_and_clock_but_keeps_city",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_definition_hypothesis_unrelated_and_multiple_places_do_not_inherit",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_explicit_day_and_place_override_old_context",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_json_and_sse_read_the_same_inherited_hour_without_sql",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_missing_new_field_does_not_use_old_answer_or_current_selected_values",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_reading_change_composes_with_social_city_day_and_clock_changes",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_short_humidity_wordings_keep_city_day_hour_and_only_requested_field",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_topic_can_switch_between_weather_and_air_without_losing_time",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reading_followups.ReadingFollowupTests.test_unknown_day_is_clarified_instead_of_reading_current_weather",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_followup_context.FollowupContextTests.test_air_followup_uses_tomorrow_and_preserves_explicit_city",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_followup_context.FollowupContextTests.test_followup_is_consistent_across_json_and_stream_without_sql",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_followup_context.FollowupContextTests.test_latest_explicit_subject_replaces_older_weather_context",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_followup_context.FollowupContextTests.test_repeated_temporal_turns_keep_field_and_replace_previous_dates",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_followup_context.FollowupContextTests.test_screenshot_advice_followup_keeps_weather_and_selected_place",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_followup_context.FollowupContextTests.test_unrelated_turn_and_new_unrelated_request_do_not_inherit_environment_topic",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_consultation_why.ConsultationWhyTests.test_api_does_not_query_sql_when_explaining_our_own_question",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_consultation_why.ConsultationWhyTests.test_new_environment_question_is_not_mistaken_for_a_question_about_our_request",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_consultation_why.ConsultationWhyTests.test_question_about_our_time_request_is_answered_directly",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_context_and_location_are_preserved",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_cross_origin_feedback_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_failed_save_is_not_reported_as_success_and_can_be_retried",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_helpful_acknowledgement_preserves_topic_for_next_question",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_natural_positive_phrases_do_not_match_negations_or_questions",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_no_previous_answer_does_not_create_database_or_claim_saved",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_plain_helpful_saves_previous_answer_and_responds_without_model",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_repeated_feedback_and_polite_turns_target_original_answer",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_text_feedback.TextFeedbackTests.test_stream_and_json_match_and_retry_does_not_duplicate_feedback",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_dated_forecast_is_not_reviewed_as_permanent_knowledge",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_helpful_vote_needs_no_comment_but_is_still_not_training_data",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_invalid_data_returns_400_without_creating_database",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_opt_in_store_is_lazy_and_submission_is_persistent_idempotent_and_pending",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_origin_and_body_limits_are_enforced",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_public_submission_cannot_approve_itself_or_read_other_feedback",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_rejecting_review_removes_record_from_training_pool",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_feedback.FeedbackTests.test_review_requires_checked_content_privacy_and_known_sources",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_api_returns_source_checked_json_and_sse_without_model_or_monitoring_reads",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_auto_lessons_join_frozen_dataset_without_user_votes",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_current_forecasts_and_supplied_numbers_never_become_permanent_facts",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_daily_check_selects_automatic_data_source_without_feedback_or_training",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_disable_switch_and_cross_origin_requests_do_not_collect_questions",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_followup_uses_previous_user_topic_and_never_copies_old_bot_claims",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_holdout_questions_are_not_collected_and_later_holdouts_are_not_exported",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_missing_flag_and_storage_failure_leave_normal_chat_available",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_new_question_gets_checked_answer_and_persistent_nonduplicated_lesson",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_private_data_injection_social_and_unrelated_requests_are_not_collected",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_source_change_invalidates_old_lesson_until_rechecked",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_static_learning_and_exact_aliases_do_not_load_the_fuzzy_search_index",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_unknown_reply_is_never_used_as_an_automatic_target",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_learning.ChatLearningTests.test_unknown_topic_is_saved_without_inventing_or_training_an_answer",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reviewed_safety.ReviewedSafetyTests.test_json_and_stream_classify_supplied_aqi_without_database_or_model",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reviewed_safety.ReviewedSafetyTests.test_noise_duration_and_pm10_harm_use_existing_reviewed_sources",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reviewed_safety.ReviewedSafetyTests.test_other_scales_and_particle_concentrations_are_not_classified_as_us_aqi",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_reviewed_safety.ReviewedSafetyTests.test_supplied_aqi_categories_and_colors_do_not_use_a_live_value",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_training_state.TrainingAvailabilityTests.test_cold_native_runtime_requires_more_ram_and_transformers_stay_blocked",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_training_state.TrainingAvailabilityTests.test_model_is_not_started_during_training_and_status_is_explicit",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_training_state.TrainingAvailabilityTests.test_stable_native_runtime_is_allowed_with_memory_and_guarded_without_it",
+      "status": "passed"
+    },
+    {
+      "id": "test_chat_training_state.TrainingAvailabilityTests.test_verified_explanations_stay_available_in_json_and_stream",
+      "status": "passed"
+    },
+    {
+      "id": "test_restored_training_seed.RestoredTrainingSeedTests.test_existing_adapter_keeps_its_original_seed",
+      "status": "passed"
+    },
+    {
+      "id": "test_restored_training_seed.RestoredTrainingSeedTests.test_explicit_export_base_takes_precedence",
+      "status": "passed"
+    },
+    {
+      "id": "test_restored_training_seed.RestoredTrainingSeedTests.test_export_uses_the_recovered_base_in_adapter_metadata",
+      "status": "passed"
+    },
+    {
+      "id": "test_restored_training_seed.RestoredTrainingSeedTests.test_missing_recovery_proof_is_never_treated_as_a_valid_checkpoint",
+      "status": "passed"
+    },
+    {
+      "id": "test_restored_training_seed.RestoredTrainingSeedTests.test_recovered_merge_requires_valid_hash_and_config",
+      "status": "passed"
+    }
+  ],
+  "source_hashes": {
+    "app.py": "29ebc2804ec03484e902a4b70e3b4d60c77ec8ca44da1d873ad15a199f2693f5",
+    "chatbot.py": "04d0f5d00c30323bab3b34bafbebfc07a8b8f7fba9d0df46efa6c8d9fd3dfd49",
+    "chat_knowledge.py": "fff0393221869d866d6f40a397470521b00ff88f796940ea0a10f33788be8e04",
+    "chat_scope.py": "9c1533fb20d4ca2bd39b31185daeda6fd18f905ffe641e0622bfcb182f02202f",
+    "chat_clarification.py": "c8eaf4cb8594132754c6ae0fa9911fc2fd77f1d21a256dbda7c7c99aac886643",
+    "chat_air_data.py": "6a2f84b2bd1196abba622562da5352c1d9daf31f6a61bbe00a3057ef41176537",
+    "chat_weather_data.py": "12a94306889493cf7fe863670f9950d48a072a395f11606f2fa873f12c454ac0",
+    "chat_time_context.py": "ccefd78e1068da94ca5f8df5872c7d0df650a176951c66b1bb8fd154747d10c5",
+    "chat_feedback.py": "bec30f43d29b98b9794490fa656818f94adc10c6c94b173bbbeca0d091d25906",
+    "chat_learning.py": "71a41f1bef4e12e06895eff66011f697bce1de537adf43919ee8314054ae8078",
+    "model_release.py": "c36fb4bd36a6adfd52da6e268a2e5091669e9a756ef86aa50b19676e43217ce4",
+    "daily_train_xanhnon.py": "eddb9546ccf8d365d1dc94506949d256952bcbef3a6b89b8978717e457ba1f40",
+    "export_xanhnon.py": "b0f38a4d2c666fa2a3b4cc495f497d66b5ba93c995f77c6c5d69ad2c931e31f8",
+    "static/index.html": "27d47be9dfa142a70daf45e35a19d9e085732c5aabd53baf5e441201ea97b0a9",
+    "static/dashboard.css": "257eb5c806a482796bbe953b7458481f9531ec891ff737765cdc8dc4c483d8ea",
+    "static/dashboard.js": "06155c7af6a588e22d3776c9f87438dd660a3d120e40a14a35c45ce63377befe",
+    "static/chat.js": "ea52d7c0b8be5735f0a8c2fed15addca5213fc6f45defaa2d3e7f628a62ac762",
+    "static/locations.js": "e4520b981d8df69aaf0609d611b94bd2a8c796e72b40a6390c1a7e0959f5c329",
+    "static/script.js": "58e9032d14ca77b23ddc28d14ab10feacd6782b9291dcd92442a3cb06936b50a",
+    "static/vendor/volt/volt.css": "8b473e4a15ee6fc8e88c93ccc8644c1c0be0caa585680ffe33aad7d8a729731c"
+  },
+  "changes_since_recorded_tests": []
+}

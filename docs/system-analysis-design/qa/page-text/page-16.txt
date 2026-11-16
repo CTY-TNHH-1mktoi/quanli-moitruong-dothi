@@ -1,0 +1,41 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+4.3 Yêu cầu phi chức năng có căn cứ
+Bảng 8. Giới hạn và hành vi phi chức năng hiện có
+Mã Nội dung có thể kiểm tra Bằng chứng
+Cập nhật có cache 600 giây; trình duyệt yêu cầu lại mỗi 605 giây khi
+NFR01 app.py; static/script.js
+trang mở. Đây là chu kỳ yêu cầu, không phải cam kết độ trễ nguồn.
+Luồng chat có status, delta và done hoặc error; có thể dừng nhận khi chatbot.stream_reply;
+NFR02
+đang sinh. static/chat.js
+Câu hỏi tối đa 8.000 ký tự, history tối đa 16 message đúng cặp; body validate_chat;
+NFR03
+chat không quá 2 MiB. app.chat
+Lỗi một phần lịch sử hoặc cảnh báo được hiển thị riêng; đổi địa điểm
+NFR04 static/script.js
+loại phản hồi quá hạn.
+app.py;
+Truy vấn SQL dùng tham số; dữ liệu chat hiển thị bằng textContent.
+NFR05 environment_reports.p
+Không có chức năng xác thực tài khoản.
+y; static/chat.js
+Giao diện đã có kiểm tra trình duyệt ở 1.600 px và 390 px; hỗ trợ bàn browser-checks.json;
+NFR06
+phím cho menu, tìm kiếm và đóng hộp nổi. dashboard.js
+environment_reports.p
+Dữ liệu báo cáo và snapshot dùng JSON không chấp nhận NaN; RF y;
+NFR07
+và thống kê loại giá trị không hữu hạn. environment_predicto
+r.py
+_generation_lock;
+Runtime sinh mô hình được khóa tránh chồng phiên; giới hạn tài training_state.py;
+NFR08
+nguyên được kiểm tra trước huấn luyện. daily_train_xanhnon.p
+y
+4.4 Điều kiện nghiệm thu theo phạm vi
+Một chức năng được xác nhận bằng hành vi đầu ra và trạng thái dữ liệu, không chỉ bằng sự có
+mặt của nút giao diện. Cập nhật phải giữ đúng mã địa điểm và quan hệ bản ghi; báo cáo mở lại
+phải khớp nội dung đã lưu; câu hỏi nối tiếp phải dùng đúng chủ đề và ngày giờ; tình huống thiếu
+dữ liệu phải trả trạng thái hoặc thông báo phù hợp. Chương 12 trình bày dữ liệu kiểm thử, điều
+kiện thực hiện và bằng chứng kết quả của từng nhóm yêu cầu.
+16
