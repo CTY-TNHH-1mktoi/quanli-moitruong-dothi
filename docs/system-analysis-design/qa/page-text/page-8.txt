@@ -1,0 +1,20 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+DANH MỤC TỪ VIẾT TẮT
+Bảng 1. Các thuật ngữ sử dụng trong báo cáo
+Viết tắt Ý nghĩa
+API Giao diện lập trình ứng dụng
+AQI Chỉ số chất lượng không khí
+BFD Sơ đồ phân rã chức năng
+CAMS Dịch vụ giám sát khí quyển Copernicus
+DFD Sơ đồ luồng dữ liệu
+ERD Sơ đồ thực thể và quan hệ
+FK và PK Khóa ngoại và khóa chính
+GGUF Định dạng tệp mô hình dùng cho suy luận cục bộ
+LoRA Kỹ thuật tinh chỉnh mô hình bằng các ma trận hạng thấp
+PM2.5 và PM10 Bụi có đường kính khí động học tương ứng không lớn hơn 2,5 và 10 micromet
+RF Random Forest
+SRS Đặc tả yêu cầu phần mềm
+SSE Luồng sự kiện từ máy chủ tới trình duyệt qua HTTP
+UML Ngôn ngữ mô hình hóa thống nhất
+UTC+7 Múi giờ được sử dụng cho dữ liệu tại Việt Nam
+8

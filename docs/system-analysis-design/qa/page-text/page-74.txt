@@ -1,0 +1,27 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+FR và
+UI và luồng API hoặc module xử lý Kho dữ liệu Kiểm thử
+UC
+POST /baocao;
+10 UI07; L3 Đọc D2 D3; ghi D5 TC14–15
+ReportRepository.create
+11 UI07; L3 GET /baocao và /baocao/<id> Đọc D5 TC15–16
+Snapshot báo cáo trên
+12 UI07; L3 reports.js; Blob; window.print TC17
+trình duyệt
+D2 D6 D8; lịch sử trong
+13 UI08; L4 POST /chat; NativeChatbot TC18–19
+trang
+14–15 UI08; L4 Các module chat_*; Open-Meteo D2 D6; cache dự báo TC20–23
+ConversationLearner;
+16 UI08; L5 Đọc D6; ghi D7 TC24–25
+FeedbackStore
+17 API; L5 GET /chat/status; runtime_status Trạng thái trong tiến trình TC26
+train_xanhnon; export; Đọc D6 D7 D8; ghi ứng
+18 Công cụ; L5 TC27–28
+model_release viên D8
+Các đường dẫn API rút gọn trong ma trận đều có tiền tố /api. D1 là danh mục địa điểm; D2 là
+snapshot; D3 là cảnh báo và phân tích; D4 là mẫu bản đồ; D5 là báo cáo; D6 là tri thức JSON;
+D7 là hai kho SQLite; D8 là dữ liệu học và mô hình. Mỗi nhóm có thể liên quan nhiều bảng hoặc
+nhiều API, không giả định quan hệ một–một.
+74

@@ -1,0 +1,43 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+11.6 Dữ liệu hội thoại và dữ liệu cảm biến dùng cho học
+Bảng 26. Nhóm dữ liệu và vai trò trong quy trình học
+Nhóm nguồn Vai trò có trong dự án Giới hạn sử dụng
+Không làm nguồn khẳng định
+Vietnamese Multi-turn và Bổ sung cách diễn đạt và nối lượt trong
+chuyên môn hoặc số liệu hiện
+Vietnamese Chatting đã lọc tập hội thoại
+tại.
+Kiến thức có nguồn; các con số
+Dạy cách trả lời AQI, PM2.5, thiếu dữ
+Hỏi đáp môi trường của dự án theo thời gian phải là tình huống
+liệu và nhánh tư vấn
+giả định rõ ràng.
+Dữ liệu lịch sử của dự án nghiên
+iSCAPE Outdoor Sensor Nguồn dữ liệu cảm biến ngoài trời
+cứu; không là số liệu hiện tại tại
+Deployment trong kho đã khôi phục [T10]
+Việt Nam.
+iSCAPE Citizen Science Dữ liệu các hoạt động cảm biến cộng Các kênh có thể khác theo thiết
+Workshops đồng [T11] bị; không tự gán trường thiếu.
+iSCAPE Low Cost Sensor Dữ liệu thử nghiệm và phát triển cảm Điều kiện thí nghiệm khác môi
+Development biến [T12] trường sử dụng thực tế.
+Không có trường tiếng ồn hoặc
+Bổ sung dữ liệu bụi và khí tượng trong
+Beijing Multi-Site Air Quality độ ẩm tương đối trực tiếp như
+kho nguồn [T13]
+đầu vào năm đặc trưng.
+Các bộ dữ liệu thô được kiểm tra trùng và chuẩn hóa trước khi chuyển thành mẫu. Sự có mặt của
+một bộ dữ liệu trong kho không xác nhận toàn bộ hàng của nó đã tham gia huấn luyện bản đang
+hoạt động. Hồ sơ khôi phục ghi nhận 21 phiên bản dữ liệu và 388 tệp nguồn, trong khi tập
+JSONL mặc định đã chuẩn bị gồm 452 mẫu train và 124 validation. Đây là các đơn vị đếm khác
+nhau.
+11.7 Học từ chat và quy trình huấn luyện
+ConversationLearner quan sát câu hỏi phù hợp khi cờ learn_from_chat được bật. Câu hỏi có số
+liệu hiện tại hoặc dự báo được chuyển sang trạng thái cần dữ liệu; nội dung cần nguồn được giữ
+chờ xử lý. Chỉ câu hỏi có thể gắn với một đáp án kiến thức ổn định có nguồn mới được dùng như
+biến thể learned. Hash kho tri thức và phiên bản chính sách là điều kiện để tái sử dụng đáp án đó.
+Góp ý có chuỗi trạng thái pending, approved hoặc rejected. Khi duyệt, công cụ yêu cầu kiểm tra
+nội dung và thông tin riêng tư, nguồn tham chiếu hợp lệ và chính sách cho dữ liệu thời gian. Góp
+ý đã duyệt có thể được chuyển thành mẫu học. Tinh chỉnh LoRA là bước riêng với dữ liệu,
+checkpoint và kiểm thử; trọng số không cập nhật tức thời sau mỗi cuộc trò chuyện [T14].
+66

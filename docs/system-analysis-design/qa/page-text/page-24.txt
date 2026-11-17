@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+5.11 FR10 Tạo và lưu báo cáo môi trường
+Mục đích và tác nhân. Tổng hợp dữ liệu đã ghi nhận trong một kỳ thành báo cáo có thể mở lại.
+Tác nhân: A01. Ca sử dụng tương ứng: UC10.
+Điều kiện trước. Địa điểm hợp lệ và SQL Server sẵn sàng. Kỳ không có bản ghi vẫn có thể tạo
+báo cáo rỗng.
+Đầu vào và giao diện. POST /api/baocao nhận JSON days là số nguyên 1, 7 hoặc 30 và location
+là mã danh mục. Nút Tạo và lưu báo cáo bị khóa trong lúc xử lý. Vị trí thao tác: UI07.
+Luồng chính.
+1. Kiểm tra kiểu và giá trị kỳ báo cáo; lấy thời gian tạo và mốc đầu kỳ.
+2. Đọc NguonDL cùng các CanhBao đúng mã địa điểm, trong khoảng đầu và cuối kỳ.
+3. Chuẩn hóa giá trị, tính số bản ghi, min, max, trung bình phù hợp, số thiếu, số lần vượt ngưỡng
+và nhóm thời gian.
+4. Lưu toàn bộ nội dung JSON trong BaoCaoMT rồi trả HTTP 201 kèm MaBaoCao; cập nhật
+màn hình và lịch sử.
+Điều kiện sau và đầu ra. Báo cáo có địa điểm, kỳ, thời gian tạo, thống kê, dữ liệu nguồn và
+cảnh báo. Nội dung đã lưu giữ nguyên khi người sử dụng mở lại sau đó.
+Luồng thay thế và ngoại lệ. Kỳ sai, số thực hoặc boolean trả 400. SQL lỗi trả 503. Nếu trình
+duyệt hết thời gian chờ, trạng thái chưa xác định việc lưu được xử lý bằng tải lại lịch sử; không
+coi timeout là chắc chắn chưa lưu.
+Thiết kế và bằng chứng. environment_reports.py: build_report, ReportRepository.create,
+create_report_blueprint; static/reports.js. Đọc NguonDL và CanhBao; ghi BaoCaoMT.
+Quy tắc và nghiệm thu. BR07, BR08, BR14. Kiểm thử: TC14, TC15.
+5.12 FR11 Tra cứu và mở báo cáo đã lưu
+Mục đích và tác nhân. Sử dụng lại đúng nội dung báo cáo đã tạo thay vì tính lại theo dữ liệu
+hiện tại. Tác nhân: A01. Ca sử dụng tương ứng: UC11.
+Điều kiện trước. Người sử dụng đang ở màn hình báo cáo và địa điểm hợp lệ.
+Đầu vào và giao diện. GET /api/baocao nhận location, limit và offset; mặc định limit=10, tối đa
+50. Chọn Mở báo cáo gửi MaBaoCao trên đường dẫn và mã địa điểm trong query. Vị trí thao tác:
+UI07.
+Luồng chính.
+1. Tải các báo cáo theo địa điểm, sắp mới nhất trước.
+2. Nhấn Xem thêm để tăng offset và ghép các mục tiếp theo.
+3. Khi mở một mã, repository tìm đồng thời theo MaBaoCao và MaDiaDiem.
+24

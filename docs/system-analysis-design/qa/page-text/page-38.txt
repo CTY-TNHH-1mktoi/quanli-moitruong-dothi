@@ -1,0 +1,7 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+6.6 Các tương tác tuần tự quan trọng
+Hình 8. Sequence cập nhật snapshot và ghi dữ liệu
+Nhánh lấy nguồn trong hình chỉ chạy khi kiểm tra cache không trả được kết quả còn hạn. Bộ dữ
+liệu, cảnh báo và phân tích được ghi trong cùng khối giao dịch. Sau đó giao diện đọc lịch sử và
+cảnh báo bằng các yêu cầu độc lập để một phần lỗi không che lấp toàn bộ màn hình.
+38

@@ -1,0 +1,13 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 8 THIẾT KẾ CƠ SỞ DỮ LIỆU
+8.1 Mô hình logic và mô hình vật lý
+Mô hình dữ liệu nghiệp vụ lấy địa điểm và snapshot làm trục. Một địa điểm có nhiều snapshot và
+nhiều báo cáo; một snapshot có thể sinh nhiều cảnh báo. Phân tích và cảnh báo tham chiếu nguồn
+đã ghi. Mẫu bản đồ được tổ chức theo tọa độ lưới, có thể dùng chung giữa các địa điểm và vùng
+nhìn nên không có quan hệ khóa ngoại đến một địa điểm cụ thể.
+Trong lược đồ SQL hiện tại, chỉ hai quan hệ được khai báo bằng FOREIGN KEY:
+CanhBao.Manguon và PhanTichAI.Manguon cùng tham chiếu NguonDL.Manguon. MaDiaDiem
+trong NguonDL và BaoCaoMT được dùng để liên kết ở tầng ứng dụng nhưng chưa khai báo FK
+trong các tệp schema. ERD dưới đây dùng nét đứt cho các liên kết logic đó, tránh thể hiện như
+ràng buộc vật lý đã tồn tại [T06].
+48

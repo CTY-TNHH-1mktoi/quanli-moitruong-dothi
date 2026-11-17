@@ -1,0 +1,34 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Thiết kế và bằng chứng. app.py: capnhat, update_environment, fetch_environment,
+build_alerts, build_analysis. Kho ghi: NguonDL, CanhBao, PhanTichAI; DiaDiem được chuẩn
+bị trước.
+Quy tắc và nghiệm thu. BR01–BR06. Kiểm thử: TC04, TC05, TC06.
+5.5 FR04 Xem các chỉ số môi trường
+Mục đích và tác nhân. Trình bày kết quả giám sát theo địa điểm bằng chỉ số, đơn vị và trạng
+thái dễ đối chiếu. Tác nhân: A01. Ca sử dụng tương ứng: UC04.
+Điều kiện trước. Giao diện đã có snapshot hợp lệ hoặc nhận được trạng thái tải lỗi.
+Đầu vào và giao diện. Dữ liệu JSON từ FR03. Các trường chính là US_AQI, PM25, PM10,
+NhietDo, DoAm và TiengOn; metadata thời gian nguồn và tiếng ồn đi cùng snapshot. Vị trí thao
+tác: UI01 và UI02.
+Luồng chính.
+1. Đối chiếu phiên yêu cầu và địa điểm đang chọn trước khi cập nhật DOM.
+2. Điền các giá trị, đơn vị và trạng thái thông số; đặt màu, mức AQI và nội dung phân tích.
+3. Cập nhật thời điểm lấy dữ liệu và ghi chú nguồn tiếng ồn.
+4. Giữ dữ liệu cũ cùng thông báo khi tải mới lỗi tại cùng địa điểm; khi đổi nơi thì xóa số cũ trước
+khi tải.
+Điều kiện sau và đầu ra. Người sử dụng xem được năm chỉ số và US AQI. Thanh tiến trình chỉ
+phục vụ tỷ lệ hiển thị theo cấu hình, không phải toàn bộ thang chuẩn pháp lý.
+Luồng thay thế và ngoại lệ. Trường thiếu hiển thị dấu gạch hoặc trạng thái chưa có dữ liệu. Lỗi
+tải không được tạo cảm giác số cũ thuộc địa điểm mới. Mức AQI và kết quả RF được hiển thị
+tách biệt.
+Thiết kế và bằng chứng. static/script.js: renderCurrent, renderAnalysis, renderPrediction,
+renderCurrentFailed; static/index.html. GET /api/dulieu/moinhat cung cấp bản ghi gần nhất khi
+cần đọc lại.
+Quy tắc và nghiệm thu. BR03, BR04, BR06, BR14. Kiểm thử: TC02, TC06, TC07.
+5.6 FR05 Tương tác với bản đồ địa điểm
+Mục đích và tác nhân. Đặt dữ liệu môi trường vào bối cảnh không gian và giúp người sử dụng
+nhận biết tọa độ tham chiếu. Tác nhân: A01, E03. Ca sử dụng tương ứng: UC05.
+Điều kiện trước. Leaflet đã nạp; địa điểm hiện tại có tọa độ hợp lệ.
+Đầu vào và giao diện. Các thao tác kéo, phóng to, thu nhỏ, nhấn marker, về địa điểm đã chọn,
+toàn màn hình và mở bản đồ lớn. Vị trí thao tác: UI03.
+20

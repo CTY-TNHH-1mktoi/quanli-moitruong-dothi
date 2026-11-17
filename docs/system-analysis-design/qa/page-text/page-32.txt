@@ -1,0 +1,5 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+là nhóm lưu trữ logic, không mặc định tương ứng một bảng. Cụ thể, D3 gồm CanhBao và
+PhanTichAI; D7 gồm hai cơ sở dữ liệu SQLite; D8 gồm JSONL, manifest và tệp mô hình.
+Hình 3. DFD mức 0 phần tra cứu giám sát và báo cáo
+32

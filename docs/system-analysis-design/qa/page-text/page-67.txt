@@ -1,0 +1,13 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 20. Quy trình dữ liệu học và huấn luyện cục bộ
+11.8 Kiểm soát đầu ra và phạm vi an toàn
+Đầu vào được giới hạn kích thước, vai trò lịch sử phải luân phiên đúng cặp và đầu ra được xử lý
+như văn bản. chat_output làm sạch một số phần lặp, lời dẫn thừa và hướng dẫn nội bộ. Nội dung
+cần giá trị hiện tại được ưu tiên nhánh đọc dữ liệu để giảm phụ thuộc mô hình nhớ con số. Các
+biện pháp này là kiểm soát cụ thể trong mã; chúng không tạo bảo đảm rằng mô hình không thể
+sai hoặc không chịu ảnh hưởng của chỉ dẫn độc hại.
+Ứng dụng không có đăng nhập nên việc kiểm tra Origin ở các nhánh ghi góp ý và câu hỏi không
+phải cơ chế phân quyền người dùng. CORS được bật ở Flask; phạm vi triển khai hiện tại là máy
+cục bộ. Kho học lọc một số mẫu thông tin nhạy cảm và tách khỏi tập kiểm tra, nhưng hội thoại
+không được mô tả như đã có cơ chế ẩn danh hóa toàn diện hoặc chứng nhận bảo mật.
+67

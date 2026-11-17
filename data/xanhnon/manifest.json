@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "built_at": "2026-10-27T21:23:17.106946+07:00",
+  "purpose": "Restored reviewed corpus; preflight and answer evaluation required before any deployment",
+  "require_complete_dialogues": true,
+  "selected_datasets": [
+    "qwen3-4b-v16-repair-data-20261024-reviewed",
+    "balanced-v9-data-20261021-reviewed",
+    "consultation-v6-data-20261021-reviewed",
+    "runtime-correction-v5-data-20261019",
+    "sensor-dataset"
+  ],
+  "counts": {
+    "validation": {
+      "v16_dialogue_repair": 8,
+      "environment_balanced_v9": 6,
+      "environment_consultation_v6": 34,
+      "environment_runtime_review": 24,
+      "environment_style": 4,
+      "vietnamese_multiturn": 4,
+      "sensor_iscape_development": 8,
+      "sensor_iscape_workshops": 8,
+      "environment_advice": 4,
+      "sensor_beijing_air": 8,
+      "environment_qa": 4,
+      "vietnamese_chatting": 4,
+      "sensor_iscape_outdoor": 8
+    },
+    "train": {
+      "v16_dialogue_repair": 24,
+      "v16_checked_rehearsal": 24,
+      "environment_consultation_v6": 84,
+      "environment_balanced_v9": 64,
+      "sensor_iscape_development": 32,
+      "environment_runtime_review": 76,
+      "sensor_iscape_outdoor": 28,
+      "sensor_beijing_air": 28,
+      "sensor_iscape_workshops": 28,
+      "environment_style": 48,
+      "environment_advice": 16
+    }
+  },
+  "total_rows": 576,
+  "excluded": {
+    "duplicate_conversation": 173,
+    "validation_family_or_qa_overlap": 23
+  },
+  "artifacts_sha256": {
+    "validation.jsonl": "9d83733778cab04bd2d73804ca1929c3e2df95494e65b90b3067ff1b15e14f60",
+    "train.jsonl": "33745f4f512f672113569c25ddec4e1fc4b0666092990abf81114b6a5e154083"
+  },
+  "active_release_unchanged": true,
+  "limitations": [
+    "Candidate pools failing semantic review are archived only.",
+    "Dataset readiness does not establish answer quality or certify trained weights.",
+    "Raw sensor values retain their source location/time; they are not live Vietnam observations."
+  ]
+}

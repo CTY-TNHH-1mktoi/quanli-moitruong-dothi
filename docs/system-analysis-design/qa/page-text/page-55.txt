@@ -1,0 +1,24 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 9 THIẾT KẾ GIAO DIỆN VÀ TƯƠNG TÁC NGƯỜI
+DÙNG
+9.1 Cấu trúc điều hướng và luồng màn hình
+Ứng dụng sử dụng một trang HTML và chuyển phần nội dung theo hash. Tổng quan gồm ba khu
+vực: địa điểm đang giám sát, chỉ số môi trường và bản đồ. Các chức năng còn lại được mở từ
+menu để giữ trang tổng quan ngắn. Nút chuông và chatbot là hai phần nổi dùng chung trên các
+màn hình; chúng không tạo thêm mục dài trong trang chính.
+Bảng 20. Danh mục màn hình và quan hệ điều hướng
+Mã Màn hình và đường dẫn Điều hướng và ca sử dụng
+Menu hoặc thương hiệu về tổng quan; UC01–04,
+UI01 Tổng quan /#overview
+UC05–06.
+UI02 Chỉ số /#air Menu Chỉ số môi trường; quay lại tổng quan; UC04.
+UI03 Bản đồ /#environmentMap Menu Bản đồ chất lượng không khí; UC05–06.
+UI04 Xu hướng /#trends Menu Xu hướng dữ liệu; UC07.
+UI05 Phân tích /#insights Menu Phân tích và tư vấn; UC09.
+UI06 Bảng cảnh báo nổi Nút chuông mở; X hoặc Esc đóng; UC08.
+UI07 Báo cáo /#reports Menu Báo cáo môi trường; UC10–12.
+UI08 Cửa sổ Xanh Non nổi Bong bóng chat mở; nút đóng thu gọn; UC13–16.
+Luồng màn hình được giữ bằng URL, nên tải lại, Quay lại và Tiến của trình duyệt khôi phục
+đúng mục. Mỗi màn hình chức năng hiển thị địa điểm dùng chung và đường về tổng quan. Việc
+mở menu không thay địa điểm; chọn một địa điểm từ tìm kiếm mới phát sinh locationchange.
+55

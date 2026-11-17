@@ -42,7 +42,7 @@
     clearTimeout(airTimer);
     airRequest?.abort();
     const version = ++airVersion;
-    if (!airToggle.checked || !map || !selected) return;
+    if (!airToggle.checked || !map || !selected || !container.getClientRects().length) return;
     airTimer = setTimeout(() => loadAirData(version), delay);
   }
 
@@ -228,6 +228,10 @@
   }
 
   document.addEventListener('locationchange', (event) => showLocation(event.detail));
+  document.addEventListener('dashboardviewchange', () => {
+    if (container.getClientRects().length) frameSelected();
+    queueAirLoad(0);
+  });
   recenter.addEventListener('click', frameSelected);
   airToggle.addEventListener('change', () => {
     updateAirControls();

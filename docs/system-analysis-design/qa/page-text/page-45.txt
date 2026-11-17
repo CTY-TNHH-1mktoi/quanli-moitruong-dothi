@@ -1,0 +1,9 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 7 THIẾT KẾ KIẾN TRÚC PHẦN MỀM
+7.1 Kiến trúc tổng thể
+Ứng dụng là một hệ Flask triển khai tập trung theo module. Giao diện và API được phục vụ từ
+cùng tiến trình; bản đồ, báo cáo và góp ý được tách thành blueprint. SQL Server giữ dữ liệu
+nghiệp vụ; các tệp mô hình, tri thức và SQLite nằm trên máy chạy ứng dụng. Cách sử dụng
+blueprint ở đây là phân nhóm chức năng trong một ứng dụng Flask [T05].
+Hình 14. Component Diagram của ứng dụng
+45

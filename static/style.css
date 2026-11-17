@@ -861,6 +861,52 @@ footer strong {
     padding: 0 21px 15px;
 }
 
+.chat-feedback {
+    border-top: 1px solid #dce3e8;
+    margin-top: 10px;
+    padding-top: 8px;
+}
+.chat-feedback [hidden] { display: none !important; }
+
+.chat-feedback-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.chat-feedback button {
+    border: 1px solid #cbd5df;
+    border-radius: 6px;
+    background: #fff;
+    color: #425268;
+    padding: 5px 9px;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+}
+.chat-feedback button:hover { background: #e7edf3; }
+.chat-feedback button:disabled { opacity: .6; cursor: wait; }
+.chat-feedback-note, .chat-feedback-status {
+    display: block;
+    color: #66758a;
+    font-size: 10px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+.chat-feedback-form { margin-top: 9px; }
+.chat-feedback-form label { display: block; font-size: 11px; margin-bottom: 8px; }
+.chat-feedback-form textarea, .chat-feedback-form select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-top: 4px;
+    padding: 7px;
+    border: 1px solid #cbd5df;
+    border-radius: 6px;
+    color: #263447;
+    background: #fff;
+    font: inherit;
+    font-size: 12px;
+}
+.chat-feedback-form textarea { resize: vertical; }
+.chat-feedback-form details { margin-bottom: 9px; font-size: 11px; }
+
 .chat-suggestions button {
     padding: 7px 11px;
     border: 1px solid #d2e3d9;

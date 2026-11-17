@@ -11,13 +11,53 @@
   const stop = document.querySelector('#chatStop');
   const status = document.querySelector('#chatStatus');
   const error = document.querySelector('#chatError');
+  const panel = document.querySelector('#chat');
+  const launcher = document.querySelector('#chatLauncher');
+  const closeButton = document.querySelector('#chatClose');
+  const unread = document.querySelector('#chatUnread');
+  const openButtons = [...document.querySelectorAll('[data-open-chat]')];
   const suggestions = [...document.querySelectorAll('[data-chat-question]')];
   const welcome = messages.firstElementChild.cloneNode(true);
   let history = [];
+  const maxHistoryMessages = 16;
   let busy = false;
   let activeController = null;
   const locationHistories = new Map();
   let historyLocation = null;
+  let opener = launcher;
+
+  function setUnread(value) {
+    launcher?.classList.toggle('has-unread', value);
+    launcher?.setAttribute('aria-label', value
+      ? 'Trò chuyện với Xanh Non — có câu trả lời mới'
+      : 'Trò chuyện với Xanh Non');
+    if (unread) unread.hidden = !value;
+  }
+
+  function openChat(source = launcher) {
+    if (!panel) return;
+    if (panel.hidden) opener = source;
+    panel.hidden = false;
+    launcher?.setAttribute('aria-expanded', 'true');
+    openButtons.forEach((button) => button.setAttribute('aria-expanded', 'true'));
+    setUnread(false);
+    messages.scrollTop = messages.scrollHeight;
+    if (input.disabled) closeButton?.focus();
+    else input.focus();
+  }
+
+  function closeChat() {
+    if (!panel || panel.hidden) return;
+    panel.hidden = true;
+    launcher?.setAttribute('aria-expanded', 'false');
+    openButtons.forEach((button) => button.setAttribute('aria-expanded', 'false'));
+    // Minimizing only changes visibility; the current reply keeps streaming.
+    const canFocusOpener = opener?.isConnected
+      && !opener.closest('[inert]')
+      && opener.getClientRects().length > 0;
+    const target = canFocusOpener ? opener : launcher;
+    target?.focus();
+  }
 
   function appendMessage(role, text) {
     const bubble = document.createElement('div');
@@ -43,6 +83,7 @@
     suggestions.forEach((button) => { button.disabled = value; });
     form.setAttribute('aria-busy', String(value));
     send.textContent = value ? 'Đang trả lời…' : 'Gửi';
+    launcher?.classList.toggle('is-busy', value);
   }
 
   async function readReply(response, onEvent) {
@@ -85,7 +126,10 @@
       const response = await fetch(`${base}/api/chat/status`);
       if (!response.ok) return;
       const result = await response.json();
-      if (result.state === 'loading' || result.state === 'cold') {
+      if (result.state === 'training') {
+        if (!busy) status.textContent = 'Xanh Non đang cập nhật. Bạn vẫn có thể hỏi các chỉ số trên bảng giám sát.';
+        setTimeout(checkReadiness, 10000);
+      } else if (result.state === 'loading' || result.state === 'cold') {
         if (!busy && history.length === 0 && result.state === 'loading') {
           status.textContent = 'Xanh Non đang khởi động. Bạn có thể nhập câu hỏi trước.';
         }
@@ -101,8 +145,10 @@
   function rememberReply(message, reply) {
     let context = reply.slice(-32768);
     if (/^[\uDC00-\uDFFF]/.test(context)) context = context.slice(1);
-    history.push({ role: 'user', content: message }, { role: 'assistant', content: context });
-    history = history.slice(-8);
+    const entry = { role: 'assistant', content: context };
+    history.push({ role: 'user', content: message }, entry);
+    history = history.slice(-maxHistoryMessages);
+    return entry;
   }
 
   async function sendMessage(message, isContinuation = false) {
@@ -117,6 +163,7 @@
     const userBubble = appendMessage('user', isContinuation ? 'Viết tiếp' : message);
     let assistantBubble = null;
     let partialReply = '';
+    let replyCompleted = false;
     status.textContent = 'Xanh Non đang suy nghĩ…';
     const slowTimer = setTimeout(() => {
       status.textContent = 'Xanh Non đang chuẩn bị câu trả lời. Lần hỏi đầu tiên có thể cần thêm thời gian.';
@@ -127,7 +174,8 @@
       const response = await fetch(`${base}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, history: history.slice(-8), stream: true, location: locationId }),
+        body: JSON.stringify({ message, history: history.slice(-maxHistoryMessages), stream: true,
+          location: locationId, learn_from_chat: true }),
         signal: controller.signal,
       });
       const result = await readReply(response, (event) => {
@@ -148,6 +196,7 @@
       assistantBubble.querySelector('p').textContent = result.reply;
       messages.scrollTop = messages.scrollHeight;
       rememberReply(message, result.reply);
+      replyCompleted = true;
       continueButton.hidden = !result.truncated;
       status.textContent = result.truncated
         ? 'Chọn Viết tiếp để đọc phần còn lại.'
@@ -178,9 +227,24 @@
       activeController = null;
       locationHistories.set(locationId, history.slice());
       setBusy(false);
-      input.focus();
+      if (panel?.hidden) {
+        if (replyCompleted) setUnread(true);
+      } else input.focus();
     }
   }
+
+  launcher?.addEventListener('click', () => {
+    if (panel?.hidden) openChat(launcher);
+    else closeChat();
+  });
+  closeButton?.addEventListener('click', closeChat);
+  openButtons.forEach((button) => button.addEventListener('click', () => openChat(button)));
+  panel?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !event.isComposing) {
+      event.preventDefault();
+      closeChat();
+    }
+  });
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -215,7 +279,7 @@
     input.value = '';
     error.hidden = true;
     status.textContent = 'Enter để gửi · Shift + Enter để xuống dòng';
-    input.focus();
+    if (!panel?.hidden) input.focus();
   });
 
   checkReadiness();

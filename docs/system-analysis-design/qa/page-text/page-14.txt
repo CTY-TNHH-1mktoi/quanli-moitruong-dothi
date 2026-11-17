@@ -1,0 +1,30 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 4 ĐẶC TẢ YÊU CẦU HỆ THỐNG
+4.1 Yêu cầu chức năng và điều kiện truy cập
+Danh mục chức năng được chuẩn hóa thành 18 mã. FR01–FR16 phục vụ thao tác trên ứng dụng
+và xử lý dữ liệu liên quan; FR17–FR18 phục vụ theo dõi và vận hành mô hình. Mỗi mã có một
+ca sử dụng tương ứng, ví dụ FR03 liên kết UC03. Các chức năng web không yêu cầu tài khoản;
+thao tác vận hành dùng quyền của tài khoản hệ điều hành đang chạy dự án.
+Bảng 6. Danh mục yêu cầu chức năng
+Mã Yêu cầu cần đạt Tác nhân
+FR01 Chọn và tìm kiếm địa điểm hoặc chức năng trong danh mục A01
+FR02 Lấy vị trí thiết bị và tự chọn địa điểm gần nhất trong danh sách A01
+A01, E01,
+FR03 Cập nhật dữ liệu theo địa điểm và lưu snapshot nhất quán
+E02
+FR04 Hiển thị chỉ số, đơn vị, nguồn và thời điểm cập nhật A01
+FR05 Xem marker, di chuyển, phóng to và mở bản đồ lớn A01, E03
+FR06 Tải và hiển thị lớp màu chất lượng không khí theo vùng A01, E01
+FR07 Xem đồ thị PM2.5 từ các snapshot gần nhất A01
+FR08 Xem lịch sử cảnh báo đúng địa điểm bằng nút chuông A01
+FR09 Xem kết quả hai mô hình Random Forest và trạng thái dữ liệu A01
+FR10 Tạo và lưu báo cáo kỳ 1, 7 hoặc 30 ngày A01
+FR11 Tra cứu danh sách và mở nội dung báo cáo đã lưu A01
+FR12 Xuất dữ liệu báo cáo thành CSV hoặc in bằng trình duyệt A01
+FR13 Gửi câu hỏi và điều khiển phiên hội thoại Xanh Non A01
+FR14 Giữ ngữ cảnh chủ đề, địa điểm và thời gian qua nhiều lượt A01, E01
+FR15 Giải thích chỉ số và tư vấn từ tri thức có nguồn A01
+FR16 Ghi nhận lời xác nhận hữu ích và câu hỏi mới phù hợp A01
+FR17 Tra cứu trạng thái runtime của chatbot A02
+FR18 Chuẩn bị dữ liệu, huấn luyện và kiểm tra mô hình ứng viên A02
+14

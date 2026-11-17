@@ -1,0 +1,33 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+5.8 FR07 Theo dõi xu hướng PM2.5
+Mục đích và tác nhân. Cho phép đối chiếu các snapshot PM2.5 gần đây trong cùng địa điểm.
+Tác nhân: A01. Ca sử dụng tương ứng: UC07.
+Điều kiện trước. Lịch sử trả về có thể có dữ liệu, rỗng hoặc một số giá trị thiếu.
+Đầu vào và giao diện. GET /api/dulieu/lichsu với location và limit. Giao diện dùng limit=12;
+API giới hạn hợp lệ từ 1 đến 500. Vị trí thao tác: UI04.
+Luồng chính.
+1. Đọc các bản ghi mới nhất của địa điểm theo thời gian và mã nguồn giảm dần.
+2. Sắp thứ tự trình bày theo thời gian tăng dần và lấy các điểm PM2.5 sử dụng được.
+3. Tính miền giá trị, chọn bước chia trục số phù hợp và dựng đường biểu diễn trên Canvas.
+4. Hiển thị giá trị gần nhất, nhãn xu hướng và các mốc thời gian; vẽ lại khi thay đổi kích thước
+màn hình.
+Điều kiện sau và đầu ra. Đồ thị có trục tung số, đơn vị µg/m³ và các mốc thời gian. Nhận xét
+tăng giảm dựa trên lịch sử snapshot, không phải dự báo tương lai.
+Luồng thay thế và ngoại lệ. Lịch sử rỗng và tải lỗi có trạng thái riêng. Dữ liệu thiếu tạo khoảng
+trống thay vì điểm đo bằng 0. Phản hồi của địa điểm cũ bị loại bỏ.
+Thiết kế và bằng chứng. app.dulieu_lichsu; static/script.js: renderTrend, describeTrend,
+drawTrend. Đọc NguonDL; không tạo bản ghi mới.
+Quy tắc và nghiệm thu. BR03, BR14. Kiểm thử: TC11.
+5.9 FR08 Xem lịch sử cảnh báo
+Mục đích và tác nhân. Cho phép tra cứu các cảnh báo môi trường gần nhất của nơi đang giám
+sát. Tác nhân: A01. Ca sử dụng tương ứng: UC08.
+Điều kiện trước. Địa điểm đã được xác định; cảnh báo có thể chưa phát sinh.
+Đầu vào và giao diện. Nhấn biểu tượng chuông trên đầu trang. GET /api/canhbao nhận location
+và limit; giao diện lấy 8, API mặc định 20 và giới hạn tối đa 200. Vị trí thao tác: UI06 dưới dạng
+bảng thông báo.
+Luồng chính.
+1. Đọc CanhBao liên kết NguonDL theo mã địa điểm.
+2. Hiển thị loại, mức, nội dung và thời gian; cập nhật số cảnh báo đã tải trên chuông.
+3. Người sử dụng mở bảng bằng chuông và đóng bằng X, Esc hoặc chuyển ngữ cảnh thích hợp.
+4. Khi đổi địa điểm, tải lại cảnh báo và xóa trạng thái của nơi cũ.
+22

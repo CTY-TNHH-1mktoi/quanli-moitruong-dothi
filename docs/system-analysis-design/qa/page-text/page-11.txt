@@ -1,0 +1,32 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 2 KHẢO SÁT HIỆN TRẠNG
+2.1 Đối tượng sử dụng và nhu cầu thông tin
+Người sử dụng truy cập trực tiếp ứng dụng web để xem môi trường tại địa điểm quan tâm. Họ
+cần biết chỉ số nào đã có dữ liệu, dữ liệu được cập nhật lúc nào, cảnh báo thuộc địa điểm nào và
+nội dung tư vấn dựa trên thông tin gì. Người vận hành phụ trách khởi chạy dịch vụ, kết nối cơ sở
+dữ liệu, kiểm tra mô hình và xử lý dữ liệu học bằng công cụ cục bộ. Đây là hai nhóm trách
+nhiệm nghiệp vụ, không phải hai vai trò đăng nhập trong ứng dụng.
+Bảng 3. Tác nhân và phạm vi tương tác
+Mã Tác nhân Tương tác thực tế
+Tra cứu, xem chỉ số và bản đồ, xem cảnh báo, lập báo cáo, chat và
+A01 Người sử dụng web
+gửi lời xác nhận hữu ích.
+Đọc trạng thái, cấu hình môi trường, duyệt góp ý, chuẩn bị dữ liệu và
+A02 Người vận hành trên máy
+chạy công cụ huấn luyện.
+Cung cấp dữ liệu thời tiết, chất lượng không khí và dự báo theo tọa
+E01 Open-Meteo
+độ.
+E02 NoiseCapture Cung cấp tệp dữ liệu tiếng ồn cộng đồng tại Việt Nam.
+E03 OpenStreetMap Cung cấp ảnh nền bản đồ cho trình duyệt.
+2.2 Quy trình hiện tại
+Khi mở ứng dụng, trình duyệt tải danh mục địa điểm, khôi phục lựa chọn gần nhất và yêu cầu
+snapshot môi trường của địa điểm đó. Máy chủ kiểm tra cache, gọi các nguồn khi cần, tạo cảnh
+báo và phân tích, rồi lưu kết quả vào SQL Server. Sau đó, trình duyệt đọc lịch sử và cảnh báo để
+hoàn thiện nội dung hiển thị. Khi người sử dụng đổi địa điểm, các phản hồi thuộc yêu cầu cũ
+được loại bỏ để tránh ghép số liệu giữa hai nơi.
+Bản đồ dùng tọa độ tham chiếu của địa điểm đã chọn, đồng thời tải lưới AQI theo vùng đang
+xem. Báo cáo được tạo từ các bản ghi đã lưu trong kỳ 1, 7 hoặc 30 ngày. Hội thoại gửi kèm địa
+điểm và một số lượt hỏi đáp gần nhất; máy chủ xác định chủ đề, thời gian và nguồn dữ liệu cần
+dùng trước khi tạo phản hồi.
+11

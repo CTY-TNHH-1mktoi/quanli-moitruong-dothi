@@ -1,0 +1,12 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Điều kiện sau và đầu ra. Các sản phẩm gồm JSONL đã lọc, báo cáo tiền kiểm tra, checkpoint
+hoặc adapter, kết quả đánh giá và bản xuất. Hồ sơ ngày 27/10 ghi nhận 452 mẫu train, 124
+validation đã tiền kiểm tra; lịch tự động thực tế đang chờ bộ nhớ.
+Luồng thay thế và ngoại lệ. Thiếu RAM chuyển waiting_for_memory. Dữ liệu không hợp lệ,
+nguồn trùng hoặc mất trạng thái tối ưu không được coi là một lần tiếp tục học thành công. Khôi
+phục checkpoint gộp chỉ hỗ trợ đợt LoRA mới, không phục dựng optimizer cũ.
+Thiết kế và bằng chứng. daily_train_xanhnon.py; train_xanhnon.py; training_state.py;
+training_resume.py; export_xanhnon.py; model_release.py. Lịch XanhNon-Train-Reviewed-
+Data và các manifest cục bộ.
+Quy tắc và nghiệm thu. BR12. Kiểm thử: TC27, TC28.
+30

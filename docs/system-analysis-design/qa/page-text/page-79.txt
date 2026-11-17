@@ -1,0 +1,18 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Phương thức và đường dẫn Đầu vào và kiểm tra Đầu ra và dữ liệu liên quan
+location; limit mặc định 10, 1–50; Danh sách metadata mới nhất; đọc
+GET /api/baocao
+offset 0–1.000.000 BaoCaoMT.
+GET Mã trên đường dẫn; location trong Nội dung snapshot đã lưu; 404 nếu
+/api/baocao/<int:report_id> query không cùng nơi hoặc không tồn tại.
+A.1 Dữ liệu câu hỏi và lịch sử
+message bắt buộc là chuỗi có nội dung sau khi loại khoảng trắng. history là danh sách có số phần
+tử chẵn, tối đa 16, bắt đầu bằng user rồi assistant; mỗi content phải có nội dung và không dài quá
+32.768 ký tự. Trường stream chỉ kích hoạt đường SSE khi bằng true. Các kiểm tra này chặn cấu
+trúc yêu cầu sai nhưng không phải xác thực danh tính.
+A.2 Phân biệt dữ liệu trả về
+/api/capnhat trả bộ kết quả điều phối đã ghép; /api/dulieu/moinhat trả hàng dữ liệu NguonDL.
+Khi cần snapshot đầy đủ từ hàng SQL, xử lý phải đọc và kiểm tra ChiTiet. /api/phantich trả danh
+sách phân tích lưu theo nguồn, không trực tiếp gọi mô hình ngôn ngữ. /api/baocao/<id> trả nội
+dung đã lưu để giữ khả năng tái hiện báo cáo.
+79

@@ -1,0 +1,15 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 10. Sequence tạo và lưu báo cáo môi trường
+ReportRepository là lớp chịu trách nhiệm lấy dữ liệu theo kỳ và lưu snapshot báo cáo.
+build_report thực hiện tính toán trên dữ liệu đã đọc. Mã báo cáo chỉ được trả cùng phản hồi
+thành công sau khi lệnh lưu được commit; thao tác mở lại sử dụng NoiDung đã lưu, không gọi
+lại build_report.
+6.7 Đối tượng miền nghiệp vụ
+Bảng 10. Đối tượng miền và bất biến dữ liệu
+Đối tượng Trách nhiệm và thuộc tính chính Bất biến hoặc vòng đời
+Nhận diện nơi tra cứu; mã, tên, nhóm, hai Mã thuộc danh mục; tọa độ thời tiết và
+Địa điểm
+bộ tọa độ tham chiếu tiếng ồn có thể khác nhau.
+Snapshot môi Gắn bộ số liệu, nguồn, thời điểm lấy và kết Sau commit là bản ghi lịch sử; thiếu
+trường quả với Manguon trường giữ ý nghĩa chưa có dữ liệu.
+40

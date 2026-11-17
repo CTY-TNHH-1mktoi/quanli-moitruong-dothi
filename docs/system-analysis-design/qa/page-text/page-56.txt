@@ -1,0 +1,13 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Hình 17. Wireframe tổng quan theo giao diện đã triển khai
+9.2 UI01 Tổng quan và lựa chọn địa điểm
+Khu vực đầu có tên địa điểm, trạng thái tải, nguồn, danh sách chọn và nút lấy vị trí. Bên phải là
+nút Cập nhật dữ liệu, ngay dưới là thời điểm cập nhật gần nhất. Danh sách địa điểm giới hạn
+chiều rộng trên máy tính và co theo màn hình nhỏ. Chọn nơi mới làm thay đổi toàn bộ phần dữ
+liệu đang dùng chung, thay vì chỉ đổi tiêu đề.
+Đầu vào gồm mã địa điểm từ danh sách và từ khóa tìm kiếm trên thanh đầu trang. Dữ liệu đến từ
+/api/diadiem và /api/capnhat. Trạng thái đang tải được thể hiện ở nhãn trạng thái cùng aria-busy;
+lỗi danh mục có nút thử lại riêng. Khi GPS thành công, thông báo ghi rõ địa điểm gần nhất trong
+danh sách và khoảng cách theo đường thẳng. UI01 phục vụ UC01–UC04; mã nguồn liên quan là
+index.html, locations.js, dashboard.js và script.js.
+56

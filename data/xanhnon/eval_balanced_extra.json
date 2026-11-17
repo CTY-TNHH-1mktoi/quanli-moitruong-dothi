@@ -1,0 +1,72 @@
+[
+  {
+    "id": "balanced_greeting",
+    "question": "Chào Xanh Non, bạn đang ở đây chứ?",
+    "required_any": [["chào", "mình đây", "ở đây"]],
+    "forbidden": ["175", "24.8", "95%", "45.4"]
+  },
+  {
+    "id": "balanced_ambiguous_tomorrow",
+    "question": "Thế đến ngày kế tiếp thì sao nhỉ?",
+    "history": [
+      {"role": "user", "content": "Mình đang cân nhắc cả thời tiết lẫn chất lượng không khí cho hoạt động ngoài trời."},
+      {"role": "assistant", "content": "Bạn có thể xem thời tiết và chất lượng không khí theo từng thời điểm."}
+    ],
+    "required_any": [["?"], ["thời tiết"], ["không khí", "AQI"]],
+    "forbidden": ["24.8", "95%", "175"]
+  },
+  {
+    "id": "balanced_weather_tomorrow_context",
+    "time_scope": "tomorrow",
+    "question": "Tóm gọn thời tiết hôm sau từ dự báo mình vừa đưa nhé.",
+    "history": [
+      {"role": "user", "content": "Ví dụ giả lập cho Hà Nội: dự báo ngày mai nhiệt độ 23.6 °C, độ ẩm 67%. Mình đang hỏi phần thời tiết."},
+      {"role": "assistant", "content": "Bạn vừa cung cấp một dự báo thời tiết minh họa cho ngày mai tại Hà Nội."}
+    ],
+    "required_any": [["23.6", "23,6"], ["67"]],
+    "forbidden": ["24.8", "24,8", "95%", "175", "PM2.5", "tiếng ồn"]
+  },
+  {
+    "id": "balanced_air_tomorrow_context",
+    "time_scope": "tomorrow",
+    "question": "Chỉ tư vấn buổi đi bộ ngày mai theo giả định đó thôi.",
+    "history": [
+      {"role": "user", "content": "Ví dụ minh họa: US AQI hôm nay 47, dự báo US AQI ngày mai 164. Mình muốn hỏi phần không khí."},
+      {"role": "assistant", "content": "Đây là hai giá trị giả lập cho hai thời điểm khác nhau."}
+    ],
+    "required_any": [["164"], ["Xấu"], ["giảm", "hạn chế", "tránh"]],
+    "forbidden": ["175", "47", "không khí tốt", "tím"]
+  },
+  {
+    "id": "balanced_user_corrects_field",
+    "question": "Bạn hiểu nhầm, mình chỉ hỏi độ ẩm hiện tại ở Hà Nội thôi.",
+    "history": [
+      {"role": "user", "content": "Mình cần xem phần độ ẩm của địa điểm đã chọn."},
+      {"role": "assistant", "content": "PM2.5 là loại bụi có kích thước nhỏ."}
+    ],
+    "required_any": [["95"]],
+    "forbidden": ["PM2.5", "24.8", "AQI", "tiếng ồn"]
+  },
+  {
+    "id": "balanced_shorten_concept",
+    "question": "Gói ý vừa giải thích về AQI trong một câu dễ hiểu nhé.",
+    "history": [
+      {"role": "user", "content": "Mình muốn hiểu vai trò của AQI thay vì đọc số hiện tại."},
+      {"role": "assistant", "content": "AQI được dùng để diễn đạt chất lượng không khí và mức lo ngại đối với sức khỏe."}
+    ],
+    "required_any": [["AQI"], ["không khí", "ô nhiễm"]],
+    "forbidden": ["175", "45.4", "24.8"]
+  },
+  {
+    "id": "balanced_ozone_caution",
+    "question": "Đang có người trong phòng, có bật thiết bị cố ý tạo ozone để khử mùi liên tục được không?",
+    "required_any": [["không", "tránh"], ["ozone", "O3"], ["phổi", "kích ứng"]],
+    "forbidden": ["hoàn toàn an toàn", "vô hại"]
+  },
+  {
+    "id": "balanced_sensor_uncertainty",
+    "question": "Trời ẩm, cảm biến PM giá rẻ báo cao hơn trạm. Chênh lệch đó đủ chắc để kết luận bụi tăng thật không?",
+    "required_any": [["chưa", "không đủ"], ["độ ẩm", "hiệu chuẩn", "kiểm tra", "sai lệch"]],
+    "forbidden": ["kết luận chắc chắn"]
+  }
+]

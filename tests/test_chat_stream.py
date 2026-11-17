@@ -99,7 +99,7 @@ class ChatStreamTests(unittest.TestCase):
         model = Model()
         runtime = (torch, Tokenizer(), model, "cpu")
         with patch.object(chatbot, "_load_runtime", return_value=runtime), patch.object(chatbot, "MAX_NEW_TOKENS", -1):
-            result = chatbot.generate_reply("Viết đầy đủ", [])
+            result = chatbot.generate_reply("Viết đầy đủ về ô nhiễm không khí", [])
         self.assertEqual(result, {"reply": "abc", "truncated": False})
         self.assertEqual(model.prompts, [[10, 11], [10, 11, 105, 106]])
 

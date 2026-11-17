@@ -1,0 +1,41 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+4.2 Quy tắc nghiệp vụ
+Bảng 7. Các quy tắc nghiệp vụ sử dụng trong đặc tả
+Mã Quy tắc
+Mã địa điểm phải thuộc danh mục; bỏ trống dùng Hà Nội. Mã không hợp lệ trả lỗi thay vì tự gán
+BR01
+sang địa điểm khác.
+Cache snapshot hiệu lực 600 giây theo từng địa điểm. Khóa riêng ngăn yêu cầu cùng địa điểm tạo
+BR02
+đồng thời nhiều bản ghi trong một tiến trình.
+Thời gian lấy dữ liệu, thời gian nguồn thời tiết, thời gian nguồn không khí và thời gian đo tiếng
+BR03
+ồn có ý nghĩa riêng; metadata nguồn được giữ trong ChiTiet.
+BR04 Không có tiếng ồn phù hợp thì trả null. Không dùng tiếng ồn của địa điểm khác để lấp chỗ trống.
+Cảnh báo được sinh cho từng thông số có giá trị và liên kết với Manguon; hai mức lưu là Trung
+BR05
+bình và Cao.
+Phân loại Random Forest chỉ chạy khi đủ năm giá trị hữu hạn. Nhãn của mô hình không thay thế
+BR06
+chỉ số US AQI.
+Báo cáo chỉ dùng bản ghi và cảnh báo cùng địa điểm, nằm trong kỳ 1, 7 hoặc 30 ngày; nội dung
+BR07
+được lưu thành snapshot JSON.
+Số liệu thiếu không được dùng như một lần đo bằng 0 khi tính thống kê báo cáo; số thiếu được
+BR08
+đếm riêng.
+Ngữ cảnh hội thoại gồm tối đa tám cặp hỏi đáp hoàn chỉnh; đổi địa điểm trên giao diện sử dụng
+BR09
+lịch sử riêng.
+Dữ liệu hiện tại và dự báo phải được lấy theo địa điểm, thời gian đã giải nghĩa. Không lấy số đã
+BR10
+xuất hiện trong câu trả lời cũ làm nguồn mới.
+Câu hỏi ngoài phạm vi nhận câu giới thiệu cố định; câu hỏi thiếu chủ đề hoặc ngày quan trọng có
+BR11
+thể được hỏi lại.
+Học từ chat chỉ tái sử dụng câu trả lời kiến thức ổn định đã đối chiếu nguồn. Góp ý cần kiểm tra
+BR12
+trước khi thành dữ liệu huấn luyện.
+BR13 Lưới bản đồ tối đa 196 điểm; vùng thiếu dữ liệu để trống, không tô màu bằng giá trị giả.
+BR14 Phản hồi cũ đến muộn không thay thế dữ liệu của địa điểm mới đang chọn trên giao diện.
+15

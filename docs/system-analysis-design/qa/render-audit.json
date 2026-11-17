@@ -1,0 +1,1102 @@
+[
+  {
+    "page": 1,
+    "text_length": 253,
+    "images": 0,
+    "words": 58,
+    "body_top": 115.01264000000003,
+    "body_bottom": 496.44568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 2,
+    "text_length": 3712,
+    "images": 0,
+    "words": 290,
+    "body_top": 63.34735999999998,
+    "body_bottom": 718.61568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 1 TỔNG QUAN ĐỀ TÀI ............................................................................................. 9",
+      "CHƯƠNG 2 KHẢO SÁT HIỆN TRẠNG ................................................................................... 11",
+      "CHƯƠNG 3 PHƯƠNG PHÁP PHÂN TÍCH VÀ THIẾT KẾ .................................................... 13",
+      "CHƯƠNG 4 ĐẶC TẢ YÊU CẦU HỆ THỐNG ......................................................................... 14",
+      "CHƯƠNG 5 PHÂN TÍCH CHỨC NĂNG NGHIỆP VỤ ............................................................ 17"
+    ],
+    "errors": []
+  },
+  {
+    "page": 3,
+    "text_length": 3943,
+    "images": 0,
+    "words": 327,
+    "body_top": 62.835680000000025,
+    "body_bottom": 733.85568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 6 MÔ HÌNH HÓA HỆ THỐNG ................................................................................ 31",
+      "CHƯƠNG 7 THIẾT KẾ KIẾN TRÚC PHẦN MỀM .................................................................. 45",
+      "CHƯƠNG 8 THIẾT KẾ CƠ SỞ DỮ LIỆU ................................................................................. 48"
+    ],
+    "errors": []
+  },
+  {
+    "page": 4,
+    "text_length": 3878,
+    "images": 0,
+    "words": 318,
+    "body_top": 62.835680000000025,
+    "body_bottom": 733.85568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 9 THIẾT KẾ GIAO DIỆN VÀ TƯƠNG TÁC NGƯỜI DÙNG ............................... 55",
+      "CHƯƠNG 10 THIẾT KẾ XỬ LÝ VÀ GIÁM SÁT MÔI TRƯỜNG ......................................... 61",
+      "CHƯƠNG 11 THIẾT KẾ CHATBOT TƯ VẤN XANH NON .................................................. 64"
+    ],
+    "errors": []
+  },
+  {
+    "page": 5,
+    "text_length": 3038,
+    "images": 0,
+    "words": 248,
+    "body_top": 62.835680000000025,
+    "body_bottom": 580.23568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 12 KIỂM THỬ VÀ TRUY VẾT YÊU CẦU ............................................................ 68",
+      "CHƯƠNG 13 TRIỂN KHAI VÀ VẬN HÀNH .......................................................................... 75",
+      "CHƯƠNG 14 KẾT QUẢ PHÂN TÍCH VÀ THIẾT KẾ ............................................................. 77",
+      "PHỤ LỤC A DANH MỤC API ................................................................................................... 78",
+      "PHỤ LỤC B BẰNG CHỨNG MÃ NGUỒN .............................................................................. 80"
+    ],
+    "errors": []
+  },
+  {
+    "page": 6,
+    "text_length": 3419,
+    "images": 0,
+    "words": 345,
+    "body_top": 63.34735999999998,
+    "body_bottom": 732.41568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 1. Cây phân rã chức năng của hệ thống ............................................................................... 17",
+      "Hình 2. Sơ đồ ngữ cảnh của hệ thống ........................................................................................... 31",
+      "Hình 3. DFD mức 0 phần tra cứu giám sát và báo cáo ................................................................. 32",
+      "Hình 4. DFD mức 0 phần hội thoại và huấn luyện ....................................................................... 33",
+      "Hình 5. DFD mức 1 của tiến trình cập nhật và đánh giá............................................................... 34",
+      "Hình 6. Use Case tổng thể theo nhóm nghiệp vụ .......................................................................... 36",
+      "Hình 7. Activity của luồng chọn địa điểm và tra cứu ................................................................... 37",
+      "Hình 8. Sequence cập nhật snapshot và ghi dữ liệu ...................................................................... 38",
+      "Hình 9. Sequence điều phối hội thoại và phản hồi SSE ................................................................ 39",
+      "Hình 10. Sequence tạo và lưu báo cáo môi trường ....................................................................... 40",
+      "Hình 11. Class Diagram các lớp triển khai nghiệp vụ .................................................................. 42",
+      "Hình 12. Các phụ thuộc của lớp học từ câu hỏi mới ..................................................................... 43",
+      "Hình 13. State Diagram của runtime chatbot ................................................................................ 44",
+      "Hình 14. Component Diagram của ứng dụng ............................................................................... 45",
+      "Hình 15. Deployment Diagram trên máy chạy dự án ................................................................... 47",
+      "Hình 16. ERD sáu bảng nghiệp vụ và loại liên kết ....................................................................... 49",
+      "Hình 17. Wireframe tổng quan theo giao diện đã triển khai ......................................................... 56",
+      "Hình 18. Giao diện tổng quan trên máy tính ................................................................................. 57",
+      "Hình 19. Màn hình xu hướng với trục số ...................................................................................... 58",
+      "Hình 20. Quy trình dữ liệu học và huấn luyện cục bộ .................................................................. 67",
+      "Bảng 1. Các thuật ngữ sử dụng trong báo cáo ................................................................................ 8",
+      "Bảng 2. Thành phần công nghệ của phiên bản khảo sát ................................................................. 9",
+      "Bảng 3. Tác nhân và phạm vi tương tác ........................................................................................ 11",
+      "Bảng 4. Kết quả đối chiếu phạm vi chức năng ............................................................................. 12",
+      "Bảng 5. Đối chiếu hai cách phân tích trong dự án ........................................................................ 13",
+      "Bảng 6. Danh mục yêu cầu chức năng .......................................................................................... 14",
+      "Bảng 7. Các quy tắc nghiệp vụ sử dụng trong đặc tả .................................................................... 15"
+    ],
+    "errors": []
+  },
+  {
+    "page": 7,
+    "text_length": 3517,
+    "images": 0,
+    "words": 333,
+    "body_top": 62.835680000000025,
+    "body_bottom": 667.95568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 8. Giới hạn và hành vi phi chức năng hiện có ..................................................................... 16",
+      "Bảng 9. Đặc tả các tiến trình con của cập nhật ............................................................................. 34",
+      "Bảng 10. Đối tượng miền và bất biến dữ liệu ............................................................................... 40",
+      "Bảng 11. Trách nhiệm các thành phần kiến trúc ........................................................................... 46",
+      "Bảng 12. Cấu trúc bảng DiaDiem ................................................................................................. 50",
+      "Bảng 13. Cấu trúc bảng NguonDL................................................................................................ 50",
+      "Bảng 14. Cấu trúc bảng CanhBao ................................................................................................. 51",
+      "Bảng 15. Cấu trúc bảng PhanTichAI ............................................................................................ 51",
+      "Bảng 16. Cấu trúc bảng BaoCaoMT ............................................................................................. 52",
+      "Bảng 17. Cấu trúc bảng MauBanDoKhongKhi ............................................................................ 52",
+      "Bảng 18. Các trường của hai kho SQLite ..................................................................................... 53",
+      "Bảng 19. Chỉ mục và cơ chế tra cứu hiện có ................................................................................ 53",
+      "Bảng 20. Danh mục màn hình và quan hệ điều hướng ................................................................. 55",
+      "Bảng 21. Hành vi thành phần giao diện ........................................................................................ 60",
+      "Bảng 22. Thông số và đặc tính nguồn dữ liệu .............................................................................. 61",
+      "Bảng 23. Ngưỡng cảnh báo nội bộ được khai báo trong mã nguồn ............................................. 62",
+      "Bảng 24. Các mức US AQI được giao diện sử dụng .................................................................... 62",
+      "Bảng 25. Các biến ngữ cảnh và cách sử dụng............................................................................... 65",
+      "Bảng 26. Nhóm dữ liệu và vai trò trong quy trình học ................................................................. 66",
+      "Bảng 27. Tổng hợp các kết quả đã ghi nhận ................................................................................. 68",
+      "Bảng 28. Tình huống kiểm thử địa điểm giám sát và bản đồ ....................................................... 69",
+      "Bảng 29. Tình huống kiểm thử xu hướng cảnh báo và báo cáo.................................................... 70",
+      "Bảng 30. Tình huống kiểm thử hội thoại dữ liệu học và vận hành ............................................... 71",
+      "Bảng 31. Tác nhân và nhóm chức năng ........................................................................................ 73",
+      "Bảng 32. Truy vết yêu cầu đến thiết kế và kiểm thử .................................................................... 73",
+      "Bảng 33. Dấu hiệu vận hành và ý nghĩa ....................................................................................... 75",
+      "Bảng 34. Các hợp đồng API của ứng dụng ................................................................................... 78",
+      "Bảng 35. Danh mục mã nguồn phục vụ kiểm chứng .................................................................... 80"
+    ],
+    "errors": []
+  },
+  {
+    "page": 8,
+    "text_length": 735,
+    "images": 0,
+    "words": 166,
+    "body_top": 63.34735999999998,
+    "body_bottom": 498.77464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 1. Các thuật ngữ sử dụng trong báo cáo"
+    ],
+    "errors": []
+  },
+  {
+    "page": 9,
+    "text_length": 2248,
+    "images": 0,
+    "words": 483,
+    "body_top": 74.38735999999994,
+    "body_bottom": 710.26464,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 1 TỔNG QUAN ĐỀ TÀI",
+      "Bảng 2. Thành phần công nghệ của phiên bản khảo sát"
+    ],
+    "errors": []
+  },
+  {
+    "page": 10,
+    "text_length": 1167,
+    "images": 0,
+    "words": 201,
+    "body_top": 68.40463999999997,
+    "body_bottom": 446.16568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 11,
+    "text_length": 1829,
+    "images": 0,
+    "words": 406,
+    "body_top": 69.34735999999998,
+    "body_bottom": 634.95568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 2 KHẢO SÁT HIỆN TRẠNG",
+      "Bảng 3. Tác nhân và phạm vi tương tác"
+    ],
+    "errors": []
+  },
+  {
+    "page": 12,
+    "text_length": 1894,
+    "images": 0,
+    "words": 373,
+    "body_top": 63.17264,
+    "body_bottom": 673.71568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 4. Kết quả đối chiếu phạm vi chức năng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 13,
+    "text_length": 2138,
+    "images": 0,
+    "words": 452,
+    "body_top": 69.34735999999998,
+    "body_bottom": 722.21568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 3 PHƯƠNG PHÁP PHÂN TÍCH VÀ THIẾT KẾ",
+      "Bảng 5. Đối chiếu hai cách phân tích trong dự án"
+    ],
+    "errors": []
+  },
+  {
+    "page": 14,
+    "text_length": 1652,
+    "images": 0,
+    "words": 370,
+    "body_top": 69.34735999999998,
+    "body_bottom": 696.46464,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 4 ĐẶC TẢ YÊU CẦU HỆ THỐNG",
+      "Bảng 6. Danh mục yêu cầu chức năng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 15,
+    "text_length": 1823,
+    "images": 0,
+    "words": 398,
+    "body_top": 63.05264,
+    "body_bottom": 618.80464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 7. Các quy tắc nghiệp vụ sử dụng trong đặc tả"
+    ],
+    "errors": []
+  },
+  {
+    "page": 16,
+    "text_length": 1806,
+    "images": 0,
+    "words": 348,
+    "body_top": 63.05264,
+    "body_bottom": 638.07568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 8. Giới hạn và hành vi phi chức năng hiện có"
+    ],
+    "errors": []
+  },
+  {
+    "page": 17,
+    "text_length": 869,
+    "images": 1,
+    "words": 189,
+    "body_top": 69.34735999999998,
+    "body_bottom": 701.45568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 5 PHÂN TÍCH CHỨC NĂNG NGHIỆP VỤ",
+      "Hình 1. Cây phân rã chức năng của hệ thống"
+    ],
+    "errors": []
+  },
+  {
+    "page": 18,
+    "text_length": 2326,
+    "images": 0,
+    "words": 487,
+    "body_top": 63.17264,
+    "body_bottom": 728.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 19,
+    "text_length": 2200,
+    "images": 0,
+    "words": 454,
+    "body_top": 62.835680000000025,
+    "body_bottom": 687.87568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 20,
+    "text_length": 2163,
+    "images": 0,
+    "words": 429,
+    "body_top": 62.835680000000025,
+    "body_bottom": 714.89568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 21,
+    "text_length": 2338,
+    "images": 0,
+    "words": 483,
+    "body_top": 62.835680000000025,
+    "body_bottom": 728.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 22,
+    "text_length": 2082,
+    "images": 0,
+    "words": 434,
+    "body_top": 63.17264,
+    "body_bottom": 700.97568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 23,
+    "text_length": 2065,
+    "images": 0,
+    "words": 384,
+    "body_top": 62.835680000000025,
+    "body_bottom": 676.83568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 24,
+    "text_length": 2163,
+    "images": 0,
+    "words": 448,
+    "body_top": 63.17264,
+    "body_bottom": 731.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 25,
+    "text_length": 2177,
+    "images": 0,
+    "words": 471,
+    "body_top": 62.835680000000025,
+    "body_bottom": 734.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 26,
+    "text_length": 2313,
+    "images": 0,
+    "words": 482,
+    "body_top": 62.835680000000025,
+    "body_bottom": 716.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 27,
+    "text_length": 2271,
+    "images": 0,
+    "words": 474,
+    "body_top": 62.835680000000025,
+    "body_bottom": 718.73568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 28,
+    "text_length": 2324,
+    "images": 0,
+    "words": 446,
+    "body_top": 62.835680000000025,
+    "body_bottom": 719.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 29,
+    "text_length": 2177,
+    "images": 0,
+    "words": 429,
+    "body_top": 62.835680000000025,
+    "body_bottom": 685.83568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 30,
+    "text_length": 797,
+    "images": 0,
+    "words": 140,
+    "body_top": 62.835680000000025,
+    "body_bottom": 245.86568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 31,
+    "text_length": 731,
+    "images": 1,
+    "words": 159,
+    "body_top": 69.34735999999998,
+    "body_bottom": 706.49568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 6 MÔ HÌNH HÓA HỆ THỐNG",
+      "Hình 2. Sơ đồ ngữ cảnh của hệ thống"
+    ],
+    "errors": []
+  },
+  {
+    "page": 32,
+    "text_length": 262,
+    "images": 1,
+    "words": 58,
+    "body_top": 62.835680000000025,
+    "body_bottom": 633.90832,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 3. DFD mức 0 phần tra cứu giám sát và báo cáo"
+    ],
+    "errors": []
+  },
+  {
+    "page": 33,
+    "text_length": 515,
+    "images": 1,
+    "words": 115,
+    "body_top": 428.55832,
+    "body_bottom": 532.20568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 4. DFD mức 0 phần hội thoại và huấn luyện"
+    ],
+    "errors": []
+  },
+  {
+    "page": 34,
+    "text_length": 618,
+    "images": 1,
+    "words": 140,
+    "body_top": 63.17264,
+    "body_bottom": 712.42464,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 5. DFD mức 1 của tiến trình cập nhật và đánh giá",
+      "Bảng 9. Đặc tả các tiến trình con của cập nhật"
+    ],
+    "errors": []
+  },
+  {
+    "page": 35,
+    "text_length": 550,
+    "images": 0,
+    "words": 117,
+    "body_top": 68.40463999999997,
+    "body_bottom": 231.03463999999997,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 36,
+    "text_length": 563,
+    "images": 1,
+    "words": 130,
+    "body_top": 63.05264,
+    "body_bottom": 647.31568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 6. Use Case tổng thể theo nhóm nghiệp vụ"
+    ],
+    "errors": []
+  },
+  {
+    "page": 37,
+    "text_length": 455,
+    "images": 1,
+    "words": 99,
+    "body_top": 63.17264,
+    "body_bottom": 576.51568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 7. Activity của luồng chọn địa điểm và tra cứu"
+    ],
+    "errors": []
+  },
+  {
+    "page": 38,
+    "text_length": 401,
+    "images": 1,
+    "words": 88,
+    "body_top": 63.17264,
+    "body_bottom": 577.47568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 8. Sequence cập nhật snapshot và ghi dữ liệu"
+    ],
+    "errors": []
+  },
+  {
+    "page": 39,
+    "text_length": 362,
+    "images": 1,
+    "words": 78,
+    "body_top": 481.59832,
+    "body_bottom": 551.43568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 9. Sequence điều phối hội thoại và phản hồi SSE"
+    ],
+    "errors": []
+  },
+  {
+    "page": 40,
+    "text_length": 807,
+    "images": 1,
+    "words": 168,
+    "body_top": 481.59832,
+    "body_bottom": 726.58464,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 10. Sequence tạo và lưu báo cáo môi trường",
+      "Bảng 10. Đối tượng miền và bất biến dữ liệu"
+    ],
+    "errors": []
+  },
+  {
+    "page": 41,
+    "text_length": 949,
+    "images": 0,
+    "words": 205,
+    "body_top": 68.40463999999997,
+    "body_bottom": 346.95464,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 42,
+    "text_length": 572,
+    "images": 1,
+    "words": 106,
+    "body_top": 63.05264,
+    "body_bottom": 644.79568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 11. Class Diagram các lớp triển khai nghiệp vụ"
+    ],
+    "errors": []
+  },
+  {
+    "page": 43,
+    "text_length": 1319,
+    "images": 1,
+    "words": 275,
+    "body_top": 344.65832,
+    "body_bottom": 644.9156800000001,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 12. Các phụ thuộc của lớp học từ câu hỏi mới"
+    ],
+    "errors": []
+  },
+  {
+    "page": 44,
+    "text_length": 484,
+    "images": 1,
+    "words": 93,
+    "body_top": 63.17264,
+    "body_bottom": 514.20568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 13. State Diagram của runtime chatbot"
+    ],
+    "errors": []
+  },
+  {
+    "page": 45,
+    "text_length": 486,
+    "images": 1,
+    "words": 102,
+    "body_top": 69.34735999999998,
+    "body_bottom": 620.10832,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 7 THIẾT KẾ KIẾN TRÚC PHẦN MỀM",
+      "Hình 14. Component Diagram của ứng dụng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 46,
+    "text_length": 1928,
+    "images": 0,
+    "words": 382,
+    "body_top": 63.17264,
+    "body_bottom": 703.37568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 11. Trách nhiệm các thành phần kiến trúc"
+    ],
+    "errors": []
+  },
+  {
+    "page": 47,
+    "text_length": 927,
+    "images": 1,
+    "words": 186,
+    "body_top": 62.835680000000025,
+    "body_bottom": 663.63568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 15. Deployment Diagram trên máy chạy dự án"
+    ],
+    "errors": []
+  },
+  {
+    "page": 48,
+    "text_length": 830,
+    "images": 0,
+    "words": 172,
+    "body_top": 69.34735999999998,
+    "body_bottom": 282.58567999999997,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 8 THIẾT KẾ CƠ SỞ DỮ LIỆU"
+    ],
+    "errors": []
+  },
+  {
+    "page": 49,
+    "text_length": 562,
+    "images": 1,
+    "words": 119,
+    "body_top": 536.8283200000001,
+    "body_bottom": 657.51568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 16. ERD sáu bảng nghiệp vụ và loại liên kết"
+    ],
+    "errors": []
+  },
+  {
+    "page": 50,
+    "text_length": 1420,
+    "images": 0,
+    "words": 256,
+    "body_top": 63.17264,
+    "body_bottom": 715.18464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 12. Cấu trúc bảng DiaDiem",
+      "Bảng 13. Cấu trúc bảng NguonDL"
+    ],
+    "errors": []
+  },
+  {
+    "page": 51,
+    "text_length": 1449,
+    "images": 0,
+    "words": 279,
+    "body_top": 62.835680000000025,
+    "body_bottom": 637.83568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 14. Cấu trúc bảng CanhBao",
+      "Bảng 15. Cấu trúc bảng PhanTichAI"
+    ],
+    "errors": []
+  },
+  {
+    "page": 52,
+    "text_length": 1459,
+    "images": 0,
+    "words": 275,
+    "body_top": 63.17264,
+    "body_bottom": 725.57568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 16. Cấu trúc bảng BaoCaoMT",
+      "Bảng 17. Cấu trúc bảng MauBanDoKhongKhi"
+    ],
+    "errors": []
+  },
+  {
+    "page": 53,
+    "text_length": 2067,
+    "images": 0,
+    "words": 384,
+    "body_top": 62.608319999999935,
+    "body_bottom": 707.14464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 18. Các trường của hai kho SQLite",
+      "Bảng 19. Chỉ mục và cơ chế tra cứu hiện có"
+    ],
+    "errors": []
+  },
+  {
+    "page": 54,
+    "text_length": 601,
+    "images": 0,
+    "words": 130,
+    "body_top": 68.40463999999997,
+    "body_bottom": 233.14568000000008,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 55,
+    "text_length": 1353,
+    "images": 0,
+    "words": 276,
+    "body_top": 69.46735999999999,
+    "body_bottom": 541.71568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 9 THIẾT KẾ GIAO DIỆN VÀ TƯƠNG TÁC NGƯỜI",
+      "Bảng 20. Danh mục màn hình và quan hệ điều hướng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 56,
+    "text_length": 900,
+    "images": 1,
+    "words": 184,
+    "body_top": 412.23832,
+    "body_bottom": 619.83568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 17. Wireframe tổng quan theo giao diện đã triển khai"
+    ],
+    "errors": []
+  },
+  {
+    "page": 57,
+    "text_length": 1278,
+    "images": 1,
+    "words": 276,
+    "body_top": 375.75832,
+    "body_bottom": 705.41568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 18. Giao diện tổng quan trên máy tính"
+    ],
+    "errors": []
+  },
+  {
+    "page": 58,
+    "text_length": 1390,
+    "images": 1,
+    "words": 291,
+    "body_top": 62.835680000000025,
+    "body_bottom": 726.29568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 19. Màn hình xu hướng với trục số"
+    ],
+    "errors": []
+  },
+  {
+    "page": 59,
+    "text_length": 2495,
+    "images": 0,
+    "words": 520,
+    "body_top": 62.835680000000025,
+    "body_bottom": 704.81568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 60,
+    "text_length": 1856,
+    "images": 0,
+    "words": 406,
+    "body_top": 63.17264,
+    "body_bottom": 668.67568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 21. Hành vi thành phần giao diện"
+    ],
+    "errors": []
+  },
+  {
+    "page": 61,
+    "text_length": 2170,
+    "images": 0,
+    "words": 448,
+    "body_top": 69.34735999999998,
+    "body_bottom": 726.29568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 10 THIẾT KẾ XỬ LÝ VÀ GIÁM SÁT MÔI TRƯỜNG",
+      "Bảng 22. Thông số và đặc tính nguồn dữ liệu"
+    ],
+    "errors": []
+  },
+  {
+    "page": 62,
+    "text_length": 1356,
+    "images": 0,
+    "words": 303,
+    "body_top": 62.835680000000025,
+    "body_bottom": 685.52464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 23. Ngưỡng cảnh báo nội bộ được khai báo trong mã nguồn",
+      "Bảng 24. Các mức US AQI được giao diện sử dụng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 63,
+    "text_length": 2308,
+    "images": 0,
+    "words": 487,
+    "body_top": 62.835680000000025,
+    "body_bottom": 576.1556800000001,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 64,
+    "text_length": 2418,
+    "images": 0,
+    "words": 527,
+    "body_top": 69.34735999999998,
+    "body_bottom": 701.69568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 11 THIẾT KẾ CHATBOT TƯ VẤN XANH NON"
+    ],
+    "errors": []
+  },
+  {
+    "page": 65,
+    "text_length": 2276,
+    "images": 0,
+    "words": 505,
+    "body_top": 62.608319999999935,
+    "body_bottom": 705.77568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 25. Các biến ngữ cảnh và cách sử dụng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 66,
+    "text_length": 2325,
+    "images": 0,
+    "words": 486,
+    "body_top": 63.17264,
+    "body_bottom": 691.47568,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 26. Nhóm dữ liệu và vai trò trong quy trình học"
+    ],
+    "errors": []
+  },
+  {
+    "page": 67,
+    "text_length": 921,
+    "images": 1,
+    "words": 208,
+    "body_top": 447.51832,
+    "body_bottom": 654.99568,
+    "out_of_bounds": [],
+    "headings": [
+      "Hình 20. Quy trình dữ liệu học và huấn luyện cục bộ"
+    ],
+    "errors": []
+  },
+  {
+    "page": 68,
+    "text_length": 2246,
+    "images": 0,
+    "words": 459,
+    "body_top": 69.34735999999998,
+    "body_bottom": 727.01568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 12 KIỂM THỬ VÀ TRUY VẾT YÊU CẦU",
+      "Bảng 27. Tổng hợp các kết quả đã ghi nhận"
+    ],
+    "errors": []
+  },
+  {
+    "page": 69,
+    "text_length": 2347,
+    "images": 0,
+    "words": 478,
+    "body_top": 62.835680000000025,
+    "body_bottom": 697.06464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 28. Tình huống kiểm thử địa điểm giám sát và bản đồ"
+    ],
+    "errors": []
+  },
+  {
+    "page": 70,
+    "text_length": 2056,
+    "images": 0,
+    "words": 402,
+    "body_top": 68.40463999999997,
+    "body_bottom": 663.80464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 29. Tình huống kiểm thử xu hướng cảnh báo và báo cáo"
+    ],
+    "errors": []
+  },
+  {
+    "page": 71,
+    "text_length": 1973,
+    "images": 0,
+    "words": 389,
+    "body_top": 68.40463999999997,
+    "body_bottom": 652.64464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 30. Tình huống kiểm thử hội thoại dữ liệu học và vận hành"
+    ],
+    "errors": []
+  },
+  {
+    "page": 72,
+    "text_length": 1871,
+    "images": 0,
+    "words": 336,
+    "body_top": 68.40463999999997,
+    "body_bottom": 612.4446399999999,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 73,
+    "text_length": 1646,
+    "images": 0,
+    "words": 330,
+    "body_top": 63.05264,
+    "body_bottom": 704.74464,
+    "out_of_bounds": [],
+    "headings": [
+      "Bảng 31. Tác nhân và nhóm chức năng",
+      "Bảng 32. Truy vết yêu cầu đến thiết kế và kiểm thử"
+    ],
+    "errors": []
+  },
+  {
+    "page": 74,
+    "text_length": 1028,
+    "images": 0,
+    "words": 200,
+    "body_top": 68.40463999999997,
+    "body_bottom": 441.12568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 75,
+    "text_length": 2058,
+    "images": 0,
+    "words": 378,
+    "body_top": 69.34735999999998,
+    "body_bottom": 701.74464,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 13 TRIỂN KHAI VÀ VẬN HÀNH",
+      "Bảng 33. Dấu hiệu vận hành và ý nghĩa"
+    ],
+    "errors": []
+  },
+  {
+    "page": 76,
+    "text_length": 2330,
+    "images": 0,
+    "words": 466,
+    "body_top": 68.40463999999997,
+    "body_bottom": 708.65568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 77,
+    "text_length": 1541,
+    "images": 0,
+    "words": 339,
+    "body_top": 69.34735999999998,
+    "body_bottom": 399.24568,
+    "out_of_bounds": [],
+    "headings": [
+      "CHƯƠNG 14 KẾT QUẢ PHÂN TÍCH VÀ THIẾT KẾ"
+    ],
+    "errors": []
+  },
+  {
+    "page": 78,
+    "text_length": 1802,
+    "images": 0,
+    "words": 322,
+    "body_top": 69.34735999999998,
+    "body_bottom": 691.28464,
+    "out_of_bounds": [],
+    "headings": [
+      "PHỤ LỤC A DANH MỤC API",
+      "Bảng 34. Các hợp đồng API của ứng dụng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 79,
+    "text_length": 1102,
+    "images": 0,
+    "words": 215,
+    "body_top": 68.40463999999997,
+    "body_bottom": 383.50568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 80,
+    "text_length": 1763,
+    "images": 0,
+    "words": 258,
+    "body_top": 69.34735999999998,
+    "body_bottom": 705.58464,
+    "out_of_bounds": [],
+    "headings": [
+      "PHỤ LỤC B BẰNG CHỨNG MÃ NGUỒN",
+      "Bảng 35. Danh mục mã nguồn phục vụ kiểm chứng"
+    ],
+    "errors": []
+  },
+  {
+    "page": 81,
+    "text_length": 1511,
+    "images": 0,
+    "words": 220,
+    "body_top": 68.40463999999997,
+    "body_bottom": 514.0856799999999,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  },
+  {
+    "page": 82,
+    "text_length": 1673,
+    "images": 0,
+    "words": 286,
+    "body_top": 69.34735999999998,
+    "body_bottom": 589.95568,
+    "out_of_bounds": [],
+    "headings": [],
+    "errors": []
+  }
+]

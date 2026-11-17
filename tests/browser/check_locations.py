@@ -91,6 +91,7 @@ async def main():
         await wait_ready(test)
         await test.wait_for_timeout(900)
         assert await test.locator('[data-metric="pm25"] [data-role="value"]').inner_text() == "222.0"
+        await test.locator("#chatLauncher").click()
         await test.locator("#chatInput").fill("Câu hỏi TP.HCM")
         await test.locator("#chatSend").click()
         await test.wait_for_function("document.querySelector('#locationSelect').disabled")

@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Thiết kế và bằng chứng. chat_scope.py; chat_knowledge.py: practical_answer,
+concept_answer, retrieve; chat_output.py; chatbot._generate_raw. Kho
+data/xanhnon/knowledge.json; không có cơ sở dữ liệu vector riêng.
+Quy tắc và nghiệm thu. BR10–BR12. Kiểm thử: TC22, TC23.
+5.17 FR16 Tiếp nhận góp ý và câu hỏi mới
+Mục đích và tác nhân. Ghi nhận phản hồi hữu ích và biến thể câu hỏi phù hợp để sử dụng trong
+quy trình cải thiện có kiểm tra. Tác nhân: A01; A02 duyệt bằng công cụ. Ca sử dụng tương ứng:
+UC16.
+Điều kiện trước. Hội thoại có ngữ cảnh cần thiết. Nguồn gửi đáp ứng kiểm tra Origin đối với
+thao tác ghi; tự học được bật cho các yêu cầu phù hợp.
+Đầu vào và giao diện. Tin nhắn xác nhận hữu ích đi qua /api/chat; câu hỏi mới được quan sát
+khi learn_from_chat=true. API POST /api/chat/feedback tồn tại cho payload góp ý nhưng giao
+diện không có bộ nút đánh giá riêng. Vị trí thao tác: UI08.
+Luồng chính.
+1. Nhận biết lời xác nhận hữu ích và lưu payload có fingerprint để tránh ghi trùng.
+2. Với câu hỏi mới, loại dữ liệu nhạy cảm, nội dung ngoài phạm vi và câu thuộc tập kiểm tra; tạo
+khóa từ câu hỏi cùng ngữ cảnh người dùng.
+3. Chỉ gắn learned nếu đáp án khớp tài liệu ổn định có nguồn chính thức, đúng phiên bản tri thức
+và chính sách.
+4. Các câu cần số liệu hoặc nguồn được lưu ở trạng thái chờ phù hợp; góp ý chỉ được xuất thành
+dữ liệu học sau kiểm tra nội dung và riêng tư.
+Điều kiện sau và đầu ra. feedback.sqlite3 lưu góp ý và trạng thái duyệt; questions.sqlite3 lưu
+câu hỏi, số lần gặp và liên kết tài liệu. Trọng số mô hình không thay đổi sau mỗi tin nhắn.
+Luồng thay thế và ngoại lệ. Không đọc được kho học không làm dừng hội thoại chính. Nguồn
+gửi không hợp lệ trả 403; payload góp ý sai trả 400; lỗi lưu góp ý trả 503. Không tái sử dụng một
+đáp án learned khi hash tri thức hoặc chính sách đã đổi.
+Thiết kế và bằng chứng. chat_feedback.FeedbackStore; record_helpful_message;
+chat_learning.ConversationLearner.observe; feedback_training_data.py. Hai cơ sở dữ liệu
+SQLite độc lập với SQL Server.
+Quy tắc và nghiệm thu. BR09, BR12. Kiểm thử: TC24, TC25.
+5.18 FR17 Theo dõi trạng thái mô hình
+Mục đích và tác nhân. Phân biệt chatbot chưa nạp, đang nạp, sẵn sàng, gặp lỗi hoặc đang bị
+khóa bởi huấn luyện. Tác nhân: A02; giao diện đọc khi cần. Ca sử dụng tương ứng: UC17.
+28

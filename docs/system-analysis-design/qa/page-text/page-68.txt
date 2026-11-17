@@ -1,0 +1,39 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 12 KIỂM THỬ VÀ TRUY VẾT YÊU CẦU
+12.1 Phạm vi và tổ chức kiểm thử
+Kiểm thử được tổ chức theo bốn lớp: đơn vị xử lý thuần và dữ liệu; tích hợp API với các phụ
+thuộc được mock; giao diện trình duyệt với dữ liệu kiểm soát; và đối chiếu API, SQL, mô hình
+thật trong các hồ sơ chạy đã lưu. Cách chia này tách việc kiểm tra quy tắc khỏi sự thay đổi của
+nguồn ngoài và chi phí nạp mô hình.
+Dữ liệu kiểm thử bao gồm mã địa điểm hợp lệ và sai, giá trị đúng ngưỡng, trường thiếu, mảng dự
+báo thiếu giờ, phản hồi API lỗi, chuỗi nhiều lượt và các payload không đúng kiểu. Các kịch bản
+trình duyệt dùng Edge ở kích thước máy tính và điện thoại. Bộ kiểm thử có mock không được
+tính như một lần đo tốc độ suy luận hoặc một lần xác minh dữ liệu thật của nguồn.
+12.2 Kết quả có bằng chứng
+Bảng 27. Tổng hợp các kết quả đã ghi nhận
+Đợt kiểm tra Kết quả Bằng chứng
+209 kiểm thử Python duy nhất; 13 kiểm tra restoration-state.json; ba log kiểm
+Hồ sơ khôi phục 27/10
+JavaScript đạt thử và javascript-tests.txt
+Chạy kiểm tra phục vụ lập qa/document-evidence-tests.json;
+179/180 kiểm thử đạt; 1 thất bại; 0 lỗi
+hồ sơ qa/document-evidence-tests.txt
+Kiểm tra 1.600 px và 390 px, menu,
+Giao diện 27/10 chuông, tìm kiếm, đồ thị, chat và không browser-checks.json
+tràn ngang
+Dữ liệu và hội thoại thật HTTP giám sát và RF; tám câu chat; đối
+live-verification.json
+27/10 chiếu JSON/SSE
+452 mẫu train, 124 validation đã token preflight.json; restoration-
+Tiền kiểm tra dữ liệu học
+hóa; chưa là lần học trọng số mới state.json
+Con số 209 là tổng số ca duy nhất trong hồ sơ khôi phục, không phải tổng cộng trực tiếp 177, 30
+và 5 vì có ca trùng giữa các lần chạy. Bộ kiểm tra phục vụ biên soạn được ghi riêng, không cộng
+vào con số đó như một nhóm ca mới. Các hash của những tệp chính trong hồ sơ đã được đối
+chiếu với phiên bản đang khảo sát.
+Lần chạy bổ sung có một ca không đạt kỳ vọng trong test_chat_intents.py: câu “Ở Đà Nẵng hôm
+nay nên làm gì?” mong _grounded_reply trả None khi snapshot đầu vào thuộc nơi khác. Nhánh
+hiện tại đã đọc được AQI của Đà Nẵng và trả tư vấn, nên không khớp điều kiện khẳng định của
+bài thử. Kết quả được giữ nguyên là một ca không đạt; không gộp lần chạy này vào kết quả 209
+ca của hồ sơ trước.
+68

@@ -1,0 +1,14 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+chung. Khóa sinh hội thoại hạn chế chồng phiên mô hình. Đây là cơ chế trong bộ nhớ của tiến
+trình, không phải khóa phân tán giữa nhiều máy chủ.
+Ở giao diện, số phiên yêu cầu và AbortController được dùng khi đổi địa điểm. Báo cáo và hội
+thoại cũng kiểm tra mã nơi đang chọn trước khi trình bày. Nút thao tác được khóa trong những
+bước có thể gây lẫn ngữ cảnh, ví dụ đổi địa điểm trong lúc gửi câu hỏi hoặc tạo báo cáo.
+7.5 Mô hình triển khai hiện tại
+Hình 15. Deployment Diagram trên máy chạy dự án
+Flask được cấu hình lắng nghe 127.0.0.1:5000, debug=False và không dùng reloader.
+NativeChatbot mở tiến trình llama.cpp trên 127.0.0.1 với cổng động; luồng giao tiếp mô hình
+không đi qua dịch vụ ChatGPT. SQL Server được kết nối bằng ODBC, mặc định dùng xác thực
+Windows khi không cấu hình tài khoản SQL. Internet phục vụ nguồn môi trường và nền bản đồ,
+còn trọng số mô hình nằm cục bộ.
+47

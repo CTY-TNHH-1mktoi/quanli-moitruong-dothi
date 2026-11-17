@@ -1,0 +1,47 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+PHỤ LỤC A DANH MỤC API
+Các hợp đồng dưới đây lấy từ các route Flask và blueprint hiện có. location không truyền dùng
+hanoi; mã không hợp lệ trả 400. Những giới hạn limit được chặn về miền cho phép ở API; không
+mô tả chúng như tham số phân trang tùy ý không giới hạn.
+Bảng 34. Các hợp đồng API của ứng dụng
+Phương thức và đường dẫn Đầu vào và kiểm tra Đầu ra và dữ liệu liên quan
+Danh sách 86 địa điểm; chuẩn bị
+GET /api/diadiem Không có payload
+metadata qua LocationStore.
+Snapshot hoàn chỉnh; đọc ghi
+location trong query; thuộc danh
+GET hoặc POST /api/capnhat NguonDL, CanhBao, PhanTichAI;
+mục
+cache 600 giây.
+Hàng NguonDL gần nhất hoặc {};
+GET /api/dulieu/moinhat location không cùng cấu trúc ngoài cùng với
+/capnhat.
+location; limit mặc định 12, trong Danh sách NguonDL được trả theo thứ
+GET /api/dulieu/lichsu
+1–500 tự cũ tới mới.
+location; limit mặc định 20, trong Cảnh báo mới nhất theo địa điểm
+GET /api/canhbao
+1–200 thông qua JOIN NguonDL.
+location; limit mặc định 1, trong Các hàng PhanTichAI mới nhất theo
+GET /api/phantich
+1–50 địa điểm.
+Trục tọa độ, ma trận AQI/PM25, thời
+location; cả bốn south west north
+GET /api/bando/khongkhi gian nguồn và cảnh báo thiếu; tối đa
+east nếu chỉ định phạm vi
+196 điểm.
+JSON reply, truncated hoặc SSE
+JSON message history location;
+POST /api/chat status/delta/done/error; có giới hạn
+stream, learn_from_chat tùy chọn
+body, lịch sử và khóa sinh.
+state và có thể có
+GET /api/chat/status Không có payload background_training; không gọi sinh
+văn bản.
+JSON góp ý theo 201 saved=true khi ghi được; kho
+POST /api/chat/feedback validate_feedback; Origin hợp lệ; SQLite, không công khai danh sách
+tối đa 512 KiB góp ý qua API.
+201 cùng MaBaoCao sau khi lưu
+POST /api/baocao JSON days là int 1, 7, 30; location
+BaoCaoMT.
+78

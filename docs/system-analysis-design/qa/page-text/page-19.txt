@@ -1,0 +1,34 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+3. Tính khoảng cách Haversine từ thiết bị tới từng địa điểm trong danh mục, chọn giá trị nhỏ
+nhất.
+4. Đặt mã tìm được vào danh sách và gọi lại luồng thay đổi địa điểm; hiển thị tên và khoảng cách
+ước tính.
+Điều kiện sau và đầu ra. Kết quả là một địa điểm đã tồn tại trong danh mục, không tạo địa điểm
+mới và không xác định trạm đo gần nhất. Tọa độ thiết bị chỉ được xử lý trong trình duyệt.
+Luồng thay thế và ngoại lệ. Từ chối quyền, không xác định được vị trí, quá thời gian hoặc tọa
+độ không hợp lệ đều có thông báo riêng. Người sử dụng vẫn chọn thủ công. Phản hồi GPS cũ
+không ghi đè lựa chọn mới.
+Thiết kế và bằng chứng. static/locations.js: locateNearest, distanceKm và selectPlace. Không
+có API nhận tọa độ GPS của thiết bị; các API tiếp theo chỉ nhận MaDiaDiem.
+Quy tắc và nghiệm thu. BR01, BR14. Kiểm thử: TC03.
+5.4 FR03 Cập nhật và lưu dữ liệu môi trường
+Mục đích và tác nhân. Tạo snapshot thống nhất của dữ liệu nguồn, kết quả đánh giá và cảnh
+báo tại một địa điểm. Tác nhân: A01, E01, E02. Ca sử dụng tương ứng: UC03.
+Điều kiện trước. Mã địa điểm hợp lệ; SQL Server truy cập được. Nguồn bên ngoài chỉ được gọi
+khi không có snapshot còn hạn.
+Đầu vào và giao diện. Nút Cập nhật dữ liệu hoặc chu kỳ tải tự động gửi location dạng chuỗi.
+GET và POST /api/capnhat đều được khai báo; giao diện hiện dùng GET. Vị trí thao tác: UI01.
+Luồng chính.
+1. Lấy khóa riêng cho địa điểm và kiểm tra cache 600 giây; nếu cần, đọc snapshot đã lưu còn hạn
+trong SQL.
+2. Khi cache hết hạn, lấy nhiệt độ, độ ẩm, dữ liệu không khí và phần tiếng ồn phù hợp.
+3. Tạo cảnh báo theo ngưỡng và phân tích theo AQI; gọi hai bộ phân loại RF khi đủ năm giá trị.
+4. Trong một giao dịch, chèn NguonDL, các CanhBao và PhanTichAI, cập nhật ChiTiet rồi
+commit; đặt cache và trả JSON.
+Điều kiện sau và đầu ra. JSON gồm Manguon, ThoiGian, DiaDiem, DuLieu, DuDoanRF,
+CanhBao và PhanTich. Snapshot mới có mã nguồn duy nhất; cảnh báo và phân tích cùng tham
+chiếu mã này.
+Luồng thay thế và ngoại lệ. Nguồn HTTP lỗi trả 502; SQL lỗi trả thông báo chung và 503. RF
+lỗi hoặc thiếu trường không chặn lưu số liệu. Cập nhật còn trong thời hạn cache trả lại snapshot
+hiện có, không tạo bản ghi mới.
+19

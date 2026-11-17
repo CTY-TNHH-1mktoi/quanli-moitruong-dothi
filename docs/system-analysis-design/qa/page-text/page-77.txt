@@ -1,0 +1,20 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 14 KẾT QUẢ PHÂN TÍCH VÀ THIẾT KẾ
+Hồ sơ xác định hệ thống demoth1 là ứng dụng giám sát môi trường theo địa điểm, gồm giao diện
+web, API Flask, lưu trữ SQL Server, bản đồ AQI, báo cáo và trợ lý Xanh Non. Phần nghiệp vụ
+được phân tích thành 18 chức năng, tám màn hình hoặc phần giao diện, các quy tắc dữ liệu và
+điều kiện nghiệm thu tương ứng. Các sơ đồ thể hiện thống nhất giữa luồng cập nhật, quan hệ lưu
+trữ, quá trình tạo báo cáo và điều phối hội thoại.
+Phân tích theo chức năng làm rõ dòng dữ liệu và thứ tự xử lý. Mô hình UML bổ sung trách
+nhiệm của các lớp triển khai, tương tác giữa thành phần và vòng đời runtime. ERD giữ nguyên
+sáu bảng SQL Server, phân biệt hai khóa ngoại vật lý với liên kết địa điểm ở tầng ứng dụng; hai
+kho SQLite được mô tả riêng theo nhiệm vụ góp ý và học câu hỏi.
+Thiết kế giao diện được đối chiếu theo hành vi thực tế của menu, tìm kiếm, định vị, chuông cảnh
+báo, bản đồ, báo cáo và chat nổi. Phần dữ liệu phân biệt nguồn mô hình, tiếng ồn tổng hợp,
+snapshot ứng dụng và dự báo; các nhãn RF được tách khỏi US AQI. Phần chatbot phân biệt
+nhánh quy tắc, truy xuất tri thức, đọc dữ liệu theo ngữ cảnh và suy luận mô hình cục bộ.
+Các kết quả kiểm thử được ghi theo hồ sơ thực tế, kèm điều kiện và phạm vi. Những nội dung
+như quản trị tài khoản, CRUD trạm, quy trình xử lý cảnh báo hoặc hồ sơ cá nhân không thuộc
+phiên bản được khảo sát. Báo cáo kết thúc ở cấu trúc và hành vi hiện có của hệ thống, với bảng
+API và danh mục bằng chứng mã nguồn làm căn cứ tra cứu.
+77

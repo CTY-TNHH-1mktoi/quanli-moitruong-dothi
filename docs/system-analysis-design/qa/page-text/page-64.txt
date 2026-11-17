@@ -1,0 +1,34 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 11 THIẾT KẾ CHATBOT TƯ VẤN XANH NON
+11.1 Kiến trúc trả lời kết hợp
+Xanh Non kết hợp nhận diện ý định bằng quy tắc, tra cứu tri thức, đọc dữ liệu môi trường và mô
+hình ngôn ngữ cục bộ. Quy trình không bắt buộc đi qua mô hình sinh ở mọi câu hỏi. Những nội
+dung đã được xác định chắc chắn, như giao tiếp cơ bản, chức năng ứng dụng, số liệu cần đọc, dự
+báo theo cửa sổ giờ hoặc một đáp án kiến thức phù hợp, được trả trực tiếp. Nhánh chưa có đáp án
+trực tiếp mới xây dựng ngữ cảnh và gọi runtime.
+Manifest đang hoạt động xác định XanhNon-Style-v2, với nền Qwen2.5 0.5B và bản GGUF F16
+dùng bởi llama.cpp. Bản phát hành có hash để nhận diện tệp; thông tin số bước học trong
+manifest là thông tin của bản đã phát hành. Một đợt chuẩn bị dữ liệu hoặc kiểm tra token mới
+không đồng nghĩa bản mô hình đó đã được thay thế. NativeChatbot quản lý tiến trình cục bộ, còn
+Flask giao tiếp với tiến trình qua HTTP loopback [T09].
+11.2 Chuỗi quyết định của câu trả lời
+1. Kiểm tra cấu trúc yêu cầu và tách câu hỏi khỏi lịch sử giới hạn. Với lời xác nhận hữu ích, ghi
+nhận theo nhánh góp ý riêng.
+2. Giải nghĩa câu nối tiếp, chủ đề và chi tiết còn thiếu. Nếu cần, hỏi lại trước khi kết luận.
+3. Nhận biết giao tiếp cơ bản, câu giới thiệu chức năng hoặc câu ngoài phạm vi.
+4. Trong phạm vi, ưu tiên các nhánh dữ liệu người dùng nêu, thời tiết, không khí, tư vấn và kiến
+thức phù hợp.
+5. Khi cần mô hình, tạo thông điệp hệ thống và phần dữ liệu chỉ liên quan đến câu hỏi; không
+đưa toàn bộ bộ dữ liệu chat thô vào ngữ cảnh.
+6. Nhận nội dung trực tiếp hoặc token sinh, làm sạch đầu ra và trả JSON hoặc SSE thống nhất.
+11.3 Quản lý ngữ cảnh nhiều lượt
+Ngữ cảnh được giải từ lượt người sử dụng, kết hợp chủ đề, địa điểm và mốc thời gian. Câu hỏi
+mới có thể thay một phần ngữ cảnh mà vẫn giữ những phần còn liên quan. Ví dụ, sau một câu về
+thời tiết ngày mai ở Đà Nẵng lúc 18:30, câu “độ ẩm thì sao” giữ Đà Nẵng, ngày mai và khoảng
+18:00–19:00. Câu “không khí nữa” đổi lĩnh vực dữ liệu nhưng có thể tiếp tục dùng cùng địa
+điểm, ngày và giờ.
+Nếu hỏi “19 giờ thì sao”, giờ mới thay cho giờ cũ. Nếu hỏi “hiện tại”, mốc dự báo không còn áp
+dụng. Khi chỉ nêu một giờ mà chưa có ngày rõ ràng, hệ thống có thể hỏi người sử dụng muốn
+xem hôm nay hay ngày khác. Các câu cảm ơn được nhận diện riêng; việc chuyển sang một chủ
+đề không liên quan không tiếp tục kéo nội dung môi trường cũ vào câu trả lời.
+64

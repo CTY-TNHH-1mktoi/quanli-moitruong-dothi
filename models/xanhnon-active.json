@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "name": "XanhNon-Style-v2",
+  "gguf": "models/xanhnon-style-v2-f16.gguf",
+  "adapter": "models/xanhnon-style-lora-v2",
+  "base_model": "models/xanhnon-qwen2.5-0.5b-vietnamese",
+  "gguf_sha256": "faafda1900c033ab1ae89f2c7881229d8aa08a1a564405149669ab9e0ad3f1d2",
+  "dataset_manifest_sha256": "602ea81565fae77886758d5fe5a3e0ab6a8f13f740b8f481d86f6e9bc6712628",
+  "training_steps": 81,
+  "stage_training_steps": 21,
+  "activated_at": "2026-10-19T03:36:08.030006+00:00"
+}

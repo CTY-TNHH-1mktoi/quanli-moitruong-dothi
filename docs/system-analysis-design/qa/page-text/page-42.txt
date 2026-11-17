@@ -1,0 +1,9 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+6.8 Sơ đồ lớp triển khai
+Hình 11. Class Diagram các lớp triển khai nghiệp vụ
+LocationStore phụ trách tạo và đồng bộ metadata địa điểm. ReportRepository phụ trách truy vấn
+và lưu báo cáo; nó nhận ensure_locations dưới dạng hàm phụ thuộc, trong ứng dụng hàm này
+được cấp từ LocationStore. AirMapRepository giữ cache và các thao tác đọc ghi mẫu lưới.
+NoiseData quản lý tệp NoiseCapture dùng chung. NativeChatbot sở hữu tiến trình suy luận cục
+bộ và đóng tiến trình đó khi kết thúc. FeedbackStore đóng gói thao tác SQLite cho góp ý.
+42

@@ -1,0 +1,42 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+2.3 Hiện trạng các nhóm chức năng
+Bảng 4. Kết quả đối chiếu phạm vi chức năng
+Nhóm Hiện trạng Căn cứ
+Đã triển khai danh mục, tìm kiếm, ghi nhớ lựa chọn và locations.json;
+Địa điểm
+chọn địa điểm gần nhất static/locations.js
+Đã triển khai cập nhật, lưu snapshot, năm thông số
+Giám sát app.py; static/script.js
+chính và US AQI
+Đã triển khai nền bản đồ, marker tham chiếu và lớp AQI map.js; air-overlay.js;
+Bản đồ
+nội suy air_quality_map.py
+Đã triển khai sinh theo ngưỡng và lịch sử trong nút build_alerts; CanhBao;
+Cảnh báo
+chuông dashboard.js
+Đã triển khai tạo, lưu, mở lại, xuất CSV và in bằng trình environment_reports.py;
+Báo cáo
+duyệt static/reports.js
+chatbot.py;
+Đã triển khai các nhánh quy tắc, tra cứu tri thức, đọc dữ
+Chatbot chat_knowledge.py;
+liệu và sinh cục bộ
+native_chatbot.py
+chat_learning.py;
+Đã triển khai tiếp nhận câu hỏi mới và góp ý; việc học
+Học từ trao đổi chat_feedback.py;
+trọng số là quy trình riêng
+train_xanhnon.py
+2.4 Đặc điểm dữ liệu và giới hạn nghiệp vụ
+Dữ liệu không khí là kết quả của mô hình do nguồn cung cấp, có độ phân giải theo ô lưới. Các
+địa điểm gần nhau có thể có cùng giá trị. Đối với bản đồ, API chỉ định CAMS Global và trả
+metadata độ phân giải 45 km; màu được nội suy để hiển thị liên tục, không tạo ra độ chính xác
+tương đương đo trực tiếp trên từng tuyến đường.
+Tiếng ồn được lọc trong bán kính tham chiếu 2 km và tổng hợp theo năng lượng có trọng số. Nếu
+không có ô dữ liệu phù hợp, trường tiếng ồn để trống. Trạng thái “Hệ thống hoạt động” phản ánh
+việc tải dữ liệu thành công trên giao diện, không xác nhận sự hoạt động của một mạng trạm vật
+lý.
+Lịch sử trong SQL là lịch sử các snapshot ứng dụng đã lưu. Đồ thị PM2.5 hiển thị tối đa 12
+snapshot gần nhất; các điểm không nhất thiết cách đều về thời gian. Hệ thống không suy ra rằng
+toàn bộ thời gian giữa hai lần cập nhật đã được quan trắc liên tục.
+12

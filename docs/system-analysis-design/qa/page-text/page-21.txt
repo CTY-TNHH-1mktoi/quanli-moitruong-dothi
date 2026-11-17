@@ -1,0 +1,35 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Luồng chính.
+1. Khởi tạo nền OpenStreetMap và các điều khiển Leaflet.
+2. Đặt marker thời tiết và không khí theo tọa độ địa điểm; marker tiếng ồn dùng tọa độ tham
+chiếu riêng khi phù hợp.
+3. Nhấn marker để xem tên, tọa độ và thông tin nguồn.
+4. Khi đổi địa điểm, bỏ marker cũ, tạo marker mới và đưa vùng nhìn về nơi được chọn.
+Điều kiện sau và đầu ra. Bản đồ hiển thị đúng địa điểm; liên kết mở bản đồ lớn mang tọa độ
+tương ứng. Di chuyển vùng nhìn không tự thay danh mục địa điểm.
+Luồng thay thế và ngoại lệ. Nếu nền bản đồ không tải được, phần tham chiếu vị trí vẫn có thể
+hiển thị và giao diện có thao tác thử lại. Toàn màn hình phụ thuộc khả năng của trình duyệt.
+Thiết kế và bằng chứng. static/map.js và thư viện static/vendor/leaflet. Nền bản đồ được tải trực
+tiếp trong trình duyệt từ OpenStreetMap; dữ liệu mẫu AQI thuộc FR06.
+Quy tắc và nghiệm thu. BR01, BR14. Kiểm thử: TC08.
+5.7 FR06 Hiển thị lớp màu AQI theo vùng
+Mục đích và tác nhân. Biểu diễn phân bố AQI từ các điểm lưới của mô hình trong vùng đang
+xem. Tác nhân: A01, E01. Ca sử dụng tương ứng: UC06.
+Điều kiện trước. Phạm vi bản đồ hợp lệ và giao với vùng phục vụ của API. Có ít nhất một phần
+mẫu dữ liệu dùng được.
+Đầu vào và giao diện. location và bốn giới hạn south, west, north, east dạng số. Giao diện có
+công tắc lớp màu và độ đậm 25–85%, mặc định 68%. Vị trí thao tác: UI03.
+Luồng chính.
+1. Xác định vùng, tạo lưới lấy mẫu với số điểm không vượt 196.
+2. Đọc mẫu còn hiệu lực trong giờ hiện tại từ bộ nhớ và SQL; gọi Open-Meteo cho những điểm
+còn thiếu.
+3. Trả ma trận AQI, PM25, các trục tọa độ, thời gian nguồn và metadata độ phân giải.
+4. Trình duyệt nội suy giữa các góc hợp lệ, tô theo sáu mức AQI và đặt độ đậm đã chọn.
+Điều kiện sau và đầu ra. Lớp phủ là biểu diễn nội suy từ dữ liệu mô hình CAMS Global. Nhấn
+bản đồ có thể xem giá trị ước tính tại vị trí đó; đây không phải bản ghi đo mới của một cảm biến.
+Luồng thay thế và ngoại lệ. Phạm vi thiếu hoặc sai trả 400. Nguồn lỗi hoàn toàn trả 502; thiếu
+một phần trả cảnh báo và để trống phần không đủ dữ liệu. Mẫu không được tự gán 0.
+Thiết kế và bằng chứng. air_quality_map.py: make_grid, AirMapRepository.get_samples và
+grid; static/air-overlay.js. API GET /api/bando/khongkhi; kho MauBanDoKhongKhi.
+Quy tắc và nghiệm thu. BR03, BR13, BR14. Kiểm thử: TC09, TC10.
+21

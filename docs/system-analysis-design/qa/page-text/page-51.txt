@@ -1,0 +1,26 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Thời gian nguồn thời tiết, nguồn không khí, thông tin số ô và thời gian đo tiếng ồn, các khí bổ
+sung cùng US AQI nằm trong ChiTiet. Các giá trị hiển thị thường xuyên cũng được lưu ở cột
+quan hệ để truy vấn lịch sử và tổng hợp. Việc lưu song song là chủ đích lưu snapshot và phục vụ
+truy vấn; hai phần được ghi trong cùng giao dịch cập nhật.
+8.4 Từ điển bảng CanhBao và PhanTichAI
+Bảng 14. Cấu trúc bảng CanhBao
+Cột Kiểu và ràng buộc Ý nghĩa
+Macanhbao INT IDENTITY, PK Mã cảnh báo.
+Manguon INT, NOT NULL, FK Nguồn snapshot gây cảnh báo.
+LoaiCanhBao NVARCHAR(100), NULL Tên thông số.
+MucDo NVARCHAR(50), NULL Trung bình hoặc Cao theo xử lý ứng dụng.
+NoiDung NVARCHAR(255), NULL Thông tin giá trị và ngưỡng.
+ThoiGian DATETIME, NOT NULL Thời gian tạo cảnh báo.
+Bảng 15. Cấu trúc bảng PhanTichAI
+Cột Kiểu và ràng buộc Ý nghĩa
+Maphantich INT IDENTITY, PK Mã hàng phân tích.
+Manguon INT, NOT NULL, FK Snapshot được đánh giá.
+KetQua NVARCHAR(100), NULL Mức chất lượng không khí.
+NhanXet NVARCHAR(255), NULL Diễn giải từ quy tắc AQI.
+KhuyenNghi NVARCHAR(255), NULL Nội dung gợi ý do build_analysis chọn.
+ThoiGian DATETIME, NOT NULL Thời gian lưu phân tích.
+Lược đồ không có cột người xử lý, thời gian xác nhận hoặc trạng thái đóng cảnh báo. Thao tác
+hiện tại là ghi nhận và tra cứu sự kiện. Tên bảng PhanTichAI được giữ theo dự án; cơ chế tạo dữ
+liệu trong bảng là hàm quy tắc, tách khỏi việc chatbot sinh văn bản.
+51

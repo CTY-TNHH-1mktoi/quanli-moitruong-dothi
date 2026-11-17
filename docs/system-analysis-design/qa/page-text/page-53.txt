@@ -1,0 +1,39 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Bảng 18. Các trường của hai kho SQLite
+Kho Các trường và vai trò
+id INTEGER PK; fingerprint TEXT UNIQUE NOT NULL; created_at, payload, model
+feedback và status TEXT NOT NULL; review, reviewed_at TEXT cho phép trống. status mặc
+định pending; công cụ duyệt dùng approved hoặc rejected.
+question_key TEXT PK; question và context_user TEXT NOT NULL; status TEXT
+questions NOT NULL; document_id, variant TEXT; knowledge_hash và policy TEXT NOT
+NULL; created_at, last_seen TEXT NOT NULL; seen_count INTEGER NOT NULL.
+8.7 Chuẩn hóa và lưu snapshot
+Ở phần dữ liệu quan hệ, mỗi bảng có khóa chính đơn và lưu các thuộc tính của chính thực thể đó.
+Các thuộc tính cảnh báo được tách khỏi snapshot để biểu diễn quan hệ một–nhiều; metadata địa
+điểm được tách thành DiaDiem. Với các cột quan hệ được liệt kê, không có nhóm thuộc tính lặp
+và không có khóa ghép làm phát sinh phụ thuộc bộ phận. Việc phân tích dạng chuẩn được giới
+hạn ở cấu trúc quan hệ, không xem JSON lồng nhau là một tập cột đã chuẩn hóa.
+NguonDL.ChiTiet và BaoCaoMT.NoiDung giữ nội dung snapshot phục vụ khôi phục cache và
+mở lại báo cáo. Một số thuộc tính được lặp có chủ đích trong cột và JSON, vì vậy không mô tả
+toàn bộ thiết kế là một lược đồ thuần 3NF không dư thừa. Nội dung JSON được kiểm tra ở mã
+Python và ghi bằng tham số; các tệp schema không khai báo CHECK ISJSON hay CHECK cho
+khoảng độ ẩm và kỳ báo cáo.
+8.8 Chỉ mục tính toàn vẹn và chống trùng
+Bảng 19. Chỉ mục và cơ chế tra cứu hiện có
+Đối tượng Cơ chế Phục vụ
+IX_NguonDL_DiaDiem_ThoiGian trên Bản gần nhất và lịch sử theo
+NguonDL
+MaDiaDiem, ThoiGian DESC, Manguon DESC nơi.
+IX_BaoCaoMT_ThoiGianTao; Danh sách báo cáo mới nhất và
+BaoCaoMT
+IX_BaoCaoMT_DiaDiem phân trang theo địa điểm.
+IX_MauBanDoKK_ViTri_ThoiGian trên Đọc mẫu mới nhất của một
+MauBanDoKhongKhi
+MaViTri, ThoiGianLay DESC, MaMau DESC điểm trong giờ.
+Không ghi lặp cùng payload và
+Góp ý fingerprint duy nhất và INSERT OR IGNORE
+phiên bản mô hình.
+Tăng số lần gặp trên hàng đã
+Câu hỏi học question_key và hash của câu hỏi cùng ngữ cảnh
+có.
+53

@@ -1,0 +1,36 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+CHƯƠNG 10 THIẾT KẾ XỬ LÝ VÀ GIÁM SÁT MÔI TRƯỜNG
+10.1 Nguồn và ý nghĩa các thông số
+Bảng 22. Thông số và đặc tính nguồn dữ liệu
+Thông số Nguồn và đơn vị Ý nghĩa trong ứng dụng
+Nhiệt độ Open-Meteo, °C temperature_2m tại tọa độ tham chiếu.
+Độ ẩm Open-Meteo, % relative_humidity_2m; dữ liệu nguồn thời tiết.
+PM2.5 và PM10 Open-Meteo Air Quality, µg/m³ Nồng độ bụi mô hình tại vị trí tham chiếu.
+Open-Meteo Air Quality, chỉ số Chỉ số do nguồn trả về; ứng dụng dùng để
+US AQI
+không thứ nguyên chọn mức và diễn giải.
+Các trường bổ sung nằm trong DuLieu và
+CO NO2 SO2 O3 Open-Meteo Air Quality
+snapshot JSON, không là năm thẻ chính.
+Tổng hợp theo vùng từ các ô có số lần đo và
+Tiếng ồn NoiseCapture, dBA
+metadata thời gian.
+Tài liệu Open-Meteo xác định các biến thời tiết, biến chất lượng không khí và dữ liệu dự báo.
+NoiseCapture cung cấp dữ liệu cộng đồng có vị trí; ứng dụng lấy tệp Việt Nam và tự tổng hợp
+vùng tham chiếu [T01]–[T03]. Quy trình của dự án không tiếp nhận MQTT hoặc gói tin trực tiếp
+từ thiết bị IoT.
+10.2 Tiếp nhận và kiểm tra dữ liệu
+fetch_environment thực hiện hai yêu cầu HTTP với timeout 15 giây cho thời tiết và không khí.
+Dữ liệu hiện tại được ghép vào dictionary, giữ riêng ThoiGianNguonThoiTiet và
+ThoiGianNguonKhongKhi. NoiseData quản lý bản tải quốc gia dùng chung, kiểm tra tệp mới
+trước khi thay tệp cũ và dùng lại bản có sẵn khi cập nhật nguồn thất bại. Chu kỳ làm mới tệp
+tiếng ồn là 24 giờ; điều này không thay đổi thời điểm các phép đo bên trong nguồn.
+Mức kiểm tra được thực hiện ở từng nhánh: dữ liệu NoiseCapture phải có tọa độ và giá trị hữu
+hạn, trọng số dương; RF yêu cầu đủ năm số hữu hạn; thống kê báo cáo loại None, boolean và giá
+trị không hữu hạn. Nhánh dự báo thời tiết kiểm tra đơn vị, độ dài mảng và UTC+7. Nhánh không
+khí kiểm tra hình dạng dữ liệu và thời gian nguồn. Bộ thu thập snapshot không phải một cổng
+chuẩn hóa cảm biến có kiểm định chất lượng đo.
+10.3 Tổng hợp tiếng ồn theo năng lượng
+Với mỗi ô tiếng ồn, hệ thống xác định tâm hình học và khoảng cách đến tọa độ tiếng ồn của địa
+điểm. Chỉ các ô trong bán kính được cấu hình mới tham gia tổng hợp. Gọi Li là mức của ô và wi
+61

@@ -1,0 +1,33 @@
+PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG | DEMOTH1
+Điều kiện trước. Flask đang chạy. Kiểm tra trạng thái không yêu cầu sinh một câu trả lời.
+Đầu vào và giao diện. GET /api/chat/status không có payload. Trạng thái phụ thuộc runtime và
+khóa huấn luyện. Vị trí thao tác: API và công cụ vận hành.
+Luồng chính.
+1. Đọc trạng thái runtime đang giữ trong tiến trình.
+2. Kiểm tra huấn luyện đang hoạt động và cấu hình cho phép sử dụng đồng thời.
+3. Trả state và, nếu phù hợp, background_training.
+4. Người vận hành đối chiếu thông tin với log native, khóa huấn luyện và manifest bản phát
+hành.
+Điều kiện sau và đầu ra. JSON có các trạng thái cold, loading, ready, training hoặc error. ready
+chỉ xác nhận runtime đã nạp, không đánh giá chất lượng câu trả lời hoặc độ mới dữ liệu.
+Luồng thay thế và ngoại lệ. Máy chủ không chạy thì không nhận được phản hồi HTTP.
+Runtime nạp lỗi có log và trạng thái error; các nhánh trả lời bằng quy tắc hoặc tri thức có thể
+hoạt động độc lập với phần sinh mô hình.
+Thiết kế và bằng chứng. app.chat_status; chatbot.runtime_status, _load_runtime,
+warm_up_chatbot; native_chatbot.py; models/xanhnon-active.json.
+Quy tắc và nghiệm thu. BR09, BR12. Kiểm thử: TC26.
+5.19 FR18 Chuẩn bị dữ liệu và huấn luyện cục bộ
+Mục đích và tác nhân. Tạo bộ dữ liệu đã lọc và mô hình ứng viên, tách khỏi bản đang phục vụ
+hội thoại. Tác nhân: A02. Ca sử dụng tương ứng: UC18.
+Điều kiện trước. Có bộ dữ liệu hợp lệ, mô hình nền hoặc checkpoint có thể sử dụng, đủ RAM
+và ổ đĩa; không trùng phiên huấn luyện.
+Đầu vào và giao diện. JSONL hội thoại, manifest nguồn, dữ liệu cảm biến đã chuyển thành tình
+huống và góp ý đã duyệt. Tham số học được truyền cho các script; không có màn hình quản trị
+huấn luyện trên web. Vị trí thao tác: Công cụ dòng lệnh và lịch chạy Windows.
+Luồng chính.
+1. Kiểm tra nguồn, hash, trùng câu và giao nhau giữa các tập; chuẩn bị train và validation.
+2. Token hóa toàn bộ mẫu và chỉ tính loss trên token phía assistant.
+3. Kiểm tra RAM, ổ đĩa và khóa chạy; huấn luyện LoRA khi đáp ứng điều kiện.
+4. Lưu checkpoint, đánh giá ứng viên và xuất GGUF riêng. Bản dùng trong ứng dụng được xác
+định bởi manifest phát hành, không tự coi mọi ứng viên là bản đã áp dụng.
+29
